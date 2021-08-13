@@ -25,6 +25,12 @@ Objects {
         Id: 12635891766135779157
       }
     }
+    Overrides {
+      Name: "cs:PherTracker"
+      ObjectReference {
+        SelfId: 18174127182675046476
+      }
+    }
   }
   WantsNetworking: true
   Collidable_v2 {
@@ -101,70 +107,6 @@ Objects {
     }
   }
   WantsNetworking: true
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  EditorIndicatorVisibility {
-    Value: "mc:eindicatorvisibility:visiblewhenselected"
-  }
-  Script {
-    ScriptAsset {
-      Id: 1467038181534272658
-    }
-  }
-}
-Objects {
-  Id: 4594298331842464618
-  Name: "Ant AI"
-  Transform {
-    Location {
-    }
-    Rotation {
-    }
-    Scale {
-      X: 1
-      Y: 1
-      Z: 1
-    }
-  }
-  ParentId: 13793501792289967447
-  ChildIds: 8998359498962826759
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  EditorIndicatorVisibility {
-    Value: "mc:eindicatorvisibility:visiblewhenselected"
-  }
-  AIActivityHandler {
-  }
-}
-Objects {
-  Id: 8998359498962826759
-  Name: "RoamActivity"
-  Transform {
-    Location {
-    }
-    Rotation {
-    }
-    Scale {
-      X: 1
-      Y: 1
-      Z: 1
-    }
-  }
-  ParentId: 4594298331842464618
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -297,6 +239,7 @@ Objects {
   }
   ParentId: 13793501792289967447
   ChildIds: 5111759691925175661
+  ChildIds: 18174127182675046476
   WantsNetworking: true
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
@@ -312,6 +255,47 @@ Objects {
   }
   NetworkContext {
     Type: Server
+  }
+}
+Objects {
+  Id: 18174127182675046476
+  Name: "PherTracker"
+  Transform {
+    Location {
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 2831261251715224294
+  UnregisteredParameters {
+    Overrides {
+      Name: "cs:PherTrigger"
+      ObjectReference {
+        SelfId: 5111759691925175661
+      }
+    }
+  }
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  Script {
+    ScriptAsset {
+      Id: 9672939361282021061
+    }
   }
 }
 Objects {

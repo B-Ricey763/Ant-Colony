@@ -24,6 +24,8 @@ Objects {
   ChildIds: 14982843161775482339
   ChildIds: 5427778489820607815
   ChildIds: 13793501792289967447
+  ChildIds: 5886486340009436552
+  ChildIds: 545885846661575972
   UnregisteredParameters {
   }
   Collidable_v2 {
@@ -36,6 +38,100 @@ Objects {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
   Folder {
+  }
+}
+Objects {
+  Id: 545885846661575972
+  Name: "Cube - Bottom-Aligned"
+  Transform {
+    Location {
+      X: -600
+      Y: 800
+    }
+    Rotation {
+      Yaw: -20
+    }
+    Scale {
+      X: 1
+      Y: 9.25
+      Z: 4.25000048
+    }
+  }
+  ParentId: 4781671109827199097
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  CoreMesh {
+    MeshAsset {
+      Id: 1990013444985363097
+    }
+    Teams {
+      IsTeamCollisionEnabled: true
+      IsEnemyCollisionEnabled: true
+    }
+    StaticMesh {
+      Physics {
+        Mass: 100
+        LinearDamping: 0.01
+      }
+      BoundsScale: 1
+    }
+  }
+}
+Objects {
+  Id: 5886486340009436552
+  Name: "Cube - Bottom-Aligned"
+  Transform {
+    Location {
+      X: 375
+      Y: -25
+    }
+    Rotation {
+      Yaw: -20
+    }
+    Scale {
+      X: 1
+      Y: 9.25
+      Z: 4.25000048
+    }
+  }
+  ParentId: 4781671109827199097
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  CoreMesh {
+    MeshAsset {
+      Id: 1990013444985363097
+    }
+    Teams {
+      IsTeamCollisionEnabled: true
+      IsEnemyCollisionEnabled: true
+    }
+    StaticMesh {
+      Physics {
+        Mass: 100
+        LinearDamping: 0.01
+      }
+      BoundsScale: 1
+    }
   }
 }
 Objects {
@@ -537,7 +633,7 @@ Objects {
   Name: "Spawn Point"
   Transform {
     Location {
-      Z: 115
+      Z: -375
     }
     Rotation {
     }

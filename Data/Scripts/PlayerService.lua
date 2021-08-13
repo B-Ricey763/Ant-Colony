@@ -2,7 +2,7 @@ local playerPrison = script:GetCustomProperty("PlayerPrison"):WaitForObject()
 
 -- So they don't interfere with the camera 
 local function LockPlayer(player)
-	player.isVisible = false
+	-- player.isVisible = false
 	player:AttachToCoreObject(playerPrison)
 end
 
