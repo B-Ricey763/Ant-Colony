@@ -1,131 +1,6 @@
 Name: "Worker Ant"
 RootId: 13793501792289967447
 Objects {
-  Id: 2544855167070603294
-  Name: "Ant AI"
-  Transform {
-    Location {
-      Z: -75
-    }
-    Rotation {
-    }
-    Scale {
-      X: 1
-      Y: 1
-      Z: 1
-    }
-  }
-  ParentId: 13793501792289967447
-  ChildIds: 11875775032139364871
-  ChildIds: 11920914690646484729
-  UnregisteredParameters {
-    Overrides {
-      Name: "cs:Priorities"
-      AssetReference {
-        Id: 12635891766135779157
-      }
-    }
-    Overrides {
-      Name: "cs:PherTracker"
-      ObjectReference {
-        SelfId: 18174127182675046476
-      }
-    }
-  }
-  WantsNetworking: true
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  EditorIndicatorVisibility {
-    Value: "mc:eindicatorvisibility:visiblewhenselected"
-  }
-  AIActivityHandler {
-  }
-}
-Objects {
-  Id: 11920914690646484729
-  Name: "CollideActivity"
-  Transform {
-    Location {
-    }
-    Rotation {
-    }
-    Scale {
-      X: 1
-      Y: 1
-      Z: 1
-    }
-  }
-  ParentId: 2544855167070603294
-  WantsNetworking: true
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  EditorIndicatorVisibility {
-    Value: "mc:eindicatorvisibility:visiblewhenselected"
-  }
-  Script {
-    ScriptAsset {
-      Id: 17465752840329746924
-    }
-  }
-}
-Objects {
-  Id: 11875775032139364871
-  Name: "RoamActivity"
-  Transform {
-    Location {
-      Z: 75
-    }
-    Rotation {
-    }
-    Scale {
-      X: 1
-      Y: 1
-      Z: 1
-    }
-  }
-  ParentId: 2544855167070603294
-  UnregisteredParameters {
-    Overrides {
-      Name: "cs:Priorities"
-      AssetReference {
-        Id: 12635891766135779157
-      }
-    }
-  }
-  WantsNetworking: true
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  EditorIndicatorVisibility {
-    Value: "mc:eindicatorvisibility:visiblewhenselected"
-  }
-  Script {
-    ScriptAsset {
-      Id: 1467038181534272658
-    }
-  }
-}
-Objects {
   Id: 4490408268911996926
   Name: "ClientArt"
   Transform {
@@ -240,6 +115,7 @@ Objects {
   ParentId: 13793501792289967447
   ChildIds: 5111759691925175661
   ChildIds: 18174127182675046476
+  ChildIds: 9813685761909305619
   WantsNetworking: true
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
@@ -255,6 +131,168 @@ Objects {
   }
   NetworkContext {
     Type: Server
+  }
+}
+Objects {
+  Id: 9813685761909305619
+  Name: "Ant AI"
+  Transform {
+    Location {
+      Z: -75
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 2831261251715224294
+  ChildIds: 5173961019409617058
+  ChildIds: 13908578100777915154
+  ChildIds: 5281755016727297808
+  UnregisteredParameters {
+    Overrides {
+      Name: "cs:Priorities"
+      AssetReference {
+        Id: 12635891766135779157
+      }
+    }
+    Overrides {
+      Name: "cs:AntMover"
+      AssetReference {
+        Id: 11555320366613091189
+      }
+    }
+    Overrides {
+      Name: "cs:PherTracker"
+      ObjectReference {
+        SelfId: 18174127182675046476
+      }
+    }
+  }
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  AIActivityHandler {
+  }
+}
+Objects {
+  Id: 5281755016727297808
+  Name: "FollowActivity"
+  Transform {
+    Location {
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 9813685761909305619
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  Script {
+    ScriptAsset {
+      Id: 5260854768752014548
+    }
+  }
+}
+Objects {
+  Id: 13908578100777915154
+  Name: "CollideActivity"
+  Transform {
+    Location {
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 9813685761909305619
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  Script {
+    ScriptAsset {
+      Id: 17465752840329746924
+    }
+  }
+}
+Objects {
+  Id: 5173961019409617058
+  Name: "RoamActivity"
+  Transform {
+    Location {
+      Z: 75
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 9813685761909305619
+  UnregisteredParameters {
+    Overrides {
+      Name: "cs:Priorities"
+      AssetReference {
+        Id: 12635891766135779157
+      }
+    }
+  }
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  Script {
+    ScriptAsset {
+      Id: 1467038181534272658
+    }
   }
 }
 Objects {
@@ -308,9 +346,9 @@ Objects {
       Pitch: 90
     }
     Scale {
-      X: 1
-      Y: 1
-      Z: 1
+      X: 10
+      Y: 10
+      Z: 10
     }
   }
   ParentId: 2831261251715224294

@@ -1,7 +1,7 @@
 local activityHandler = script.parent
 local Priorities = require(activityHandler:GetCustomProperty("Priorities"))
 local PherTracker = activityHandler:GetCustomProperty("PherTracker"):WaitForObject()
-local ant = activityHandler.parent
+local ant = activityHandler.parent.parent
 
 local SPEED = ant:GetCustomProperty("Speed")
 
@@ -22,7 +22,7 @@ function Collide.tick(activity, dt)
 	end
 end
 
-function Collide.tickHighestPriority(activity, dt)
+function Collide.start(activity)
 	if currentResult then
 		local forwardVec = ant:GetTransform():GetForwardVector()
 		local reflection = reflect(forwardVec, currentResult:GetImpactNormal()) * Vector3.New(1, 1, 0)
