@@ -8,7 +8,7 @@ local SPEED = ant:GetCustomProperty("Speed")
 local Roam = {}
 
 function Roam.tickHighestPriority(activity, dt)
-	AntMover(ant, ant:GetTransform():GetForwardVector(), SPEED)
+	AntMover.Forward(ant, ant:GetTransform():GetForwardVector(), SPEED)
 end
 
 local activity = activityHandler:AddActivity("Roam", Roam)

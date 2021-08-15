@@ -1,12 +1,12 @@
 Name: "ScriptTesting"
 RootId: 15146144627536064546
 Objects {
-  Id: 18360834116012521388
+  Id: 1820767265306173143
   Name: "Pheromone"
   Transform {
     Location {
-      X: 125
-      Y: 1100
+      X: 1300
+      Y: -925
       Z: 100
     }
     Rotation {
@@ -26,7 +26,16 @@ Objects {
     Overrides {
       Name: "ma:Shared_BaseMaterial:id"
       AssetReference {
-        Id: 15400049461417550457
+        Id: 247491278714534575
+      }
+    }
+    Overrides {
+      Name: "ma:Shared_BaseMaterial:color"
+      Color {
+        R: 0.170000017
+        G: 1
+        B: 0.901059866
+        A: 1
       }
     }
   }
@@ -62,12 +71,12 @@ Objects {
   }
 }
 Objects {
-  Id: 2718622521037020912
+  Id: 3464395172870969182
   Name: "Pheromone"
   Transform {
     Location {
-      X: 25
-      Y: 600
+      X: 875
+      Y: 400
       Z: 100
     }
     Rotation {
@@ -82,12 +91,20 @@ Objects {
   UnregisteredParameters {
     Overrides {
       Name: "cs:Type"
-      String: "Follow"
+      String: "Block"
     }
     Overrides {
       Name: "ma:Shared_BaseMaterial:id"
       AssetReference {
-        Id: 15400049461417550457
+        Id: 247491278714534575
+      }
+    }
+    Overrides {
+      Name: "ma:Shared_BaseMaterial:color"
+      Color {
+        R: 0.909999967
+        G: 0.668940425
+        A: 1
       }
     }
   }
@@ -106,7 +123,7 @@ Objects {
   }
   CoreMesh {
     MeshAsset {
-      Id: 883985107983124514
+      Id: 12095835209017042614
     }
     Teams {
       IsTeamCollisionEnabled: true
@@ -175,11 +192,11 @@ Objects {
   Name: "Cube - Bottom-Aligned"
   Transform {
     Location {
-      X: 375
-      Y: -25
+      X: 1850
+      Y: -300
     }
     Rotation {
-      Yaw: -19.9999943
+      Yaw: -20
     }
     Scale {
       X: 1
@@ -222,9 +239,11 @@ Objects {
   Name: "Worker Ant"
   Transform {
     Location {
+      Y: -525
       Z: 75
     }
     Rotation {
+      Yaw: 45
     }
     Scale {
       X: 1

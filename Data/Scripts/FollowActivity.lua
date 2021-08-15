@@ -1,4 +1,3 @@
-
 local activityHandler = script.parent
 local Priorities = require(activityHandler:GetCustomProperty("Priorities"))
 local AntMover = require(activityHandler:GetCustomProperty("AntMover"))
@@ -17,11 +16,15 @@ function FollowActivity.tick(activity, dt)
 end
 
 function FollowActivity.tickHighestPriority(activity, dt)
+	local function flatten(vec)
+		return vec * Vector3.New(1, 1, 0)
+	end
+
 	local currentPher = PherTracker.context.Current
 	if Object.IsValid(currentPher) then
-		local diff = (currentPher:GetPosition() - ant:GetPosition())
-		if diff.sizeSquared > 2 then
-			AntMover(ant, diff:GetNormalized(), SPEED)
+		local diff = (flatten(currentPher:GetPosition()) - flatten(ant:GetPosition()))
+		if diff.sizeSquared > 100 then
+			AntMover.Forward(ant, diff:GetNormalized(), SPEED)
 		else
 			PherTracker.context.Current = nil
 			activity.priority = Priorities.INACTIVE

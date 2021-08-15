@@ -2,6 +2,7 @@ local activityHandler = script.parent
 local Priorities = require(activityHandler:GetCustomProperty("Priorities"))
 local PherTracker = activityHandler:GetCustomProperty("PherTracker"):WaitForObject()
 local ant = activityHandler.parent.parent
+local AntMover = require(activityHandler:GetCustomProperty("AntMover"))
 
 local SPEED = ant:GetCustomProperty("Speed")
 
@@ -19,15 +20,14 @@ function Collide.tick(activity, dt)
 	if hitResult and hitResult.other.name ~= "Pheromone" then
 		activity.priority = Priorities.URGENT + 1 -- it should always fire
 		currentResult = hitResult
+		print(currentResult.other.name)
 	end
 end
 
 function Collide.start(activity)
 	if currentResult then
 		local forwardVec = ant:GetTransform():GetForwardVector()
-		local reflection = reflect(forwardVec, currentResult:GetImpactNormal()) * Vector3.New(1, 1, 0)
-		ant:SetRotation(Rotation.New(reflection, Vector3.UP))
-		ant:SetPosition(ant:GetPosition() + forwardVec)
+		AntMover.Reflect(ant, forwardVec, currentResult:GetImpactNormal())
 		activity.priority = Priorities.INACTIVE
 		PherTracker.context.Current = nil -- so the pheremone doesn't lock on
 	end

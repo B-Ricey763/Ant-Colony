@@ -2,7 +2,7 @@ Name: "Worker Ant"
 RootId: 13793501792289967447
 Objects {
   Id: 4490408268911996926
-  Name: "ClientArt"
+  Name: "Client"
   Transform {
     Location {
     }
@@ -100,7 +100,7 @@ Objects {
 }
 Objects {
   Id: 2831261251715224294
-  Name: "ServerCollision"
+  Name: "Server"
   Transform {
     Location {
     }
@@ -152,6 +152,7 @@ Objects {
   ChildIds: 5173961019409617058
   ChildIds: 13908578100777915154
   ChildIds: 5281755016727297808
+  ChildIds: 13633900721113028654
   UnregisteredParameters {
     Overrides {
       Name: "cs:Priorities"
@@ -185,6 +186,39 @@ Objects {
     Value: "mc:eindicatorvisibility:visiblewhenselected"
   }
   AIActivityHandler {
+  }
+}
+Objects {
+  Id: 13633900721113028654
+  Name: "BlockActivity"
+  Transform {
+    Location {
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 9813685761909305619
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  Script {
+    ScriptAsset {
+      Id: 16709068358421791926
+    }
   }
 }
 Objects {
@@ -343,7 +377,6 @@ Objects {
     Location {
     }
     Rotation {
-      Pitch: 90
     }
     Scale {
       X: 10
