@@ -153,6 +153,7 @@ Objects {
   ChildIds: 13908578100777915154
   ChildIds: 5281755016727297808
   ChildIds: 13633900721113028654
+  ChildIds: 1794400680718191858
   UnregisteredParameters {
     Overrides {
       Name: "cs:Priorities"
@@ -186,6 +187,39 @@ Objects {
     Value: "mc:eindicatorvisibility:visiblewhenselected"
   }
   AIActivityHandler {
+  }
+}
+Objects {
+  Id: 1794400680718191858
+  Name: "FoodActivity"
+  Transform {
+    Location {
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 9813685761909305619
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  Script {
+    ScriptAsset {
+      Id: 4117148841755326486
+    }
   }
 }
 Objects {

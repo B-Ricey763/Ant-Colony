@@ -6,18 +6,18 @@ local ant = activityHandler.parent.parent
 
 local SPEED = ant:GetCustomProperty("Speed")
 
-local FollowActivity = {}
+local FoodActivity = {}
 
-function FollowActivity.tick(activity, dt)
+function FoodActivity.tick(activity, dt)
 	local currentPher = PherTracker.context.Current
-	if Object.IsValid(currentPher) and currentPher:GetCustomProperty("Type") == "Follow" then
-		activity.priority = Priorities.PRIMARY - 50 -- should get overwritten by more urgent events
+	if Object.IsValid(currentPher) and currentPher:GetCustomProperty("Type") == "Food" then
+		activity.priority = Priorities.PRIMARY - 25
 	else
 		activity.priority = Priorities.INACTIVE
 	end
 end
 
-function FollowActivity.tickHighestPriority(activity, dt)
+function FoodActivity.tickHighestPriority(activity)
 	local currentPher = PherTracker.context.Current
 	if Object.IsValid(currentPher) then
 		local arrived = AntMover.MoveTo(ant, currentPher, SPEED)
@@ -28,4 +28,4 @@ function FollowActivity.tickHighestPriority(activity, dt)
 	end
 end
 
-activityHandler:AddActivity("Follow", FollowActivity)
+activityHandler:AddActivity("Food", FoodActivity)
