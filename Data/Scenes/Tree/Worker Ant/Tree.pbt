@@ -154,6 +154,7 @@ Objects {
   ChildIds: 5281755016727297808
   ChildIds: 13633900721113028654
   ChildIds: 1794400680718191858
+  ChildIds: 8801048457823925438
   UnregisteredParameters {
     Overrides {
       Name: "cs:Priorities"
@@ -187,6 +188,39 @@ Objects {
     Value: "mc:eindicatorvisibility:visiblewhenselected"
   }
   AIActivityHandler {
+  }
+}
+Objects {
+  Id: 8801048457823925438
+  Name: "RetrieveActivity"
+  Transform {
+    Location {
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 9813685761909305619
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  Script {
+    ScriptAsset {
+      Id: 9997027585310727671
+    }
   }
 }
 Objects {
