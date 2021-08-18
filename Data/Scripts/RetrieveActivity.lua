@@ -22,10 +22,10 @@ function RetrieveActivity.tickHighestPriority(activity, dt)
 	if Object.IsValid(currentPher) then
 		local arrived = AntMover.MoveTo(ant, currentPher, SPEED)
 		if arrived then
-			local diff = currentPher:GetPosition() - ant:GetPosition()
+			local diff = currentPher:GetWorldPosition() - ant:GetWorldPosition()
 			activity.priority = Priorities.INACTIVE
 			PherTracker.context.Current = nil
-			AntMover.Forward(ant, diff:GetNormalized(), SPEED)
+			AntMover.Forward(ant, -diff:GetNormalized(), SPEED)
 		end
 	end
 end

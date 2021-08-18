@@ -25,7 +25,7 @@ function AntMover.MoveTo(ant, object, speed)
 		return vec * Vector3.New(1, 1, 0)
 	end
 
-	local diff = (flatten(object:GetPosition()) - flatten(ant:GetPosition()))
+	local diff = (flatten(object:GetWorldPosition()) - flatten(ant:GetWorldPosition()))
 	if diff.sizeSquared > 100 then
 		AntMover.Forward(ant, diff:GetNormalized(), speed)
 	else
