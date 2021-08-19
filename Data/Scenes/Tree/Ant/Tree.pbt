@@ -1,4 +1,4 @@
-Name: "Worker Ant"
+Name: "Ant"
 RootId: 13793501792289967447
 Objects {
   Id: 4490408268911996926
@@ -16,6 +16,8 @@ Objects {
   }
   ParentId: 13793501792289967447
   ChildIds: 2187134125576298270
+  ChildIds: 6188333201307005636
+  ChildIds: 15632175737119049579
   WantsNetworking: true
   Collidable_v2 {
     Value: "mc:ecollisionsetting:forceoff"
@@ -30,6 +32,109 @@ Objects {
     Value: "mc:eindicatorvisibility:visiblewhenselected"
   }
   NetworkContext {
+  }
+}
+Objects {
+  Id: 15632175737119049579
+  Name: "AntClient"
+  Transform {
+    Location {
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 4490408268911996926
+  UnregisteredParameters {
+    Overrides {
+      Name: "cs:FoodVisual"
+      ObjectReference {
+        SelfId: 2036828705710864778
+        SubObjectId: 8929712473172842952
+        InstanceId: 6188333201307005636
+        TemplateId: 6379391389291370543
+      }
+    }
+  }
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  Script {
+    ScriptAsset {
+      Id: 11821139690110946645
+    }
+  }
+}
+Objects {
+  Id: 6188333201307005636
+  Name: "FoodVisual"
+  Transform {
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 4490408268911996926
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  TemplateInstance {
+    ParameterOverrideMap {
+      key: 8929712473172842952
+      value {
+        Overrides {
+          Name: "Name"
+          String: "FoodVisual"
+        }
+        Overrides {
+          Name: "Rotation"
+          Rotator {
+            Yaw: -45
+          }
+        }
+        Overrides {
+          Name: "Scale"
+          Vector {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        Overrides {
+          Name: "Position"
+          Vector {
+            X: -100
+            Z: 50
+          }
+        }
+        Overrides {
+          Name: "Visible"
+          Enum {
+            Value: "mc:evisibilitysetting:forceoff"
+          }
+        }
+      }
+    }
+    TemplateAsset {
+      Id: 6379391389291370543
+    }
   }
 }
 Objects {
@@ -114,6 +219,7 @@ Objects {
   }
   ParentId: 13793501792289967447
   ChildIds: 5111759691925175661
+  ChildIds: 17736442819001709337
   ChildIds: 18174127182675046476
   ChildIds: 9813685761909305619
   WantsNetworking: true
@@ -435,6 +541,43 @@ Objects {
   Script {
     ScriptAsset {
       Id: 9672939361282021061
+    }
+  }
+}
+Objects {
+  Id: 17736442819001709337
+  Name: "HitboxTrigger"
+  Transform {
+    Location {
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1.75
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 2831261251715224294
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  Trigger {
+    TeamSettings {
+      IsTeamCollisionEnabled: true
+      IsEnemyCollisionEnabled: true
+    }
+    TriggerShape_v2 {
+      Value: "mc:etriggershape:box"
     }
   }
 }

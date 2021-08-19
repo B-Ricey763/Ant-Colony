@@ -20,7 +20,6 @@ function Collide.tick(activity, dt)
 	if hitResult and hitResult.other.name ~= "Pheromone" then
 		activity.priority = Priorities.URGENT + 1 -- it should always fire
 		currentResult = hitResult
-		print(currentResult.other.name)
 	end
 end
 

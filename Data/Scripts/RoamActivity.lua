@@ -3,7 +3,6 @@ local Priorities = require(activityHandler:GetCustomProperty("Priorities"))
 local AntMover = require(activityHandler:GetCustomProperty("AntMover"))
 local ant = activityHandler.parent.parent
 
-local SPEED = ant:GetCustomProperty("Speed")
 local ROAM_SPREAD = 2
 
 local Roam = {}
@@ -19,7 +18,7 @@ function Roam.tickHighestPriority(activity, dt)
 	end
 	-- this just gets the ant moving in a somewhat random pattern
 	local rot = Rotation.New(0, 0, randDir)
-	AntMover.Forward(ant, rot * ant:GetTransform():GetForwardVector(), SPEED)
+	AntMover.Forward(ant, rot * ant:GetTransform():GetForwardVector())
 
 	timeLeft = timeLeft - dt
 end

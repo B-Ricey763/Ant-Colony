@@ -14,7 +14,9 @@ Objects {
       Z: 1
     }
   }
+  ChildIds: 17021056371927471764
   ChildIds: 1670647210846597579
+  ChildIds: 3870094542782105082
   ChildIds: 678988168986030771
   ChildIds: 8392845933411341608
   ChildIds: 454358636617086563
@@ -24,8 +26,6 @@ Objects {
   ChildIds: 14982843161775482339
   ChildIds: 5427778489820607815
   ChildIds: 15146144627536064546
-  ChildIds: 7174657880452456565
-  ChildIds: 12610118954018359931
   UnregisteredParameters {
   }
   Collidable_v2 {
@@ -38,84 +38,6 @@ Objects {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
   Folder {
-  }
-}
-Objects {
-  Id: 12610118954018359931
-  Name: "Ball"
-  Transform {
-    Location {
-    }
-    Rotation {
-    }
-    Scale {
-      X: 1
-      Y: 1
-      Z: 1
-    }
-  }
-  ParentId: 4781671109827199097
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  EditorIndicatorVisibility {
-    Value: "mc:eindicatorvisibility:visiblewhenselected"
-  }
-  CoreMesh {
-    MeshAsset {
-      Id: 10442476699625636279
-    }
-    Teams {
-      IsTeamCollisionEnabled: true
-      IsEnemyCollisionEnabled: true
-    }
-    StaticMesh {
-      Physics {
-        Mass: 100
-        LinearDamping: 0.01
-      }
-      BoundsScale: 1
-    }
-  }
-}
-Objects {
-  Id: 7174657880452456565
-  Name: "Food Source"
-  Transform {
-    Location {
-      X: -700
-      Y: -1200
-    }
-    Rotation {
-    }
-    Scale {
-      X: 1
-      Y: 1
-      Z: 1
-    }
-  }
-  ParentId: 4781671109827199097
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  EditorIndicatorVisibility {
-    Value: "mc:eindicatorvisibility:visiblewhenselected"
-  }
-  Folder {
-    IsFilePartition: true
-    FilePartitionName: "Food Source"
   }
 }
 Objects {
@@ -1048,6 +970,50 @@ Objects {
   }
 }
 Objects {
+  Id: 3870094542782105082
+  Name: "Basic Game State Manager"
+  Transform {
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 4781671109827199097
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  TemplateInstance {
+    ParameterOverrideMap {
+      key: 16086570097188718822
+      value {
+        Overrides {
+          Name: "Name"
+          String: "Game State"
+        }
+        Overrides {
+          Name: "cs:LobbyHasDuration"
+          Bool: true
+        }
+        Overrides {
+          Name: "cs:LobbyDuration"
+          Float: 2
+        }
+        Overrides {
+          Name: "cs:RoundDuration"
+          Float: 5
+        }
+      }
+    }
+    TemplateAsset {
+      Id: 17117668218550553503
+    }
+  }
+}
+Objects {
   Id: 1670647210846597579
   Name: "ServerScripts"
   Transform {
@@ -1063,6 +1029,7 @@ Objects {
   }
   ParentId: 4781671109827199097
   ChildIds: 17987856541568006137
+  WantsNetworking: true
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -1117,6 +1084,66 @@ Objects {
   Script {
     ScriptAsset {
       Id: 4684560294731873795
+    }
+  }
+}
+Objects {
+  Id: 17021056371927471764
+  Name: "RoundService"
+  Transform {
+    Location {
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 4781671109827199097
+  UnregisteredParameters {
+    Overrides {
+      Name: "cs:Nest"
+      AssetReference {
+        Id: 7135105357064074460
+      }
+    }
+    Overrides {
+      Name: "cs:NestLocations"
+      ObjectReference {
+        SelfId: 7520989526994721992
+      }
+    }
+    Overrides {
+      Name: "cs:TableUtil"
+      AssetReference {
+        Id: 12550425098317280896
+      }
+    }
+    Overrides {
+      Name: "cs:Dumpster"
+      AssetReference {
+        Id: 13252084437026604022
+      }
+    }
+  }
+  WantsNetworking: true
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  Script {
+    ScriptAsset {
+      Id: 15610727477237202664
     }
   }
 }

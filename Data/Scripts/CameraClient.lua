@@ -30,3 +30,7 @@ function Tick(dt)
 		previousCursorPosition = nil
 	end
 end
+
+Events.Connect("MoveCamera", function (pos)
+	cam:SetPosition(pos)
+end)

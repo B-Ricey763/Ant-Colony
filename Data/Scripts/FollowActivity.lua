@@ -20,7 +20,7 @@ end
 function FollowActivity.tickHighestPriority(activity, dt)
 	local currentPher = PherTracker.context.Current
 	if Object.IsValid(currentPher) then
-		local arrived = AntMover.MoveTo(ant, currentPher, SPEED)
+		local arrived = AntMover.MoveTo(ant, currentPher)
 		if arrived then
 			activity.priority = Priorities.INACTIVE
 			PherTracker.context.Current = nil
