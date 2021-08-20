@@ -20,9 +20,15 @@ local pherIndex = 1
 local function OnPlotExecute(ability)
 	Events.BroadcastToPlayer(ability.owner, "GetMouseHit")
 
-	local newPher = World.SpawnAsset(pher, { position = ability:GetTargetData():GetHitPosition() })
-	newPher:SetNetworkedCustomProperty("Type", PHER_TYPES[pherIndex])
-	newPher:SetColor(PHER_COLORS[pherIndex])
+	local hit = ability:GetTargetData().hitObject
+	if hit.parent:GetCustomProperty("HasUI") == false then
+		local newPher = World.SpawnAsset(pher, { position = ability:GetTargetData():GetHitPosition() })
+		newPher:SetNetworkedCustomProperty("Type", PHER_TYPES[pherIndex])
+		newPher:SetColor(PHER_COLORS[pherIndex])
+	else
+		-- this is kinda lazy way to do it, but we DO NOT want a pheromone spawning whenever they click
+		Events.BroadcastToPlayer(ability.owner, hit.parent.name .. "UI",hit.parent:GetReference())
+	end
 end
 
 local function OnSwitchExecute(ability)

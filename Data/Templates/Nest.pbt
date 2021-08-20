@@ -18,12 +18,17 @@ Assets {
         ParentId: 15146144627536064546
         ChildIds: 5288328143641997138
         ChildIds: 7553776193849367170
+        ChildIds: 8665522750775552507
         UnregisteredParameters {
           Overrides {
             Name: "cs:AntTrigger"
             ObjectReference {
               SubObjectId: 54196432698546914
             }
+          }
+          Overrides {
+            Name: "cs:HasUI"
+            Bool: true
           }
           Overrides {
             Name: "cs:Food"
@@ -301,6 +306,52 @@ Assets {
           }
         }
       }
+      Objects {
+        Id: 8665522750775552507
+        Name: "Collider"
+        Transform {
+          Location {
+            Z: 125
+          }
+          Rotation {
+          }
+          Scale {
+            X: 4.00000095
+            Y: 4.00000095
+            Z: 4.00000095
+          }
+        }
+        ParentId: 2524265454032193188
+        WantsNetworking: true
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:forceoff"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 883985107983124514
+          }
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          StaticMesh {
+            Physics {
+              Mass: 100
+              LinearDamping: 0.01
+            }
+            BoundsScale: 1
+          }
+        }
+      }
     }
     Assets {
       Id: 5937460153309580301
@@ -318,6 +369,15 @@ Assets {
       PrimaryAsset {
         AssetType: "MaterialAssetRef"
         AssetId: "dirt_001"
+      }
+    }
+    Assets {
+      Id: 883985107983124514
+      Name: "Sphere"
+      PlatformAssetType: 1
+      PrimaryAsset {
+        AssetType: "StaticMeshAssetRef"
+        AssetId: "sm_sphere_002"
       }
     }
     PrimaryAssetId {

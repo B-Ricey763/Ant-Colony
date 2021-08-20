@@ -802,7 +802,7 @@ Objects {
       }
       TargetAnchor {
         Anchor {
-          Value: "mc:euianchor:middlecenter"
+          Value: "mc:euianchor:topleft"
         }
       }
     }
@@ -1163,6 +1163,12 @@ Objects {
       Name: "cs:FoodBar"
       ObjectReference {
         SelfId: 12984463076556518960
+      }
+    }
+    Overrides {
+      Name: "cs:Billboard"
+      AssetReference {
+        Id: 15059080292312999422
       }
     }
   }
