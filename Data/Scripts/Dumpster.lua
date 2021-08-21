@@ -16,6 +16,8 @@ local function AssignFinalizer(item)
 	local itemType = type(item)
 	if itemType == "function" then
 		return item
+	elseif itemType == "table" and item["Destroy"] then
+		return item.Destroy
 	end
 	for typeName, finalizer in pairs(finalizers) do
 		if itemType == "userdata" and item:IsA(typeName) then

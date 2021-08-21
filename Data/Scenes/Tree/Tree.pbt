@@ -139,8 +139,8 @@ Objects {
     Rotation {
     }
     Scale {
-      X: 50
-      Y: 50
+      X: 100
+      Y: 100
       Z: 1
     }
   }
@@ -772,6 +772,7 @@ Objects {
   ChildIds: 12639206270595325436
   ChildIds: 12984463076556518960
   ChildIds: 1478120181212176758
+  ChildIds: 12280700508547259275
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -787,6 +788,8 @@ Objects {
   Control {
     Width: 500
     Height: 500
+    UIX: 1099.10144
+    UIY: 414.739685
     RenderTransformPivot {
       Anchor {
         Value: "mc:euianchor:middlecenter"
@@ -804,6 +807,101 @@ Objects {
       TargetAnchor {
         Anchor {
           Value: "mc:euianchor:topleft"
+        }
+      }
+    }
+  }
+}
+Objects {
+  Id: 12280700508547259275
+  Name: "CloseButton"
+  Transform {
+    Location {
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 9525488429484100903
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  Control {
+    Width: 30
+    Height: 30
+    RenderTransformPivot {
+      Anchor {
+        Value: "mc:euianchor:middlecenter"
+      }
+    }
+    Button {
+      FontColor {
+        A: 1
+      }
+      FontSize: 20
+      ButtonColor {
+        R: 0.9
+        A: 1
+      }
+      HoveredColor {
+        R: 0.570000052
+        A: 1
+      }
+      PressedColor {
+        R: 1
+        G: 0.57
+        B: 0.57
+        A: 1
+      }
+      DisabledColor {
+        R: 1
+        G: 1
+        B: 1
+        A: 1
+      }
+      Brush {
+        Id: 17471360195752632915
+      }
+      IsButtonEnabled: true
+      ClickMode {
+        Value: "mc:ebuttonclickmode:default"
+      }
+      Font {
+      }
+      Justification {
+        Value: "mc:etextjustify:center"
+      }
+      VerticalJustification {
+        Value: "mc:everticaljustification:center"
+      }
+      ShadowColor {
+        A: 1
+      }
+      ShadowOffset {
+      }
+    }
+    AnchorLayout {
+      SelfAnchor {
+        Anchor {
+          Value: "mc:euianchor:topright"
+        }
+      }
+      TargetAnchor {
+        Anchor {
+          Value: "mc:euianchor:topright"
         }
       }
     }
@@ -942,7 +1040,7 @@ Objects {
   Control {
     Width: 472
     Height: 60
-    UIY: 80
+    UIY: 120
     RenderTransformPivot {
       Anchor {
         Value: "mc:euianchor:middlecenter"
@@ -1020,7 +1118,7 @@ Objects {
   Control {
     Width: 472
     Height: 60
-    UIY: 10
+    UIY: 50
     RenderTransformPivot {
       Anchor {
         Value: "mc:euianchor:middlecenter"
@@ -1173,9 +1271,21 @@ Objects {
       }
     }
     Overrides {
+      Name: "cs:CloseButton"
+      ObjectReference {
+        SelfId: 12280700508547259275
+      }
+    }
+    Overrides {
       Name: "cs:Billboard"
       AssetReference {
         Id: 15059080292312999422
+      }
+    }
+    Overrides {
+      Name: "cs:Dumpster"
+      AssetReference {
+        Id: 13252084437026604022
       }
     }
   }

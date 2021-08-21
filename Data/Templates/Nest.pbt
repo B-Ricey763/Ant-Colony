@@ -22,6 +22,12 @@ Assets {
         ChildIds: 8665522750775552507
         UnregisteredParameters {
           Overrides {
+            Name: "cs:WorkerAnt"
+            AssetReference {
+              Id: 5424554356108232616
+            }
+          }
+          Overrides {
             Name: "cs:AntTrigger"
             ObjectReference {
               SubObjectId: 54196432698546914
@@ -32,17 +38,39 @@ Assets {
             Bool: true
           }
           Overrides {
+            Name: "cs:AntLifespan"
+            Int: 30
+          }
+          Overrides {
             Name: "cs:Food"
             Int: 0
           }
           Overrides {
-            Name: "cs:WorkerAnt"
-            AssetReference {
-              Id: 5424554356108232616
-            }
+            Name: "cs:Health"
+            Float: 100
+          }
+          Overrides {
+            Name: "cs:MaxFood"
+            Int: 100
+          }
+          Overrides {
+            Name: "cs:MaxHealth"
+            Float: 100
           }
           Overrides {
             Name: "cs:Food:isrep"
+            Bool: true
+          }
+          Overrides {
+            Name: "cs:Health:isrep"
+            Bool: true
+          }
+          Overrides {
+            Name: "cs:MaxFood:isrep"
+            Bool: true
+          }
+          Overrides {
+            Name: "cs:MaxHealth:isrep"
             Bool: true
           }
         }

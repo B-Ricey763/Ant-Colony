@@ -21,7 +21,7 @@ end
 local function NewColony(player)
 	local nest = World.SpawnAsset(NEST_ASSET, { position = GetRandomNestPos(), parent = World.GetRootObject() })
 	player:SetPrivateNetworkedData("Nest", nest:GetReference())
-	-- center player cam on nest so they know where it is
+	nest:SetNetworkedCustomProperty("Food", 3) -- starting food 
 	Events.BroadcastToPlayer(player, "MoveCamera", nest:GetWorldPosition() + Vector3.UP * 1000)
 	return nest
 end

@@ -75,9 +75,6 @@ end
 
 function Billboard:Destroy()
 	self:SetActive(false)
-	if Object.IsValid(self.panel) then
-		self.panel:Destroy()
-	end
 end
 
 return Billboard
