@@ -75,52 +75,6 @@ Objects {
   }
 }
 Objects {
-  Id: 9075376143127677212
-  Name: "Static Player Equipment"
-  Transform {
-    Scale {
-      X: 1
-      Y: 1
-      Z: 1
-    }
-  }
-  ParentId: 15146144627536064546
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  TemplateInstance {
-    ParameterOverrideMap {
-      key: 16657464430720987128
-      value {
-        Overrides {
-          Name: "Name"
-          String: "Static Player Equipment"
-        }
-        Overrides {
-          Name: "Scale"
-          Vector {
-            X: 1
-            Y: 1
-            Z: 1
-          }
-        }
-        Overrides {
-          Name: "cs:EquipmentTemplate"
-          AssetReference {
-            Id: 9439221140441414754
-          }
-        }
-      }
-    }
-    TemplateAsset {
-      Id: 8395179537800625630
-    }
-  }
-}
-Objects {
   Id: 545885846661575972
   Name: "Cube - Bottom-Aligned"
   Transform {
@@ -216,15 +170,9 @@ Objects {
   }
 }
 Objects {
-  Id: 13793501792289967447
-  Name: "Ant"
+  Id: 10189406494127475815
+  Name: "Worker Ant"
   Transform {
-    Location {
-      Y: -525
-      Z: 75
-    }
-    Rotation {
-    }
     Scale {
       X: 1
       Y: 1
@@ -232,36 +180,6 @@ Objects {
     }
   }
   ParentId: 15146144627536064546
-  UnregisteredParameters {
-    Overrides {
-      Name: "cs:Speed"
-      Float: 2.5
-    }
-    Overrides {
-      Name: "cs:Type"
-      String: "Worker"
-    }
-    Overrides {
-      Name: "cs:CarryingFood"
-      Bool: false
-    }
-    Overrides {
-      Name: "cs:SpeedMultiplier"
-      Float: 1
-    }
-    Overrides {
-      Name: "cs:Speed:tooltip"
-      String: "How fast the ant will move"
-    }
-    Overrides {
-      Name: "cs:CarryingFood:isrep"
-      Bool: true
-    }
-    Overrides {
-      Name: "cs:SpeedMultiplier:isrep"
-      Bool: true
-    }
-  }
   WantsNetworking: true
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
@@ -269,14 +187,74 @@ Objects {
   Visible_v2 {
     Value: "mc:evisibilitysetting:inheritfromparent"
   }
-  CameraCollidable {
+  TemplateInstance {
+    ParameterOverrideMap {
+      key: 3849646725671175769
+      value {
+        Overrides {
+          Name: "Name"
+          String: "Ant"
+        }
+        Overrides {
+          Name: "Position"
+          Vector {
+            Y: -525
+            Z: 75
+          }
+        }
+        Overrides {
+          Name: "Rotation"
+          Rotator {
+          }
+        }
+      }
+    }
+    TemplateAsset {
+      Id: 5424554356108232616
+    }
+  }
+}
+Objects {
+  Id: 2736829802186310441
+  Name: "Nest"
+  Transform {
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 15146144627536064546
+  WantsNetworking: true
+  Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
-  EditorIndicatorVisibility {
-    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
   }
-  Folder {
-    IsFilePartition: true
-    FilePartitionName: "Ant"
+  TemplateInstance {
+    ParameterOverrideMap {
+      key: 2524265454032193188
+      value {
+        Overrides {
+          Name: "Name"
+          String: "Nest"
+        }
+        Overrides {
+          Name: "Position"
+          Vector {
+            Z: 1450
+          }
+        }
+        Overrides {
+          Name: "Rotation"
+          Rotator {
+          }
+        }
+      }
+    }
+    TemplateAsset {
+      Id: 7135105357064074460
+    }
   }
 }

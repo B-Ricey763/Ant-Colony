@@ -16,16 +16,22 @@ local PHER_COLORS = {
 }
 
 local pherIndex = 1
+local mouseUpdated = false
+local function WaitForMouseUpdate()
+	mouseUpdated = false
+	Events.BroadcastToPlayer(plotAbility.owner, "GetMouseHit")
+	repeat Task.Wait() until mouseUpdated
+end
 
 local function OnPlotExecute(ability)
-	Events.BroadcastToPlayer(ability.owner, "GetMouseHit")
+	WaitForMouseUpdate()
 
 	local hit = ability:GetTargetData().hitObject
-	if hit.parent:GetCustomProperty("HasUI") == false then
+	if Object.IsValid(hit) and not hit.parent:GetCustomProperty("HasUI") then
 		local newPher = World.SpawnAsset(pher, { position = ability:GetTargetData():GetHitPosition() })
 		newPher:SetNetworkedCustomProperty("Type", PHER_TYPES[pherIndex])
 		newPher:SetColor(PHER_COLORS[pherIndex])
-	else
+	elseif Object.IsValid(hit) then
 		-- this is kinda lazy way to do it, but we DO NOT want a pheromone spawning whenever they click
 		Events.BroadcastToPlayer(ability.owner, hit.parent.name .. "UI",hit.parent:GetReference())
 	end
@@ -37,13 +43,15 @@ local function OnSwitchExecute(ability)
 end
 
 local function OnDeleteExecute(ability)
-	Events.BroadcastToPlayer(ability.owner, "GetMouseHit")
+	WaitForMouseUpdate()
 
 	local hitObj = ability:GetTargetData().hitObject
 	if Object.IsValid(hitObj) and hitObj.name == "Pheromone" then
 		hitObj:Destroy()
 	end
 end
+
+
 
 
 local function OnMouseHitRecieved(player, hitPos, hitObj)
@@ -54,6 +62,7 @@ local function OnMouseHitRecieved(player, hitPos, hitObj)
 		-- update both of them, since both use it
 		plotAbility:SetTargetData(targetData)
 		deleteAbility:SetTargetData(targetData)
+		mouseUpdated = true
 	end
 end
 

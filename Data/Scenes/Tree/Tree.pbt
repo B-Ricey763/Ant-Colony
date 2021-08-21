@@ -17,6 +17,7 @@ Objects {
   ChildIds: 16999632839413424004
   ChildIds: 1670647210846597579
   ChildIds: 3870094542782105082
+  ChildIds: 9075376143127677212
   ChildIds: 678988168986030771
   ChildIds: 8392845933411341608
   ChildIds: 454358636617086563
@@ -1166,6 +1167,12 @@ Objects {
       }
     }
     Overrides {
+      Name: "cs:WorkerBreedButton"
+      ObjectReference {
+        SelfId: 1478120181212176758
+      }
+    }
+    Overrides {
       Name: "cs:Billboard"
       AssetReference {
         Id: 15059080292312999422
@@ -1470,6 +1477,62 @@ Objects {
   }
 }
 Objects {
+  Id: 9075376143127677212
+  Name: "Static Player Equipment"
+  Transform {
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 4781671109827199097
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  TemplateInstance {
+    ParameterOverrideMap {
+      key: 16657464430720987128
+      value {
+        Overrides {
+          Name: "Name"
+          String: "Static Player Equipment"
+        }
+        Overrides {
+          Name: "Scale"
+          Vector {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        Overrides {
+          Name: "cs:EquipmentTemplate"
+          AssetReference {
+            Id: 9439221140441414754
+          }
+        }
+        Overrides {
+          Name: "Position"
+          Vector {
+          }
+        }
+        Overrides {
+          Name: "Rotation"
+          Rotator {
+          }
+        }
+      }
+    }
+    TemplateAsset {
+      Id: 8395179537800625630
+    }
+  }
+}
+Objects {
   Id: 3870094542782105082
   Name: "Basic Game State Manager"
   Transform {
@@ -1500,7 +1563,7 @@ Objects {
         }
         Overrides {
           Name: "cs:LobbyDuration"
-          Float: 1
+          Float: 5
         }
         Overrides {
           Name: "cs:RoundDuration"

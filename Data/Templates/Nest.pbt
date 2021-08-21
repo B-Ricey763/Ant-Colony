@@ -16,6 +16,7 @@ Assets {
           }
         }
         ParentId: 15146144627536064546
+        ChildIds: 16948506006131246756
         ChildIds: 5288328143641997138
         ChildIds: 7553776193849367170
         ChildIds: 8665522750775552507
@@ -35,16 +36,13 @@ Assets {
             Int: 0
           }
           Overrides {
-            Name: "cs:Owner"
-            ObjectReference {
+            Name: "cs:WorkerAnt"
+            AssetReference {
+              Id: 5424554356108232616
             }
           }
           Overrides {
             Name: "cs:Food:isrep"
-            Bool: true
-          }
-          Overrides {
-            Name: "cs:Owner:isrep"
             Bool: true
           }
         }
@@ -63,6 +61,40 @@ Assets {
         }
         Folder {
           IsFilePartition: true
+        }
+      }
+      Objects {
+        Id: 16948506006131246756
+        Name: "NestAntBreeder"
+        Transform {
+          Location {
+          }
+          Rotation {
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 2524265454032193188
+        WantsNetworking: true
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        Script {
+          ScriptAsset {
+            Id: 16314800843784287262
+          }
         }
       }
       Objects {
@@ -311,14 +343,14 @@ Assets {
         Name: "Collider"
         Transform {
           Location {
-            Z: 125
+            Z: 325
           }
           Rotation {
           }
           Scale {
-            X: 4.00000095
-            Y: 4.00000095
-            Z: 4.00000095
+            X: 5
+            Y: 5
+            Z: 2.25
           }
         }
         ParentId: 2524265454032193188
@@ -337,7 +369,7 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: 883985107983124514
+            Id: 4442241141733743205
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -372,12 +404,12 @@ Assets {
       }
     }
     Assets {
-      Id: 883985107983124514
-      Name: "Sphere"
+      Id: 4442241141733743205
+      Name: "Cube - Polished"
       PlatformAssetType: 1
       PrimaryAsset {
         AssetType: "StaticMeshAssetRef"
-        AssetId: "sm_sphere_002"
+        AssetId: "sm_cube_hq_test_001"
       }
     }
     PrimaryAssetId {
