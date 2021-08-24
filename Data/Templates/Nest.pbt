@@ -28,6 +28,12 @@ Assets {
             }
           }
           Overrides {
+            Name: "cs:AntTypes"
+            AssetReference {
+              Id: 12053104852533493342
+            }
+          }
+          Overrides {
             Name: "cs:AntTrigger"
             ObjectReference {
               SubObjectId: 54196432698546914
@@ -56,6 +62,12 @@ Assets {
           Overrides {
             Name: "cs:MaxHealth"
             Float: 100
+          }
+          Overrides {
+            Name: "cs:TableUtil"
+            AssetReference {
+              Id: 12550425098317280896
+            }
           }
           Overrides {
             Name: "cs:Food:isrep"
