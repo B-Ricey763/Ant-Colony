@@ -1,5 +1,6 @@
 local TableUtil = require(script:GetCustomProperty("TableUtil"))
 local Dumpster = require(script:GetCustomProperty("Dumpster"))
+local NestLevels = require(script:GetCustomProperty("NestLevels"))
 
 local NEST_ASSET = script:GetCustomProperty("Nest")
 local ROUND_STATE = 1
@@ -19,10 +20,18 @@ local function GetRandomNestPos()
 end
 
 local function NewColony(player)
+	player:ClearResources()
 	local nest = World.SpawnAsset(NEST_ASSET, { position = GetRandomNestPos(), parent = World.GetRootObject() })
+	player:SetResource("NestLevel", 1)
+	player:SetResource("Health", NestLevels[1].maxHealth)
+	player:SetResource("Food", 10) -- a generic number
+	-- both the player and nest have refs to each other
+	nest:SetNetworkedCustomProperty("ownerId", player.id)
 	player:SetPrivateNetworkedData("Nest", nest:GetReference())
-	nest:SetNetworkedCustomProperty("Food", 3) -- starting food 
-	Events.BroadcastToPlayer(player, "MoveCamera", nest:GetWorldPosition() + Vector3.UP * 1000)
+	-- we have to delay this just because the client script might not run immediately
+	Task.Spawn(function()
+		Events.BroadcastToPlayer(player, "MoveCamera", nest:GetWorldPosition() + Vector3.UP * 1000)
+	end, 2)
 	return nest
 end
 

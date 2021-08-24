@@ -2,10 +2,15 @@ local nest = script.parent
 local LIFESPAN = nest:GetCustomProperty("AntLifespan")
 local AntTypes = require(nest:GetCustomProperty("AntTypes"))
 local TableUtil = require(nest:GetCustomProperty("TableUtil"))
+local NestLevels = require(nest:GetCustomProperty("NestLevels"))
 
 local ANT_REFS = {
 	Worker = nest:GetCustomProperty("WorkerAnt")
 }
+
+local function GetMax(player, str)
+	return NestLevels[player:GetResource("NestLevel")][str]
+end
 
 local function FindAntTypeByName(name)
 	for i, ant in ipairs(AntTypes) do
@@ -18,15 +23,21 @@ end
 local function BreedAnt(player, ant)
 	local antObject = World.SpawnAsset(ANT_REFS[ant.name], { position = nest:GetWorldPosition()})
 	antObject.lifeSpan = LIFESPAN -- seconds, but this will refresh each time they return to the colony
+	-- add to count when spawned, remove when killed
 	player:AddResource(ant.name .. "Num", 1)
+	player:AddResource("Ants", 1)
+	antObject.destroyEvent:Connect(function ()
+		player:RemoveResource(ant.name .. "Num", 1)
+		player:RemoveResource("Ants", 1)
+	end)
 end
 
 Events.ConnectForPlayer("Breed", function (player, breedType)
-	if player:GetPrivateNetworkedData("Nest"):GetObject() == nest then
+	if player.id == nest:GetCustomProperty("ownerId") then
 		local ant = FindAntTypeByName(breedType)
-		local food = nest:GetCustomProperty("Food")
-		if ant and food >= ant.cost then
-			nest:SetNetworkedCustomProperty("Food", food - ant.cost)
+		local food = player:GetResource("Food")
+		if ant and food >= ant.cost and player:GetResource("Ants") < GetMax(player, "maxAnts") then
+			player:RemoveResource("Food", 1)
 			local queuedName = ant.name .. "Queued"
 			player:AddResource(queuedName, 1)
 			

@@ -13,9 +13,14 @@ local queue = script:GetCustomProperty("Queue"):WaitForObject()
 local cycleButton = script:GetCustomProperty("CycleButton"):WaitForObject()
 local AntTypes = require(script:GetCustomProperty("AntTypes"))
 local breedBar = script:GetCustomProperty("BreedBar"):WaitForObject()
+local NestLevels = require(script:GetCustomProperty("NestLevels"))
 local antNum = script:GetCustomProperty("AntNum"):WaitForObject()
 local currentDump = nil
 local currentAntType = AntTypes[1] -- which is a worker right now
+
+local function GetMax(str)
+	return NestLevels[player:GetResource("NestLevel")][str]
+end
 
 local function UpdateAntType(antType)
 	antName.text = antType.name
@@ -36,12 +41,12 @@ Events.Connect("NestUI", function (nestRef)
 	-- update progress bar UI's whenever their respective properties change
 	-- the initial update
 	local function UpdateBar(bar, keyWord)
-		bar.progress = nest:GetCustomProperty(keyWord) / nest:GetCustomProperty("Max" .. keyWord)
-		bar:FindChildByName("Status").text = keyWord.. ": " .. nest:GetCustomProperty(keyWord) .. "/" .. nest:GetCustomProperty("Max".. keyWord)
+		bar.progress = player:GetResource(keyWord) / GetMax("max" .. keyWord)
+		bar:FindChildByName("Status").text = keyWord.. ": " .. player:GetResource(keyWord) .. "/" .. GetMax("max".. keyWord)
 	end
 	UpdateBar(foodBar, "Food")
 	UpdateBar(healthBar, "Health")
-	currentDump:Dump(nest.networkedPropertyChangedEvent:Connect(function (obj, property)
+	currentDump:Dump(player.resourceChangedEvent:Connect(function (obj, property)
 		if property == "Food" then
 			UpdateBar(foodBar, "Food")
 		elseif property == "Health" then

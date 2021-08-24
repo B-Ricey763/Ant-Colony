@@ -3,6 +3,11 @@ local switchAbility = script:GetCustomProperty("SwitchAbility"):WaitForObject()
 local deleteAbility = script:GetCustomProperty("DeleteAbility"):WaitForObject()
 local TableUtil = require(script:GetCustomProperty("TableUtil"))
 local pher = script:GetCustomProperty("Pheromone")
+local NestLevels = require(script:GetCustomProperty("NestLevels"))
+
+local function GetMax(player, str)
+	return NestLevels[player:GetResource("NestLevel")][str]
+end
 
 local PHER_TYPES = {
 	"Follow",
@@ -28,10 +33,15 @@ local function OnPlotExecute(ability)
 	WaitForMouseUpdate()
 
 	local hit = ability:GetTargetData().hitObject
-	if Object.IsValid(hit) and not hit.parent:GetCustomProperty("HasUI") then
+	if Object.IsValid(hit) and 
+		not hit.parent:GetCustomProperty("HasUI") 
+		and ability.owner:GetResource("Pher") < GetMax(ability.owner, "maxPher") 
+	then
+
 		local newPher = World.SpawnAsset(pher, { position = ability:GetTargetData():GetHitPosition() })
 		newPher:SetNetworkedCustomProperty("Type", PHER_TYPES[pherIndex])
 		newPher:SetColor(PHER_COLORS[pherIndex])
+		ability.owner:AddResource("Pher", 1)
 	elseif Object.IsValid(hit) then
 		-- this is kinda lazy way to do it, but we DO NOT want a pheromone spawning whenever they click
 		Events.BroadcastToPlayer(ability.owner, hit.parent.name .. "UI",hit.parent:GetReference())
@@ -61,6 +71,7 @@ local function OnDeleteExecute(ability)
 	local hitObj = ability:GetTargetData().hitObject
 	if Object.IsValid(hitObj) and hitObj.name == "Pheromone" then
 		hitObj:Destroy()
+		ability.owner:RemoveResource("Pher", 1)
 	end
 end
 

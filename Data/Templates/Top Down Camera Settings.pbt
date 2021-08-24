@@ -118,6 +118,7 @@ Assets {
             CanMoveDown: true
             IsMountEnabled: true
             MaxHitpoints: 100
+            PlayerMasterVolumeMultiplier: 1
           }
         }
       }
@@ -244,5 +245,5 @@ Assets {
       AssetId: "Top_Down_Camera_Settings"
     }
   }
-  SerializationVersion: 95
+  SerializationVersion: 97
 }

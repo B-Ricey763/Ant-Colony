@@ -451,6 +451,12 @@ Assets {
               Id: 12550425098317280896
             }
           }
+          Overrides {
+            Name: "cs:NestLevels"
+            AssetReference {
+              Id: 14420070072366796500
+            }
+          }
         }
         WantsNetworking: true
         Collidable_v2 {
@@ -542,5 +548,5 @@ Assets {
       AssetId: "None"
     }
   }
-  SerializationVersion: 95
+  SerializationVersion: 97
 }

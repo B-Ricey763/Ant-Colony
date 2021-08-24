@@ -46,6 +46,6 @@ Assets {
   Marketplace {
     Description: "A simple script that allows the player to rotate the camera by holding the right mouse button.\r\n\r\nTO USE: Drag into any client context. (A good spot is \"[Framework] Camera Settings\"->\"Client Context\")\r\n\r\nFOR THE BEST RESULTS: \r\n1. Set the player\'s MovementControlMode to \'View Relative.\'\r\n2. Set the player\'s Facing Mode to \'Face Movement.\'\r\n3. Enable \'Adjustable Distance\' on the camera."
   }
-  SerializationVersion: 95
+  SerializationVersion: 97
   DirectlyPublished: true
 }

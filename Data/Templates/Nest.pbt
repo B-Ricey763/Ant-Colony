@@ -34,6 +34,12 @@ Assets {
             }
           }
           Overrides {
+            Name: "cs:TableUtil"
+            AssetReference {
+              Id: 12550425098317280896
+            }
+          }
+          Overrides {
             Name: "cs:AntTrigger"
             ObjectReference {
               SubObjectId: 54196432698546914
@@ -48,41 +54,17 @@ Assets {
             Int: 30
           }
           Overrides {
-            Name: "cs:Food"
-            Int: 0
+            Name: "cs:ownerId"
+            String: ""
           }
           Overrides {
-            Name: "cs:Health"
-            Float: 100
-          }
-          Overrides {
-            Name: "cs:MaxFood"
-            Int: 100
-          }
-          Overrides {
-            Name: "cs:MaxHealth"
-            Float: 100
-          }
-          Overrides {
-            Name: "cs:TableUtil"
+            Name: "cs:NestLevels"
             AssetReference {
-              Id: 12550425098317280896
+              Id: 14420070072366796500
             }
           }
           Overrides {
-            Name: "cs:Food:isrep"
-            Bool: true
-          }
-          Overrides {
-            Name: "cs:Health:isrep"
-            Bool: true
-          }
-          Overrides {
-            Name: "cs:MaxFood:isrep"
-            Bool: true
-          }
-          Overrides {
-            Name: "cs:MaxHealth:isrep"
+            Name: "cs:ownerId:isrep"
             Bool: true
           }
         }
@@ -457,5 +439,5 @@ Assets {
       AssetId: "None"
     }
   }
-  SerializationVersion: 95
+  SerializationVersion: 97
 }

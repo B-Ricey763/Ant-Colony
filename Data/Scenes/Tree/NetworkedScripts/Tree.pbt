@@ -40,6 +40,12 @@ Objects {
         Id: 13252084437026604022
       }
     }
+    Overrides {
+      Name: "cs:NestLevels"
+      AssetReference {
+        Id: 14420070072366796500
+      }
+    }
   }
   WantsNetworking: true
   Collidable_v2 {

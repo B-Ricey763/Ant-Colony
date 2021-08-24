@@ -165,6 +165,6 @@ Assets {
   Marketplace {
     Description: "A top-down camera that can be dragged around the X-Y plane by holding Right Click (or whatever binding you select.)\r\n\r\nThe camera has configurable bindings, X and Y boundaries, and scroll speed. Feel free to hop into DraggableCameraClient.lua to modify the camera to suit your project\'s needs.\r\n\r\nCertain camera logic pulled from Mergelandia."
   }
-  SerializationVersion: 95
+  SerializationVersion: 97
   DirectlyPublished: true
 }

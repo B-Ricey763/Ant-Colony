@@ -205,6 +205,10 @@ Objects {
           Rotator {
           }
         }
+        Overrides {
+          Name: "Lifespan"
+          Float: 0.1
+        }
       }
     }
     TemplateAsset {
