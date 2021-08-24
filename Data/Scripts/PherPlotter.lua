@@ -1,6 +1,7 @@
 local plotAbility = script:GetCustomProperty("PlotAbility"):WaitForObject()
 local switchAbility = script:GetCustomProperty("SwitchAbility"):WaitForObject()
 local deleteAbility = script:GetCustomProperty("DeleteAbility"):WaitForObject()
+local TableUtil = require(script:GetCustomProperty("TableUtil"))
 local pher = script:GetCustomProperty("Pheromone")
 
 local PHER_TYPES = {
@@ -15,7 +16,7 @@ local PHER_COLORS = {
 	Color.ORANGE,
 }
 
-local pherIndex = 1
+local pherIndex = 0
 local mouseUpdated = false
 local function WaitForMouseUpdate()
 	mouseUpdated = false
@@ -40,6 +41,18 @@ end
 local function OnSwitchExecute(ability)
 	pherIndex = pherIndex % #PHER_TYPES + 1
 	-- also need to notify client for UI update
+	Events.BroadcastToPlayer(ability.owner,"PherSwitch",PHER_TYPES[pherIndex])
+end
+
+local function SwitchToPher(player, name)
+	if player == switchAbility.owner then
+		local i =  TableUtil.find(PHER_TYPES, name)
+		if i then
+			-- very lazy way of doing it, but it should work!
+			pherIndex = i - 1
+			OnSwitchExecute(switchAbility)
+		end
+	end
 end
 
 local function OnDeleteExecute(ability)
@@ -50,9 +63,6 @@ local function OnDeleteExecute(ability)
 		hitObj:Destroy()
 	end
 end
-
-
-
 
 local function OnMouseHitRecieved(player, hitPos, hitObj)
 	if player == plotAbility.owner and hitPos and hitObj then
@@ -66,7 +76,14 @@ local function OnMouseHitRecieved(player, hitPos, hitObj)
 	end
 end
 
+
 deleteAbility.executeEvent:Connect(OnDeleteExecute)
 switchAbility.executeEvent:Connect(OnSwitchExecute)
 plotAbility.executeEvent:Connect(OnPlotExecute)
 Events.ConnectForPlayer("MouseHit", OnMouseHitRecieved)
+Events.ConnectForPlayer("SwitchToPher", SwitchToPher)
+
+-- We call this to intialize the UI on the client side,
+-- so it updates off the bat
+repeat Task.Wait() until switchAbility.owner
+OnSwitchExecute(switchAbility)

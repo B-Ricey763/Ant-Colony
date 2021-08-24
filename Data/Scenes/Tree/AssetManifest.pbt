@@ -17,6 +17,15 @@ Assets {
   }
 }
 Assets {
+  Id: 13084265199108517588
+  Name: "Icon Arrow"
+  PlatformAssetType: 9
+  PrimaryAsset {
+    AssetType: "PlatformBrushAssetRef"
+    AssetId: "Icon_ArrowSpin"
+  }
+}
+Assets {
   Id: 12095835209017042614
   Name: "Cube"
   PlatformAssetType: 1

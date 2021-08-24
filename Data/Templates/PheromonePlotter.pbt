@@ -15,7 +15,7 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 15146144627536064546
+        ParentId: 4781671109827199097
         ChildIds: 1660701934579842156
         ChildIds: 930940963230328006
         ChildIds: 5713728359263348640
@@ -443,6 +443,12 @@ Assets {
             Name: "cs:Pheromone"
             AssetReference {
               Id: 883771465302915303
+            }
+          }
+          Overrides {
+            Name: "cs:TableUtil"
+            AssetReference {
+              Id: 12550425098317280896
             }
           }
         }

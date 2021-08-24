@@ -6,8 +6,19 @@ local closeButton = script:GetCustomProperty("CloseButton"):WaitForObject()
 local Billboard = require(script:GetCustomProperty("Billboard"))
 local Dumpster = require(script:GetCustomProperty("Dumpster"))
 local workerBreedButton = script:GetCustomProperty("WorkerBreedButton"):WaitForObject()
-
+local antName = script:GetCustomProperty("AntName"):WaitForObject()
+local antCost = script:GetCustomProperty("AntCost"):WaitForObject()
+local queue = script:GetCustomProperty("Queue"):WaitForObject()
+local cycleButton = script:GetCustomProperty("CycleButton"):WaitForObject()
+local breedBar = script:GetCustomProperty("BreedBar"):WaitForObject()
 local currentDump = nil
+local currentAntType = "Worker"
+
+local function ChangeAntType(antType)
+	antName.text = antType
+	
+end
+
 Events.Connect("NestUI", function (nestRef)
 	container.visibility = Visibility.INHERIT
 	local nest = nestRef:WaitForObject()
@@ -17,13 +28,17 @@ Events.Connect("NestUI", function (nestRef)
 
 	-- update progress bar UI's whenever their respective properties change
 	-- the initial update
-	foodBar.progress = nest:GetCustomProperty("Food") / nest:GetCustomProperty("MaxFood")
-	healthBar.progress = nest:GetCustomProperty("Health") / nest:GetCustomProperty("MaxHealth")
+	local function UpdateBar(bar, keyWord)
+		bar.progress = nest:GetCustomProperty(keyWord) / nest:GetCustomProperty("Max" .. keyWord)
+		bar:FindChildByName("Status").text = keyWord.. ": " .. nest:GetCustomProperty(keyWord) .. "/" .. nest:GetCustomProperty("Max".. keyWord)
+	end
+	UpdateBar(foodBar, "Food")
+	UpdateBar(healthBar, "Health")
 	currentDump:Dump(nest.networkedPropertyChangedEvent:Connect(function (obj, property)
 		if property == "Food" then
-			foodBar.progress = nest:GetCustomProperty("Food") / nest:GetCustomProperty("MaxFood")
+			UpdateBar(foodBar, "Food")
 		elseif property == "Health" then
-			healthBar.progress = nest:GetCustomProperty("Health") / nest:GetCustomProperty("MaxHealth")
+			UpdateBar(healthBar, "Health")
 		end
 	end))
 
