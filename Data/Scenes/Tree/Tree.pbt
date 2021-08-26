@@ -27,7 +27,7 @@ Objects {
   ChildIds: 14982843161775482339
   ChildIds: 5427778489820607815
   ChildIds: 15146144627536064546
-  ChildIds: 15908603959203861848
+  ChildIds: 5873262667040962922
   UnregisteredParameters {
   }
   Collidable_v2 {
@@ -43,13 +43,9 @@ Objects {
   }
 }
 Objects {
-  Id: 15908603959203861848
-  Name: "NestLevels"
+  Id: 5873262667040962922
+  Name: "Ant"
   Transform {
-    Location {
-    }
-    Rotation {
-    }
     Scale {
       X: 1
       Y: 1
@@ -57,21 +53,33 @@ Objects {
     }
   }
   ParentId: 4781671109827199097
+  WantsNetworking: true
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
   Visible_v2 {
     Value: "mc:evisibilitysetting:inheritfromparent"
   }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  EditorIndicatorVisibility {
-    Value: "mc:eindicatorvisibility:visiblewhenselected"
-  }
-  Script {
-    ScriptAsset {
-      Id: 14420070072366796500
+  TemplateInstance {
+    ParameterOverrideMap {
+      key: 3849646725671175769
+      value {
+        Overrides {
+          Name: "Name"
+          String: "Ant"
+        }
+        Overrides {
+          Name: "Position"
+          Vector {
+            X: -775
+            Y: 100
+            Z: 75
+          }
+        }
+      }
+    }
+    TemplateAsset {
+      Id: 5424554356108232616
     }
   }
 }

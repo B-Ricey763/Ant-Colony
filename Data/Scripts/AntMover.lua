@@ -37,18 +37,18 @@ function AntMover.Reflect(ant, light, normal)
 	AntMover.Forward(ant, reflection, 0) -- just to keep the api consistent
 end
 
-function AntMover.MoveTo(ant, object, mult)
+function AntMover.MoveTo(ant, object, mult, dist)
 	local function flatten(vec)
 		return vec * Vector3.New(1, 1, 0)
 	end
 
 	local diff = (flatten(object:GetWorldPosition()) - flatten(ant:GetWorldPosition()))
-	if diff.sizeSquared > 100 then
+	if diff.sizeSquared > (dist or 100) then
 		AntMover.Forward(ant, diff:GetNormalized(), mult)
 	else
 		return true
 	end
-	return false
+	return false, diff
 end
 
 return AntMover

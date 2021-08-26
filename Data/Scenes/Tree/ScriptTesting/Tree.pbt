@@ -1,6 +1,67 @@
 Name: "ScriptTesting"
 RootId: 15146144627536064546
 Objects {
+  Id: 3479631479404238312
+  Name: "Ant"
+  Transform {
+    Location {
+      Z: 75
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 15146144627536064546
+  UnregisteredParameters {
+    Overrides {
+      Name: "cs:Speed"
+      Float: 2
+    }
+    Overrides {
+      Name: "cs:Type"
+      String: "Soldier"
+    }
+    Overrides {
+      Name: "cs:SpeedMultiplier"
+      Float: 1
+    }
+    Overrides {
+      Name: "cs:Speed:tooltip"
+      String: "How fast the ant will move"
+    }
+    Overrides {
+      Name: "cs:SpeedMultiplier:isrep"
+      Bool: true
+    }
+  }
+  WantsNetworking: true
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  Folder {
+    IsFilePartition: true
+    FilePartitionName: "Ant"
+  }
+  InstanceHistory {
+    SelfId: 3479631479404238312
+    SubobjectId: 6085474421704206694
+    InstanceId: 10110507008222941403
+    TemplateId: 11666330275160844173
+    WasRoot: true
+  }
+}
+Objects {
   Id: 7520989526994721992
   Name: "Nest Locations"
   Transform {
@@ -166,53 +227,6 @@ Objects {
         LinearDamping: 0.01
       }
       BoundsScale: 1
-    }
-  }
-}
-Objects {
-  Id: 11924282045540866451
-  Name: "Nest"
-  Transform {
-    Scale {
-      X: 1
-      Y: 1
-      Z: 1
-    }
-  }
-  ParentId: 15146144627536064546
-  WantsNetworking: true
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  TemplateInstance {
-    ParameterOverrideMap {
-      key: 2524265454032193188
-      value {
-        Overrides {
-          Name: "Name"
-          String: "Nest"
-        }
-        Overrides {
-          Name: "Position"
-          Vector {
-          }
-        }
-        Overrides {
-          Name: "Rotation"
-          Rotator {
-          }
-        }
-        Overrides {
-          Name: "Lifespan"
-          Float: 0.1
-        }
-      }
-    }
-    TemplateAsset {
-      Id: 7135105357064074460
     }
   }
 }
