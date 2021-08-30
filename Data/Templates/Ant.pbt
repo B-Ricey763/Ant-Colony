@@ -15,7 +15,7 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 4781671109827199097
+        ParentId: 15146144627536064546
         ChildIds: 3124942802132398722
         ChildIds: 17937364273216284170
         UnregisteredParameters {
@@ -37,7 +37,12 @@ Assets {
           }
           Overrides {
             Name: "cs:Health"
-            Int: 10
+            Float: 10
+          }
+          Overrides {
+            Name: "cs:Nest"
+            ObjectReference {
+            }
           }
           Overrides {
             Name: "cs:Speed:tooltip"
@@ -53,6 +58,10 @@ Assets {
           }
           Overrides {
             Name: "cs:Health:isrep"
+            Bool: true
+          }
+          Overrides {
+            Name: "cs:Nest:isrep"
             Bool: true
           }
         }
@@ -91,6 +100,7 @@ Assets {
         ChildIds: 13963067633260766680
         ChildIds: 14426184664135412143
         ChildIds: 11374814271156418348
+        ChildIds: 6110466174266552196
         ChildIds: 8948211672571785353
         WantsNetworking: true
         Collidable_v2 {
@@ -221,6 +231,39 @@ Assets {
         Script {
           ScriptAsset {
             Id: 9672939361282021061
+          }
+        }
+      }
+      Objects {
+        Id: 6110466174266552196
+        Name: "HealthMonitor"
+        Transform {
+          Location {
+          }
+          Rotation {
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 3124942802132398722
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        Script {
+          ScriptAsset {
+            Id: 7530188864596966948
           }
         }
       }

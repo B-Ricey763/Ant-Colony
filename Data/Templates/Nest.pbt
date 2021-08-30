@@ -64,6 +64,12 @@ Assets {
             }
           }
           Overrides {
+            Name: "cs:SoldierAnt"
+            AssetReference {
+              Id: 11666330275160844173
+            }
+          }
+          Overrides {
             Name: "cs:ownerId:isrep"
             Bool: true
           }

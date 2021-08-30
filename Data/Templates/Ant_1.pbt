@@ -32,11 +32,36 @@ Assets {
             Float: 1
           }
           Overrides {
+            Name: "cs:Health"
+            Float: 15
+          }
+          Overrides {
+            Name: "cs:Damage"
+            Float: 1
+          }
+          Overrides {
+            Name: "cs:AttackSpeed"
+            Float: 0.5
+          }
+          Overrides {
+            Name: "cs:Nest"
+            ObjectReference {
+            }
+          }
+          Overrides {
             Name: "cs:Speed:tooltip"
             String: "How fast the ant will move"
           }
           Overrides {
             Name: "cs:SpeedMultiplier:isrep"
+            Bool: true
+          }
+          Overrides {
+            Name: "cs:Health:isrep"
+            Bool: true
+          }
+          Overrides {
+            Name: "cs:Nest:isrep"
             Bool: true
           }
         }
@@ -55,6 +80,7 @@ Assets {
         }
         Folder {
           IsFilePartition: true
+          FilePartitionName: "Ant"
         }
       }
       Objects {
@@ -75,6 +101,7 @@ Assets {
         ChildIds: 12896768793721941523
         ChildIds: 6321319620956792939
         ChildIds: 16283821592128653700
+        ChildIds: 745025937401829626
         ChildIds: 15392640040166782688
         WantsNetworking: true
         Collidable_v2 {
@@ -209,6 +236,39 @@ Assets {
         }
       }
       Objects {
+        Id: 745025937401829626
+        Name: "HealthMonitor"
+        Transform {
+          Location {
+          }
+          Rotation {
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 10502976312462210973
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        Script {
+          ScriptAsset {
+            Id: 7530188864596966948
+          }
+        }
+      }
+      Objects {
         Id: 15392640040166782688
         Name: "Ant AI"
         Transform {
@@ -228,8 +288,8 @@ Assets {
         ChildIds: 6649872007075768282
         ChildIds: 2159861745317026564
         ChildIds: 6581077015713510238
-        ChildIds: 9474021995612843317
         ChildIds: 3509259035256970920
+        ChildIds: 13662231590664022302
         UnregisteredParameters {
           Overrides {
             Name: "cs:Priorities"
@@ -407,39 +467,6 @@ Assets {
         }
       }
       Objects {
-        Id: 9474021995612843317
-        Name: "FoodActivity"
-        Transform {
-          Location {
-          }
-          Rotation {
-          }
-          Scale {
-            X: 1
-            Y: 1
-            Z: 1
-          }
-        }
-        ParentId: 15392640040166782688
-        Collidable_v2 {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Visible_v2 {
-          Value: "mc:evisibilitysetting:inheritfromparent"
-        }
-        CameraCollidable {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        EditorIndicatorVisibility {
-          Value: "mc:eindicatorvisibility:visiblewhenselected"
-        }
-        Script {
-          ScriptAsset {
-            Id: 4117148841755326486
-          }
-        }
-      }
-      Objects {
         Id: 3509259035256970920
         Name: "RetrieveActivity"
         Transform {
@@ -473,6 +500,47 @@ Assets {
         }
       }
       Objects {
+        Id: 13662231590664022302
+        Name: "AttackActivity"
+        Transform {
+          Location {
+          }
+          Rotation {
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 15392640040166782688
+        UnregisteredParameters {
+          Overrides {
+            Name: "cs:PherTrigger"
+            ObjectReference {
+              SubObjectId: 12896768793721941523
+            }
+          }
+        }
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        Script {
+          ScriptAsset {
+            Id: 16173495246270346640
+          }
+        }
+      }
+      Objects {
         Id: 13532279741720607089
         Name: "Client"
         Transform {
@@ -489,6 +557,8 @@ Assets {
         ParentId: 6085474421704206694
         ChildIds: 2865089715300050437
         ChildIds: 18136374303903605752
+        ChildIds: 17940166606055831803
+        ChildIds: 13355168202863297960
         WantsNetworking: true
         Collidable_v2 {
           Value: "mc:ecollisionsetting:forceoff"
@@ -535,9 +605,9 @@ Assets {
           Overrides {
             Name: "ma:Shared_BaseMaterial:color"
             Color {
-              R: 0.92933768
-              G: 1
-              B: 0.0299999714
+              R: 1
+              G: 0.377483428
+              B: 0.0600000024
               A: 1
             }
           }
@@ -612,6 +682,88 @@ Assets {
           }
         }
       }
+      Objects {
+        Id: 17940166606055831803
+        Name: "AttackVFX"
+        Transform {
+          Location {
+            X: 150
+          }
+          Rotation {
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 13532279741720607089
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        Blueprint {
+          BlueprintAsset {
+            Id: 1163765928706645129
+          }
+          TeamSettings {
+          }
+          Vfx {
+          }
+        }
+        Relevance {
+          Value: "mc:eproxyrelevance:medium"
+        }
+      }
+      Objects {
+        Id: 13355168202863297960
+        Name: "AntAttackClient"
+        Transform {
+          Location {
+          }
+          Rotation {
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 13532279741720607089
+        UnregisteredParameters {
+          Overrides {
+            Name: "cs:AttackVFX"
+            ObjectReference {
+              SubObjectId: 17940166606055831803
+            }
+          }
+        }
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        Script {
+          ScriptAsset {
+            Id: 3475605915820015184
+          }
+        }
+      }
     }
     Assets {
       Id: 488830156233060266
@@ -629,6 +781,15 @@ Assets {
       PrimaryAsset {
         AssetType: "MaterialAssetRef"
         AssetId: "mi_metal_gold_001"
+      }
+    }
+    Assets {
+      Id: 1163765928706645129
+      Name: "Plasma Impact VFX"
+      PlatformAssetType: 8
+      PrimaryAsset {
+        AssetType: "VfxBlueprintAssetRef"
+        AssetId: "fxbp_plasma_impact"
       }
     }
     PrimaryAssetId {

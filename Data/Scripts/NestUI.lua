@@ -16,13 +16,15 @@ local breedBar = script:GetCustomProperty("BreedBar"):WaitForObject()
 local NestLevels = require(script:GetCustomProperty("NestLevels"))
 local antNum = script:GetCustomProperty("AntNum"):WaitForObject()
 local currentDump = nil
-local currentAntType = AntTypes[1] -- which is a worker right now
+local currentAntIndex = 1
 
 local function GetMax(str)
 	return NestLevels[player:GetResource("NestLevel")][str]
 end
 
-local function UpdateAntType(antType)
+local function UpdateAntType(index)
+	currentAntIndex = index 
+	local antType = AntTypes[currentAntIndex]
 	antName.text = antType.name
 	antCost.text = ("Cost: %i food"):format(antType.cost)
 
@@ -36,7 +38,7 @@ Events.Connect("NestUI", function (nestRef)
 	currentDump = Dumpster.New()
 	currentDump:Dump(Billboard.New(nest, panel, Vector3.UP * 1000))
 
-	UpdateAntType(currentAntType)
+	UpdateAntType(1)
 
 	-- update progress bar UI's whenever their respective properties change
 	-- the initial update
@@ -60,8 +62,12 @@ Events.Connect("NestUI", function (nestRef)
 	end)
 end)
 
+cycleButton.clickedEvent:Connect(function ()
+	UpdateAntType(currentAntIndex % #AntTypes + 1)
+end)
+
 workerBreedButton.clickedEvent:Connect(function ()
-	Events.BroadcastToServer("Breed", "Worker")
+	Events.BroadcastToServer("Breed", AntTypes[currentAntIndex].name)
 end)
 
 closeButton.clickedEvent:Connect(function ()
@@ -70,9 +76,9 @@ closeButton.clickedEvent:Connect(function ()
 end)
 
 player.resourceChangedEvent:Connect(function (player, resource)
-	if resource == currentAntType.name .. "Queued" then
+	if resource == AntTypes[currentAntIndex].name .. "Queued" then
 		queue.text = ("%i queued"):format(player:GetResource(resource))
-	elseif resource == currentAntType.name .. "Num" then
+	elseif resource == AntTypes[currentAntIndex].name .. "Num" then
 		antNum.text = ("%i total"):format(player:GetResource(resource))
 	end
 end)

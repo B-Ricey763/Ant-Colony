@@ -27,7 +27,8 @@ Objects {
   ChildIds: 14982843161775482339
   ChildIds: 5427778489820607815
   ChildIds: 15146144627536064546
-  ChildIds: 5873262667040962922
+  ChildIds: 5289184023331025836
+  ChildIds: 5504313652370795991
   UnregisteredParameters {
   }
   Collidable_v2 {
@@ -43,7 +44,40 @@ Objects {
   }
 }
 Objects {
-  Id: 5873262667040962922
+  Id: 5504313652370795991
+  Name: "Nest"
+  Transform {
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 4781671109827199097
+  WantsNetworking: true
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  TemplateInstance {
+    ParameterOverrideMap {
+      key: 2524265454032193188
+      value {
+        Overrides {
+          Name: "Name"
+          String: "Nest"
+        }
+      }
+    }
+    TemplateAsset {
+      Id: 7135105357064074460
+    }
+  }
+}
+Objects {
+  Id: 5289184023331025836
   Name: "Ant"
   Transform {
     Scale {
@@ -62,7 +96,7 @@ Objects {
   }
   TemplateInstance {
     ParameterOverrideMap {
-      key: 3849646725671175769
+      key: 6085474421704206694
       value {
         Overrides {
           Name: "Name"
@@ -71,20 +105,15 @@ Objects {
         Overrides {
           Name: "Position"
           Vector {
-            X: -775
-            Y: 100
-            Z: 75
-          }
-        }
-        Overrides {
-          Name: "Rotation"
-          Rotator {
+            X: 200
+            Y: -2100
+            Z: 150
           }
         }
       }
     }
     TemplateAsset {
-      Id: 5424554356108232616
+      Id: 11666330275160844173
     }
   }
 }
