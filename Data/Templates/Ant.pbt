@@ -15,7 +15,7 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 15146144627536064546
+        ParentId: 4781671109827199097
         ChildIds: 3124942802132398722
         ChildIds: 17937364273216284170
         UnregisteredParameters {
@@ -36,6 +36,10 @@ Assets {
             Float: 1
           }
           Overrides {
+            Name: "cs:Health"
+            Int: 10
+          }
+          Overrides {
             Name: "cs:Speed:tooltip"
             String: "How fast the ant will move"
           }
@@ -45,6 +49,10 @@ Assets {
           }
           Overrides {
             Name: "cs:SpeedMultiplier:isrep"
+            Bool: true
+          }
+          Overrides {
+            Name: "cs:Health:isrep"
             Bool: true
           }
         }

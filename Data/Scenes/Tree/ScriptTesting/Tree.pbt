@@ -17,7 +17,7 @@ Objects {
   UnregisteredParameters {
     Overrides {
       Name: "cs:Speed"
-      Float: 2
+      Float: 3
     }
     Overrides {
       Name: "cs:Type"
@@ -28,11 +28,19 @@ Objects {
       Float: 1
     }
     Overrides {
+      Name: "cs:Health"
+      Int: 15
+    }
+    Overrides {
       Name: "cs:Speed:tooltip"
       String: "How fast the ant will move"
     }
     Overrides {
       Name: "cs:SpeedMultiplier:isrep"
+      Bool: true
+    }
+    Overrides {
+      Name: "cs:Health:isrep"
       Bool: true
     }
   }

@@ -8,6 +8,15 @@ Assets {
   }
 }
 Assets {
+  Id: 1163765928706645129
+  Name: "Plasma Impact VFX"
+  PlatformAssetType: 8
+  PrimaryAsset {
+    AssetType: "VfxBlueprintAssetRef"
+    AssetId: "fxbp_plasma_impact"
+  }
+}
+Assets {
   Id: 488830156233060266
   Name: "Capsule"
   PlatformAssetType: 1

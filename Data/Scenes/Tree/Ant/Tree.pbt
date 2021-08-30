@@ -17,6 +17,8 @@ Objects {
   ParentId: 3479631479404238312
   ChildIds: 4898516926836906635
   ChildIds: 11495588188940787574
+  ChildIds: 11295474961491674229
+  ChildIds: 15955908659583514918
   WantsNetworking: true
   Collidable_v2 {
     Value: "mc:ecollisionsetting:forceoff"
@@ -37,6 +39,88 @@ Objects {
     SubobjectId: 13532279741720607089
     InstanceId: 10110507008222941403
     TemplateId: 11666330275160844173
+  }
+}
+Objects {
+  Id: 15955908659583514918
+  Name: "AntAttackClient"
+  Transform {
+    Location {
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 16137945997379044863
+  UnregisteredParameters {
+    Overrides {
+      Name: "cs:AttackVFX"
+      ObjectReference {
+        SelfId: 11295474961491674229
+      }
+    }
+  }
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  Script {
+    ScriptAsset {
+      Id: 3475605915820015184
+    }
+  }
+}
+Objects {
+  Id: 11295474961491674229
+  Name: "AttackVFX"
+  Transform {
+    Location {
+      X: 150
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 16137945997379044863
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  Blueprint {
+    BlueprintAsset {
+      Id: 1163765928706645129
+    }
+    TeamSettings {
+    }
+    Vfx {
+    }
+  }
+  Relevance {
+    Value: "mc:eproxyrelevance:medium"
   }
 }
 Objects {

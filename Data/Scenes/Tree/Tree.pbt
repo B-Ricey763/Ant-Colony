@@ -76,6 +76,11 @@ Objects {
             Z: 75
           }
         }
+        Overrides {
+          Name: "Rotation"
+          Rotator {
+          }
+        }
       }
     }
     TemplateAsset {
