@@ -24,7 +24,7 @@ end
 local function BreedAnt(player, ant)
 	local antObject = World.SpawnAsset(ANT_REFS[ant.name], { position = nest:GetWorldPosition()})
 	antObject.lifeSpan = LIFESPAN -- seconds, but this will refresh each time they return to the colony
-	antObject:SetNetworkedCustomProperty("Nest", nest:GetReference())
+	antObject:FindDescendantByName("HitboxTrigger").team = player.team
 	-- add to count when spawned, remove when killed
 	player:AddResource(ant.name .. "Num", 1)
 	player:AddResource("Ants", 1)

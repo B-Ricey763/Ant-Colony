@@ -35,46 +35,6 @@ Objects {
   }
 }
 Objects {
-  Id: 17612226628234792997
-  Name: "Food Source"
-  Transform {
-    Scale {
-      X: 1
-      Y: 1
-      Z: 1
-    }
-  }
-  ParentId: 15146144627536064546
-  WantsNetworking: true
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  TemplateInstance {
-    ParameterOverrideMap {
-      key: 9812288447714917136
-      value {
-        Overrides {
-          Name: "Name"
-          String: "Food Source"
-        }
-        Overrides {
-          Name: "Position"
-          Vector {
-            X: -700
-            Y: -1200
-          }
-        }
-      }
-    }
-    TemplateAsset {
-      Id: 8858284903139370176
-    }
-  }
-}
-Objects {
   Id: 545885846661575972
   Name: "Cube - Bottom-Aligned"
   Transform {

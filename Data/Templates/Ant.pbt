@@ -40,11 +40,6 @@ Assets {
             Float: 10
           }
           Overrides {
-            Name: "cs:Nest"
-            ObjectReference {
-            }
-          }
-          Overrides {
             Name: "cs:Speed:tooltip"
             String: "How fast the ant will move"
           }
@@ -58,10 +53,6 @@ Assets {
           }
           Overrides {
             Name: "cs:Health:isrep"
-            Bool: true
-          }
-          Overrides {
-            Name: "cs:Nest:isrep"
             Bool: true
           }
         }

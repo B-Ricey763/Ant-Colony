@@ -27,8 +27,7 @@ Objects {
   ChildIds: 14982843161775482339
   ChildIds: 5427778489820607815
   ChildIds: 15146144627536064546
-  ChildIds: 5289184023331025836
-  ChildIds: 5504313652370795991
+  ChildIds: 6897298561226954270
   UnregisteredParameters {
   }
   Collidable_v2 {
@@ -44,9 +43,13 @@ Objects {
   }
 }
 Objects {
-  Id: 5504313652370795991
-  Name: "Nest"
+  Id: 6897298561226954270
+  Name: "Food Locations"
   Transform {
+    Location {
+    }
+    Rotation {
+    }
     Scale {
       X: 1
       Y: 1
@@ -54,67 +57,21 @@ Objects {
     }
   }
   ParentId: 4781671109827199097
-  WantsNetworking: true
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
   Visible_v2 {
     Value: "mc:evisibilitysetting:inheritfromparent"
   }
-  TemplateInstance {
-    ParameterOverrideMap {
-      key: 2524265454032193188
-      value {
-        Overrides {
-          Name: "Name"
-          String: "Nest"
-        }
-      }
-    }
-    TemplateAsset {
-      Id: 7135105357064074460
-    }
-  }
-}
-Objects {
-  Id: 5289184023331025836
-  Name: "Ant"
-  Transform {
-    Scale {
-      X: 1
-      Y: 1
-      Z: 1
-    }
-  }
-  ParentId: 4781671109827199097
-  WantsNetworking: true
-  Collidable_v2 {
+  CameraCollidable {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
   }
-  TemplateInstance {
-    ParameterOverrideMap {
-      key: 6085474421704206694
-      value {
-        Overrides {
-          Name: "Name"
-          String: "Ant"
-        }
-        Overrides {
-          Name: "Position"
-          Vector {
-            X: 200
-            Y: -2100
-            Z: 150
-          }
-        }
-      }
-    }
-    TemplateAsset {
-      Id: 11666330275160844173
-    }
+  Folder {
+    IsFilePartition: true
+    FilePartitionName: "Food Locations"
   }
 }
 Objects {
@@ -1234,7 +1191,7 @@ Objects {
 }
 Objects {
   Id: 9765450572162282086
-  Name: "PherType"
+  Name: "PherNum"
   Transform {
     Location {
     }
@@ -1247,6 +1204,7 @@ Objects {
     }
   }
   ParentId: 5216969793484939274
+  ChildIds: 12070940542195045987
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -1306,6 +1264,47 @@ Objects {
           Value: "mc:euianchor:middleright"
         }
       }
+    }
+  }
+}
+Objects {
+  Id: 12070940542195045987
+  Name: "PherNumUI"
+  Transform {
+    Location {
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 9765450572162282086
+  UnregisteredParameters {
+    Overrides {
+      Name: "cs:NestLevels"
+      AssetReference {
+        Id: 14420070072366796500
+      }
+    }
+  }
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  Script {
+    ScriptAsset {
+      Id: 4378943750682743020
     }
   }
 }

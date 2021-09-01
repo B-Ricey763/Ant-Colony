@@ -15,7 +15,7 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 15146144627536064546
+        ParentId: 7520989526994721992
         ChildIds: 10502976312462210973
         ChildIds: 13532279741720607089
         UnregisteredParameters {
@@ -44,11 +44,6 @@ Assets {
             Float: 0.5
           }
           Overrides {
-            Name: "cs:Nest"
-            ObjectReference {
-            }
-          }
-          Overrides {
             Name: "cs:Speed:tooltip"
             String: "How fast the ant will move"
           }
@@ -58,10 +53,6 @@ Assets {
           }
           Overrides {
             Name: "cs:Health:isrep"
-            Bool: true
-          }
-          Overrides {
-            Name: "cs:Nest:isrep"
             Bool: true
           }
         }
@@ -519,6 +510,12 @@ Assets {
             Name: "cs:PherTrigger"
             ObjectReference {
               SubObjectId: 12896768793721941523
+            }
+          }
+          Overrides {
+            Name: "cs:HitboxTrigger"
+            ObjectReference {
+              SubObjectId: 6321319620956792939
             }
           }
         }

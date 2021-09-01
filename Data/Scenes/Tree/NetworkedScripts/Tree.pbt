@@ -46,6 +46,18 @@ Objects {
         Id: 14420070072366796500
       }
     }
+    Overrides {
+      Name: "cs:FoodLocations"
+      ObjectReference {
+        SelfId: 6897298561226954270
+      }
+    }
+    Overrides {
+      Name: "cs:FoodSource"
+      AssetReference {
+        Id: 8858284903139370176
+      }
+    }
   }
   WantsNetworking: true
   Collidable_v2 {

@@ -4,6 +4,7 @@ local AntMover = require(activityHandler:GetCustomProperty("AntMover"))
 local PherTracker = activityHandler:GetCustomProperty("PherTracker"):WaitForObject()
 local ant = activityHandler.parent.parent
 local trigger = script:GetCustomProperty("PherTrigger"):WaitForObject()
+local hitboxTrig = script:GetCustomProperty("HitboxTrigger"):WaitForObject()
 
 local ATTACK_SPEED = ant:GetCustomProperty("AttackSpeed")
 local DAMAGE = ant:GetCustomProperty("Damage")
@@ -18,7 +19,7 @@ local function flatten(vec)
 end
 
 trigger.beginOverlapEvent:Connect(function (trig, hit)
-	if hit.name == "HitboxTrigger" and not ant:IsAncestorOf(hit) then
+	if hit.name == "HitboxTrigger" and not ant:IsAncestorOf(hit) and hit.team ~= hitboxTrig.team then 
 		activityHandler:FindActivity("Attack").priority = Priorities.URGENT
 		target = hit:FindAncestorByName("Ant") or hit:FindAncestorByName("Nest")
 	end
