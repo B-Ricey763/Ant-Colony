@@ -58,6 +58,12 @@ Objects {
         Id: 8858284903139370176
       }
     }
+    Overrides {
+      Name: "cs:PheromonePlotter"
+      AssetReference {
+        Id: 9439221140441414754
+      }
+    }
   }
   WantsNetworking: true
   Collidable_v2 {

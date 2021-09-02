@@ -34,6 +34,10 @@ local function Attack(t)
 	elseif t.name == "Nest" then
 		local owner = Game.FindPlayer(t:GetCustomProperty("ownerId"))
 		owner:RemoveResource("Health", DAMAGE)
+		if owner:GetResource("Health") <= 0 then
+			-- WE KILLED THEM!!!!!
+			Events.Broadcast("KilledNest", ant, owner, t)
+		end
 	end
 end
 

@@ -15,7 +15,7 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 15146144627536064546
+        ParentId: 4781671109827199097
         ChildIds: 3124942802132398722
         ChildIds: 17937364273216284170
         UnregisteredParameters {
@@ -37,6 +37,10 @@ Assets {
           }
           Overrides {
             Name: "cs:Health"
+            Float: 10
+          }
+          Overrides {
+            Name: "cs:MaxHealth"
             Float: 10
           }
           Overrides {

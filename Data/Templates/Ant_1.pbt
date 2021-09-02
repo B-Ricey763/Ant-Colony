@@ -15,7 +15,7 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 7520989526994721992
+        ParentId: 4781671109827199097
         ChildIds: 10502976312462210973
         ChildIds: 13532279741720607089
         UnregisteredParameters {
@@ -42,6 +42,10 @@ Assets {
           Overrides {
             Name: "cs:AttackSpeed"
             Float: 0.5
+          }
+          Overrides {
+            Name: "cs:MaxHealth"
+            Float: 15
           }
           Overrides {
             Name: "cs:Speed:tooltip"

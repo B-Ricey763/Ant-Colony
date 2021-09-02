@@ -2,6 +2,7 @@ local TableUtil = require(script:GetCustomProperty("TableUtil"))
 local Dumpster = require(script:GetCustomProperty("Dumpster"))
 local NestLevels = require(script:GetCustomProperty("NestLevels"))
 
+local PHER_PLOTTER = script:GetCustomProperty("PheromonePlotter")
 local NEST_ASSET = script:GetCustomProperty("Nest")
 local FOOD_SOURCE = script:GetCustomProperty("FoodSource")
 local ROUND_STATE = 1
@@ -35,6 +36,8 @@ local function NewColony(player)
 	local nest = World.SpawnAsset(NEST_ASSET, { position = GetRandomNestPos(), parent = World.GetRootObject() })
 	player:SetResource("NestLevel", 1)
 	player:SetResource("Health", NestLevels[1].maxHealth)
+	player:SetResource("Pher", 0)
+	player:SetResource("Ants", 0)
 	player:SetResource("Food", 10) -- a generic number
 	-- both the player and nest have refs to each other
 	nest:SetNetworkedCustomProperty("ownerId", player.id)
@@ -47,10 +50,15 @@ local function NewColony(player)
 	return nest
 end
 
--- TODO: Clean up all food sources once match is over
 local function NewFood()
 	local food = World.SpawnAsset(FOOD_SOURCE, { position = GetRandomFoodPos(), parent = World.GetRootObject() })
 	return food
+end
+
+local function GivePherPlotter(player)
+	local pp = World.SpawnAsset(PHER_PLOTTER)
+	pp:Equip(player)
+	return pp
 end
 
 Events.Connect("GameStateChanged", function (oldState, newState)
@@ -58,8 +66,15 @@ Events.Connect("GameStateChanged", function (oldState, newState)
 		currentDump = Dumpster.New()
 		for i, player in ipairs(Game.GetPlayers()) do
 			player.team = i -- assign each player a team number, 1-4
-			local col = NewColony(player)
-			currentDump:Dump(col)
+			currentDump:Dump(NewColony(player))
+
+			local plotter = GivePherPlotter(player)	
+			-- this might be redundant
+			currentDump:Dump(function ()
+				if Object.IsValid(plotter) then
+					plotter:Destroy()
+				end
+			end)
 		end
 
 		for i = 1, #foodLocations:GetChildren() do
@@ -71,7 +86,30 @@ Events.Connect("GameStateChanged", function (oldState, newState)
 			TableUtil.clear(occupiedFoodLocations)
 		end)
 	elseif newState == ROUND_STATE + 1 then
+		-- clean up all of the items we added
 		currentDump:Burn()
 		currentDump = nil
 	end
 end)
+
+Events.Connect("KilledNest", function (killerAnt, victimPlayer, victimNest)
+	local killerPlayer
+	for _, player in ipairs(Game.GetPlayers()) do
+		if player.team == killerAnt:FindDescendantByName("HitboxTrigger").team then
+			killerPlayer = player
+		end
+	end
+
+	-- Add on the bounty
+	killerPlayer:SetResource("Food", killerPlayer:GetResource("Food") + victimPlayer:GetResource("Food"))
+
+	for _, equip in ipairs(victimPlayer:GetEquipment()) do
+		equip:Unequip()
+	end
+	-- For right now, just get rid of the nest. This is subjec to change
+	victimNest:Destroy()
+end) 
+
+
+
+

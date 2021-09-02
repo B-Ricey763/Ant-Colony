@@ -19,6 +19,7 @@ local function OnBeginOverlap(trigger, hit)
 			ant:SetNetworkedCustomProperty("CarryingFood", false)
 			ant:SetNetworkedCustomProperty("SpeedMultiplier", 1)
 		end
+		ant:SetNetworkedCustomProperty("Health", ant:GetCustomProperty("MaxHealth"))
 		ant.lifeSpan = LIFESPAN -- replenish ant lifespan
 	end
 end

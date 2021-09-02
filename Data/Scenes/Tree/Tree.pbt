@@ -16,8 +16,8 @@ Objects {
   }
   ChildIds: 16999632839413424004
   ChildIds: 1670647210846597579
+  ChildIds: 10563436370658535982
   ChildIds: 3870094542782105082
-  ChildIds: 9075376143127677212
   ChildIds: 678988168986030771
   ChildIds: 8392845933411341608
   ChildIds: 454358636617086563
@@ -2978,6 +2978,12 @@ Objects {
         Id: 14420070072366796500
       }
     }
+    Overrides {
+      Name: "cs:TotalAntNum"
+      ObjectReference {
+        SelfId: 8920507463501376076
+      }
+    }
   }
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
@@ -3278,62 +3284,6 @@ Objects {
   }
 }
 Objects {
-  Id: 9075376143127677212
-  Name: "Static Player Equipment"
-  Transform {
-    Scale {
-      X: 1
-      Y: 1
-      Z: 1
-    }
-  }
-  ParentId: 4781671109827199097
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  TemplateInstance {
-    ParameterOverrideMap {
-      key: 16657464430720987128
-      value {
-        Overrides {
-          Name: "Name"
-          String: "Static Player Equipment"
-        }
-        Overrides {
-          Name: "Scale"
-          Vector {
-            X: 1
-            Y: 1
-            Z: 1
-          }
-        }
-        Overrides {
-          Name: "cs:EquipmentTemplate"
-          AssetReference {
-            Id: 9439221140441414754
-          }
-        }
-        Overrides {
-          Name: "Position"
-          Vector {
-          }
-        }
-        Overrides {
-          Name: "Rotation"
-          Rotator {
-          }
-        }
-      }
-    }
-    TemplateAsset {
-      Id: 8395179537800625630
-    }
-  }
-}
-Objects {
   Id: 3870094542782105082
   Name: "Basic Game State Manager"
   Transform {
@@ -3360,7 +3310,7 @@ Objects {
         }
         Overrides {
           Name: "cs:LobbyHasDuration"
-          Bool: true
+          Bool: false
         }
         Overrides {
           Name: "cs:LobbyDuration"
@@ -3374,6 +3324,46 @@ Objects {
     }
     TemplateAsset {
       Id: 17117668218550553503
+    }
+  }
+}
+Objects {
+  Id: 10563436370658535982
+  Name: "Lobby Required Players"
+  Transform {
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 4781671109827199097
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  TemplateInstance {
+    ParameterOverrideMap {
+      key: 4494359131020210007
+      value {
+        Overrides {
+          Name: "Name"
+          String: "Lobby Required Players"
+        }
+        Overrides {
+          Name: "cs:RequiredPlayers"
+          Int: 2
+        }
+        Overrides {
+          Name: "cs:CountdownTime"
+          Float: 3
+        }
+      }
+    }
+    TemplateAsset {
+      Id: 16035373440097774339
     }
   }
 }

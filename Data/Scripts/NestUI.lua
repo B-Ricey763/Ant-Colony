@@ -15,6 +15,7 @@ local AntTypes = require(script:GetCustomProperty("AntTypes"))
 local breedBar = script:GetCustomProperty("BreedBar"):WaitForObject()
 local NestLevels = require(script:GetCustomProperty("NestLevels"))
 local antNum = script:GetCustomProperty("AntNum"):WaitForObject()
+local totalAntNum = script:GetCustomProperty("TotalAntNum"):WaitForObject()
 local currentDump = nil
 local currentAntIndex = 1
 
@@ -80,5 +81,7 @@ player.resourceChangedEvent:Connect(function (player, resource)
 		queue.text = ("%i queued"):format(player:GetResource(resource))
 	elseif resource == AntTypes[currentAntIndex].name .. "Num" then
 		antNum.text = ("%i total"):format(player:GetResource(resource))
+	elseif resource == "Ants" then
+		totalAntNum.text = player:GetResource(resource) .. "/" .. GetMax("maxAnts") .. " total ants"
 	end
 end)
