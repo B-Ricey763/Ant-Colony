@@ -1,13 +1,13 @@
 Assets {
-  Id: 883771465302915303
-  Name: "Pheromone"
+  Id: 8756663139210238839
+  Name: "PheromoneClient"
   PlatformAssetType: 5
   TemplateAsset {
     ObjectBlock {
-      RootId: 9364227738736351439
+      RootId: 15722002967888165853
       Objects {
-        Id: 9364227738736351439
-        Name: "Pheromone"
+        Id: 15722002967888165853
+        Name: "PheromoneClient"
         Transform {
           Scale {
             X: 1
@@ -41,12 +41,11 @@ Assets {
             Bool: true
           }
         }
-        WantsNetworking: true
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
         Visible_v2 {
-          Value: "mc:evisibilitysetting:forceoff"
+          Value: "mc:evisibilitysetting:inheritfromparent"
         }
         CameraCollidable {
           Value: "mc:ecollisionsetting:inheritfromparent"

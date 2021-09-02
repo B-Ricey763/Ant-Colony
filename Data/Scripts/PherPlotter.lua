@@ -39,8 +39,10 @@ local function OnPlotExecute(ability)
 	then
 
 		local newPher = World.SpawnAsset(pher, { position = ability:GetTargetData():GetHitPosition() })
+		Events.BroadcastToPlayer(ability.owner, "SpawnPher", newPher.id, newPher:GetWorldPosition(), PHER_COLORS[pherIndex])
 		newPher:SetNetworkedCustomProperty("Type", PHER_TYPES[pherIndex])
-		newPher:SetColor(PHER_COLORS[pherIndex])
+		newPher.team = ability.owner.team
+
 		ability.owner:AddResource("Pher", 1)
 	elseif Object.IsValid(hit) then
 		-- this is kinda lazy way to do it, but we DO NOT want a pheromone spawning whenever they click
@@ -70,6 +72,7 @@ local function OnDeleteExecute(ability)
 
 	local hitObj = ability:GetTargetData().hitObject
 	if Object.IsValid(hitObj) and hitObj.name == "Pheromone" then
+		Events.BroadcastToPlayer(ability.owner, "DestroyPher", hitObj.id)
 		hitObj:Destroy()
 		ability.owner:RemoveResource("Pher", 1)
 	end
