@@ -457,6 +457,12 @@ Assets {
               Id: 14420070072366796500
             }
           }
+          Overrides {
+            Name: "cs:Dumpster"
+            AssetReference {
+              Id: 13252084437026604022
+            }
+          }
         }
         WantsNetworking: true
         Collidable_v2 {

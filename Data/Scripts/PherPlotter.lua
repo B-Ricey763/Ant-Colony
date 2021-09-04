@@ -2,6 +2,7 @@ local plotAbility = script:GetCustomProperty("PlotAbility"):WaitForObject()
 local switchAbility = script:GetCustomProperty("SwitchAbility"):WaitForObject()
 local deleteAbility = script:GetCustomProperty("DeleteAbility"):WaitForObject()
 local TableUtil = require(script:GetCustomProperty("TableUtil"))
+local Dumpster = require(script:GetCustomProperty("Dumpster"))
 local pher = script:GetCustomProperty("Pheromone")
 local NestLevels = require(script:GetCustomProperty("NestLevels"))
 
@@ -12,12 +13,14 @@ end
 local PHER_TYPES = {
 	"Follow",
 	"Food",
+	"Fight",
 	"Block",
 }
 
 local PHER_COLORS = {
 	Color.CYAN,
 	Color.GREEN,
+	Color.RED,
 	Color.ORANGE,
 }
 
@@ -91,11 +94,18 @@ local function OnMouseHitRecieved(player, hitPos, hitObj)
 end
 
 
-deleteAbility.executeEvent:Connect(OnDeleteExecute)
-switchAbility.executeEvent:Connect(OnSwitchExecute)
-plotAbility.executeEvent:Connect(OnPlotExecute)
-Events.ConnectForPlayer("MouseHit", OnMouseHitRecieved)
-Events.ConnectForPlayer("SwitchToPher", SwitchToPher)
+
+local dump = Dumpster.New()
+dump:Dump(deleteAbility.executeEvent:Connect(OnDeleteExecute))
+dump:Dump(switchAbility.executeEvent:Connect(OnSwitchExecute))
+dump:Dump(plotAbility.executeEvent:Connect(OnPlotExecute))
+dump:Dump(Events.ConnectForPlayer("MouseHit", OnMouseHitRecieved))
+dump:Dump(Events.ConnectForPlayer("SwitchToPher", SwitchToPher))
+
+script.destroyEvent:Connect(function ()
+	print("Killed")
+	dump:Burn()
+end)
 
 -- We call this to intialize the UI on the client side,
 -- so it updates off the bat

@@ -21,7 +21,11 @@ local function AssignFinalizer(item)
 	end
 	for typeName, finalizer in pairs(finalizers) do
 		if itemType == "userdata" and item:IsA(typeName) then
-			return finalizer
+			return function (i)
+				if Object.IsValid(i) then
+					finalizer(i)
+				end
+			end
 		end
 	end
 	error(("Can't dump item of type %q"):format(itemType == "userdata" and item.type or itemType))

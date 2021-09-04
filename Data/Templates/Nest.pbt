@@ -15,7 +15,7 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 15146144627536064546
+        ParentId: 4781671109827199097
         ChildIds: 16948506006131246756
         ChildIds: 5288328143641997138
         ChildIds: 7553776193849367170
@@ -70,7 +70,16 @@ Assets {
             }
           }
           Overrides {
+            Name: "cs:Ants"
+            ObjectReference {
+            }
+          }
+          Overrides {
             Name: "cs:ownerId:isrep"
+            Bool: true
+          }
+          Overrides {
+            Name: "cs:Ants:isrep"
             Bool: true
           }
         }

@@ -64,6 +64,24 @@ Objects {
         Id: 9439221140441414754
       }
     }
+    Overrides {
+      Name: "cs:Ants"
+      ObjectReference {
+        SelfId: 6349432652693186394
+      }
+    }
+    Overrides {
+      Name: "cs:FoodSources"
+      ObjectReference {
+        SelfId: 6698385623566336844
+      }
+    }
+    Overrides {
+      Name: "cs:Nests"
+      ObjectReference {
+        SelfId: 9213982471961865909
+      }
+    }
   }
   WantsNetworking: true
   Collidable_v2 {

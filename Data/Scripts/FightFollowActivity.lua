@@ -4,18 +4,20 @@ local AntMover = require(activityHandler:GetCustomProperty("AntMover"))
 local PherTracker = activityHandler:GetCustomProperty("PherTracker"):WaitForObject()
 local ant = activityHandler.parent.parent
 
-local FoodActivity = {}
+local SPEED = ant:GetCustomProperty("Speed")
 
-function FoodActivity.tick(activity, dt)
+local FightFollowActivity = {}
+
+function FightFollowActivity.tick(activity, dt)
 	local currentPher = PherTracker.context.Current
-	if Object.IsValid(currentPher) and currentPher:GetCustomProperty("Type") == "Food" then
+	if Object.IsValid(currentPher) and currentPher:GetCustomProperty("Type") == "Fight" then
 		activity.priority = Priorities.PRIMARY - 25
 	else
 		activity.priority = Priorities.INACTIVE
 	end
 end
 
-function FoodActivity.tickHighestPriority(activity)
+function FightFollowActivity.tickHighestPriority(activity, dt)
 	local currentPher = PherTracker.context.Current
 	if Object.IsValid(currentPher) then
 		local arrived = AntMover.MoveTo(ant, currentPher)
@@ -26,4 +28,4 @@ function FoodActivity.tickHighestPriority(activity)
 	end
 end
 
-activityHandler:AddActivity("Food", FoodActivity)
+activityHandler:AddActivity("FightFollowActivity", FightFollowActivity)

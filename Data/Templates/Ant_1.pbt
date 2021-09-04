@@ -285,6 +285,7 @@ Assets {
         ChildIds: 6581077015713510238
         ChildIds: 3509259035256970920
         ChildIds: 13662231590664022302
+        ChildIds: 593686138465484550
         UnregisteredParameters {
           Overrides {
             Name: "cs:Priorities"
@@ -538,6 +539,59 @@ Assets {
         Script {
           ScriptAsset {
             Id: 16173495246270346640
+          }
+        }
+      }
+      Objects {
+        Id: 593686138465484550
+        Name: "FightFollowActivity"
+        Transform {
+          Location {
+          }
+          Rotation {
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 15392640040166782688
+        UnregisteredParameters {
+          Overrides {
+            Name: "cs:PherTracker"
+            ObjectReference {
+              SubObjectId: 16283821592128653700
+            }
+          }
+          Overrides {
+            Name: "cs:Priorities"
+            AssetReference {
+              Id: 12635891766135779157
+            }
+          }
+          Overrides {
+            Name: "cs:AntMover"
+            AssetReference {
+              Id: 11555320366613091189
+            }
+          }
+        }
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        Script {
+          ScriptAsset {
+            Id: 10644540542362755635
           }
         }
       }

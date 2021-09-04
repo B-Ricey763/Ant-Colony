@@ -1,8 +1,8 @@
-Name: "ScriptTesting"
-RootId: 15146144627536064546
+Name: "Runtime"
+RootId: 2368975877374970626
 Objects {
-  Id: 7520989526994721992
-  Name: "Nest Locations"
+  Id: 9213982471961865909
+  Name: "Nests"
   Transform {
     Location {
     }
@@ -14,9 +14,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 15146144627536064546
-  UnregisteredParameters {
-  }
+  ParentId: 2368975877374970626
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -31,27 +29,24 @@ Objects {
   }
   Folder {
     IsFilePartition: true
-    FilePartitionName: "Nest Locations"
+    FilePartitionName: "Nests"
   }
 }
 Objects {
-  Id: 545885846661575972
-  Name: "Cube - Bottom-Aligned"
+  Id: 6698385623566336844
+  Name: "Food Sources"
   Transform {
     Location {
-      X: -600
-      Y: 800
     }
     Rotation {
-      Yaw: -19.9999943
     }
     Scale {
       X: 1
-      Y: 9.25
-      Z: 4.25000048
+      Y: 1
+      Z: 1
     }
   }
-  ParentId: 15146144627536064546
+  ParentId: 2368975877374970626
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -64,42 +59,26 @@ Objects {
   EditorIndicatorVisibility {
     Value: "mc:eindicatorvisibility:visiblewhenselected"
   }
-  CoreMesh {
-    MeshAsset {
-      Id: 1990013444985363097
-    }
-    Teams {
-      IsTeamCollisionEnabled: true
-      IsEnemyCollisionEnabled: true
-    }
-    InteractWithTriggers: true
-    StaticMesh {
-      Physics {
-        Mass: 100
-        LinearDamping: 0.01
-      }
-      BoundsScale: 1
-    }
+  Folder {
+    IsFilePartition: true
+    FilePartitionName: "Food Sources"
   }
 }
 Objects {
-  Id: 5886486340009436552
-  Name: "Cube - Bottom-Aligned"
+  Id: 6349432652693186394
+  Name: "Ants"
   Transform {
     Location {
-      X: 1850
-      Y: -300
     }
     Rotation {
-      Yaw: -20
     }
     Scale {
       X: 1
-      Y: 9.25
-      Z: 4.25000048
+      Y: 1
+      Z: 1
     }
   }
-  ParentId: 15146144627536064546
+  ParentId: 2368975877374970626
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -112,20 +91,8 @@ Objects {
   EditorIndicatorVisibility {
     Value: "mc:eindicatorvisibility:visiblewhenselected"
   }
-  CoreMesh {
-    MeshAsset {
-      Id: 1990013444985363097
-    }
-    Teams {
-      IsTeamCollisionEnabled: true
-      IsEnemyCollisionEnabled: true
-    }
-    StaticMesh {
-      Physics {
-        Mass: 100
-        LinearDamping: 0.01
-      }
-      BoundsScale: 1
-    }
+  Folder {
+    IsFilePartition: true
+    FilePartitionName: "Ants"
   }
 }

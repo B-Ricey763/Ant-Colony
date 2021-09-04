@@ -9,10 +9,19 @@ local ROUND_STATE = 1
 
 local nestLocations = script:GetCustomProperty("NestLocations"):WaitForObject()
 local foodLocations = script:GetCustomProperty("FoodLocations"):WaitForObject()
+local nestFolder = script:GetCustomProperty("Nests"):WaitForObject()
+local foodFolder = script:GetCustomProperty("FoodSources"):WaitForObject()
+local antFolder = script:GetCustomProperty("Ants"):WaitForObject()
 
 local occupiedNestLocations = {}
 local occupiedFoodLocations = {}
 local currentDump = nil
+
+local function ClearChildren(object)
+	for _, child in ipairs(object:GetChildren()) do
+		child:Destroy()
+	end
+end
 
 local function GetRandomNestPos()
 	for _, location in ipairs(nestLocations:GetChildren()) do
@@ -32,15 +41,15 @@ local function GetRandomFoodPos()
 	end
 end
 local function NewColony(player)
-	player:ClearResources()
-	local nest = World.SpawnAsset(NEST_ASSET, { position = GetRandomNestPos(), parent = World.GetRootObject() })
 	player:SetResource("NestLevel", 1)
 	player:SetResource("Health", NestLevels[1].maxHealth)
 	player:SetResource("Pher", 0)
 	player:SetResource("Ants", 0)
 	player:SetResource("Food", 10) -- a generic number
-	-- both the player and nest have refs to each other
+	local nest = World.SpawnAsset(NEST_ASSET, { position = GetRandomNestPos(), parent = nestFolder })
 	nest:SetNetworkedCustomProperty("ownerId", player.id)
+	nest:SetNetworkedCustomProperty("Ants", antFolder)
+	-- both the player and nest have refs to each other
 	nest:FindDescendantByName("HitboxTrigger").team = player.team
 	player:SetPrivateNetworkedData("Nest", nest:GetReference())
 	-- we have to delay this just because the client script might not run immediately
@@ -51,7 +60,7 @@ local function NewColony(player)
 end
 
 local function NewFood()
-	local food = World.SpawnAsset(FOOD_SOURCE, { position = GetRandomFoodPos(), parent = World.GetRootObject() })
+	local food = World.SpawnAsset(FOOD_SOURCE, { position = GetRandomFoodPos(), parent = foodFolder })
 	return food
 end
 
@@ -60,6 +69,18 @@ local function GivePherPlotter(player)
 	pp:Equip(player)
 	return pp
 end
+
+local function AwardWinner()
+	local winner = nil
+	for _, player in ipairs(Game.GetPlayers()) do
+		if not winner or player:GetResource("Ants") > winner then
+			winner = player
+		end
+	end
+
+	print(winner.name .. " was the winner!")
+end
+
 
 Events.Connect("GameStateChanged", function (oldState, newState)
 	if newState == ROUND_STATE then
@@ -85,7 +106,16 @@ Events.Connect("GameStateChanged", function (oldState, newState)
 			TableUtil.clear(occupiedNestLocations)
 			TableUtil.clear(occupiedFoodLocations)
 		end)
+
+		-- A failsafe just in case not everything gets destroyed
+		currentDump:Dump(function ()
+			ClearChildren(antFolder)
+			ClearChildren(nestFolder)
+			ClearChildren(foodFolder)
+		end)
 	elseif newState == ROUND_STATE + 1 then
+		-- check for winner
+		AwardWinner()
 		-- clean up all of the items we added
 		currentDump:Burn()
 		currentDump = nil

@@ -1,2 +1,0 @@
-Name: "Artwork"
-RootId: 678988168986030771

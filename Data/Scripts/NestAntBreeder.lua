@@ -22,7 +22,8 @@ local function FindAntTypeByName(name)
 end
 
 local function BreedAnt(player, ant)
-	local antObject = World.SpawnAsset(ANT_REFS[ant.name], { position = nest:GetWorldPosition()})
+	local antFolder = nest:GetCustomProperty("Ants"):WaitForObject()
+	local antObject = World.SpawnAsset(ANT_REFS[ant.name], { position = nest:GetWorldPosition(), parent = antFolder })
 	antObject.lifeSpan = LIFESPAN -- seconds, but this will refresh each time they return to the colony
 	antObject:FindDescendantByName("HitboxTrigger").team = player.team
 	-- add to count when spawned, remove when killed
@@ -48,6 +49,9 @@ Events.ConnectForPlayer("Breed", function (player, breedType)
 				ant.clearingQueue = true
 				while player:GetResource(queuedName) > 0 do
 					Task.Wait(ant.breedTime)
+
+					if not Object.IsValid(nest) then return end
+
 					BreedAnt(player, ant)
 					player:RemoveResource(queuedName, 1)
 				end
