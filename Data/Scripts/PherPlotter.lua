@@ -41,7 +41,8 @@ local function OnPlotExecute(ability)
 		and ability.owner:GetResource("Pher") < GetMax(ability.owner, "maxPher") 
 	then
 
-		local newPher = World.SpawnAsset(pher, { position = ability:GetTargetData():GetHitPosition() })
+		local pherFolder = script.parent:GetCustomProperty("Pheromones"):WaitForObject()
+		local newPher = World.SpawnAsset(pher, { position = ability:GetTargetData():GetHitPosition(), parent = pherFolder })
 		Events.BroadcastToPlayer(ability.owner, "SpawnPher", newPher.id, newPher:GetWorldPosition(), PHER_COLORS[pherIndex])
 		newPher:SetNetworkedCustomProperty("Type", PHER_TYPES[pherIndex])
 		newPher.team = ability.owner.team
@@ -103,7 +104,6 @@ dump:Dump(Events.ConnectForPlayer("MouseHit", OnMouseHitRecieved))
 dump:Dump(Events.ConnectForPlayer("SwitchToPher", SwitchToPher))
 
 script.destroyEvent:Connect(function ()
-	print("Killed")
 	dump:Burn()
 end)
 

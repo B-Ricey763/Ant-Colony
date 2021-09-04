@@ -11,8 +11,6 @@ ScreenshotPaths: "D:/Core/Projects/Ant Colony/Screenshots/Screenshot0001.png"
 OwnerId: "5126d8fe53b54167a28ad494f7ee0bdd"
 SerializationVersion: 1
 AllowDirectJoinAsChild: true
-IsQueued: true
-MinPlayersToStart: 4
 SceneNameToSceneIdMap {
   key: "Main"
   value: "d0c346e0482efa6deed1f8ba52a53846"

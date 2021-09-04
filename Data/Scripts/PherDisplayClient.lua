@@ -12,3 +12,13 @@ Events.Connect("DestroyPher", function (id)
 		pher:Destroy()
 	end
 end)
+
+Events.Connect("GameStateChanged", function (old, new)
+	if new == 2 then
+		for _, pher in ipairs(script.parent:GetChildren()) do
+			if pher ~= script then
+				pher:Destroy()
+			end
+		end
+	end
+end)

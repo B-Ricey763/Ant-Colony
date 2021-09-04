@@ -1,4 +1,5 @@
 Events.Connect("GetMouseHit", function ()
+	print("Recieved event!")
 	local hit = UI.GetCursorHitResult()
 	if hit then
 		Events.BroadcastToServer("MouseHit", hit:GetImpactPosition(), hit.other.id)

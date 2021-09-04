@@ -17,6 +17,7 @@ Objects {
   ChildIds: 16999632839413424004
   ChildIds: 1670647210846597579
   ChildIds: 11323072938959794239
+  ChildIds: 8012439127383893651
   ChildIds: 10563436370658535982
   ChildIds: 3870094542782105082
   ChildIds: 8392845933411341608
@@ -3321,7 +3322,7 @@ Objects {
         }
         Overrides {
           Name: "cs:RoundDuration"
-          Float: 20
+          Float: 10
         }
       }
     }
@@ -3367,6 +3368,71 @@ Objects {
     }
     TemplateAsset {
       Id: 16035373440097774339
+    }
+  }
+}
+Objects {
+  Id: 8012439127383893651
+  Name: "PherPlotterClient"
+  Transform {
+    Location {
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 4781671109827199097
+  ChildIds: 5086243117583979148
+  WantsNetworking: true
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:forceoff"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  NetworkContext {
+  }
+}
+Objects {
+  Id: 5086243117583979148
+  Name: "PherPlotterClient"
+  Transform {
+    Location {
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 8012439127383893651
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  Script {
+    ScriptAsset {
+      Id: 6812415512010915093
     }
   }
 }

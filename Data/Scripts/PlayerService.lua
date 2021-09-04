@@ -7,7 +7,6 @@ local function LockPlayer(player)
 end
 
 local function OnPlayerJoined(player)
-	player:SetResource("NestLevel", 1) -- so code doesn't error
 	LockPlayer(player)
 end
 

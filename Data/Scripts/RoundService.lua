@@ -12,6 +12,7 @@ local foodLocations = script:GetCustomProperty("FoodLocations"):WaitForObject()
 local nestFolder = script:GetCustomProperty("Nests"):WaitForObject()
 local foodFolder = script:GetCustomProperty("FoodSources"):WaitForObject()
 local antFolder = script:GetCustomProperty("Ants"):WaitForObject()
+local pherFolder = script:GetCustomProperty("Pheromones"):WaitForObject()
 
 local occupiedNestLocations = {}
 local occupiedFoodLocations = {}
@@ -41,7 +42,9 @@ local function GetRandomFoodPos()
 	end
 end
 local function NewColony(player)
+	player:ClearResources()
 	player:SetResource("NestLevel", 1)
+	Task.Wait(3)
 	player:SetResource("Health", NestLevels[1].maxHealth)
 	player:SetResource("Pher", 0)
 	player:SetResource("Ants", 0)
@@ -66,6 +69,7 @@ end
 
 local function GivePherPlotter(player)
 	local pp = World.SpawnAsset(PHER_PLOTTER)
+	pp:SetNetworkedCustomProperty("Pheromones", pherFolder)
 	pp:Equip(player)
 	return pp
 end
@@ -73,7 +77,7 @@ end
 local function AwardWinner()
 	local winner = nil
 	for _, player in ipairs(Game.GetPlayers()) do
-		if not winner or player:GetResource("Ants") > winner then
+		if not winner or player:GetResource("Ants") > winner:GetResource("Ants") then
 			winner = player
 		end
 	end
@@ -91,9 +95,10 @@ Events.Connect("GameStateChanged", function (oldState, newState)
 
 			local plotter = GivePherPlotter(player)	
 			-- this might be redundant
-			currentDump:Dump(function ()
-				if Object.IsValid(plotter) then
-					plotter:Destroy()
+			currentDump:Dump(function() 
+				-- This just cleans up everything, works like a charm!
+				for _, equip in ipairs(player:GetEquipment()) do
+					equip:Unequip()
 				end
 			end)
 		end
@@ -112,6 +117,7 @@ Events.Connect("GameStateChanged", function (oldState, newState)
 			ClearChildren(antFolder)
 			ClearChildren(nestFolder)
 			ClearChildren(foodFolder)
+			ClearChildren(pherFolder)
 		end)
 	elseif newState == ROUND_STATE + 1 then
 		-- check for winner

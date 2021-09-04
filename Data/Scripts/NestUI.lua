@@ -20,7 +20,10 @@ local currentDump = nil
 local currentAntIndex = 1
 
 local function GetMax(str)
-	return NestLevels[player:GetResource("NestLevel")][str]
+	if player:GetResource("NestLevel") > 0 then
+		return NestLevels[player:GetResource("NestLevel")][str]
+	end
+	return ""
 end
 
 local function UpdateAntType(index)

@@ -2,14 +2,15 @@ local num = script.parent
 local player = Game.GetLocalPlayer()
 local NestLevels = require(script:GetCustomProperty("NestLevels"))
 
-local function GetMax(player, str)
-	return NestLevels[player:GetResource("NestLevel")][str]
+local function GetMax(str)
+	if player:GetResource("NestLevel") > 0 then
+		return NestLevels[player:GetResource("NestLevel")][str]
+	end
+	return ""
 end
 
-Task.Wait(0.5)
-num.text = (player:GetResource("Pher") or "0") .. "/" .. GetMax(player, "maxPher")
-player.resourceChangedEvent:Connect(function (player, name, val)
+player.resourceChangedEvent:Connect(function (_, name, val)
 	if name == "Pher" then
-		num.text = val .. "/" .. GetMax(player, "maxPher") 
+		num.text = val .. "/" .. GetMax("maxPher") 
 	end
 end)

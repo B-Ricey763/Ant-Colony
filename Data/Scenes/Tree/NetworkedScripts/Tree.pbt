@@ -82,6 +82,12 @@ Objects {
         SelfId: 9213982471961865909
       }
     }
+    Overrides {
+      Name: "cs:Pheromones"
+      ObjectReference {
+        SelfId: 8765234528751127525
+      }
+    }
   }
   WantsNetworking: true
   Collidable_v2 {

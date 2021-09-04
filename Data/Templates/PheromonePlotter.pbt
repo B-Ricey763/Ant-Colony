@@ -21,7 +21,17 @@ Assets {
         ChildIds: 5713728359263348640
         ChildIds: 4314795209169160129
         ChildIds: 10036434379055399808
-        ChildIds: 18423728908161245438
+        UnregisteredParameters {
+          Overrides {
+            Name: "cs:Pheromones"
+            ObjectReference {
+            }
+          }
+          Overrides {
+            Name: "cs:Pheromones:isrep"
+            Bool: true
+          }
+        }
         WantsNetworking: true
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
@@ -480,71 +490,6 @@ Assets {
         Script {
           ScriptAsset {
             Id: 2943086768908804818
-          }
-        }
-      }
-      Objects {
-        Id: 18423728908161245438
-        Name: "ClientContext"
-        Transform {
-          Location {
-          }
-          Rotation {
-          }
-          Scale {
-            X: 1
-            Y: 1
-            Z: 1
-          }
-        }
-        ParentId: 4616387421538863450
-        ChildIds: 15423186129305588961
-        WantsNetworking: true
-        Collidable_v2 {
-          Value: "mc:ecollisionsetting:forceoff"
-        }
-        Visible_v2 {
-          Value: "mc:evisibilitysetting:inheritfromparent"
-        }
-        CameraCollidable {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        EditorIndicatorVisibility {
-          Value: "mc:eindicatorvisibility:visiblewhenselected"
-        }
-        NetworkContext {
-        }
-      }
-      Objects {
-        Id: 15423186129305588961
-        Name: "PherPlotterClient"
-        Transform {
-          Location {
-          }
-          Rotation {
-          }
-          Scale {
-            X: 1
-            Y: 1
-            Z: 1
-          }
-        }
-        ParentId: 18423728908161245438
-        Collidable_v2 {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Visible_v2 {
-          Value: "mc:evisibilitysetting:inheritfromparent"
-        }
-        CameraCollidable {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        EditorIndicatorVisibility {
-          Value: "mc:eindicatorvisibility:visiblewhenselected"
-        }
-        Script {
-          ScriptAsset {
-            Id: 6812415512010915093
           }
         }
       }
