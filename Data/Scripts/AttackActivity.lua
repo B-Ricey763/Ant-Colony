@@ -18,12 +18,14 @@ local function flatten(vec)
 	return vec * Vector3.New(1, 1, 0)
 end
 
-trigger.beginOverlapEvent:Connect(function (trig, hit)
+local function ConsiderAttack(trig, hit)
 	if hit.name == "HitboxTrigger" and not ant:IsAncestorOf(hit) and hit.team ~= hitboxTrig.team then 
 		activityHandler:FindActivity("Attack").priority = Priorities.URGENT
 		target = hit:FindAncestorByName("Ant") or hit:FindAncestorByName("Nest")
 	end
-end)
+end
+
+
 
 local function Attack(t)
 	-- shouldn't have to send an event for all clients, but I think that's the only way
@@ -61,3 +63,10 @@ function AttackActivity.tickHighestPriority(activity, dt)
 end
 
 activityHandler:AddActivity("Attack", AttackActivity)
+
+trigger.beginOverlapEvent:Connect(ConsiderAttack)
+-- Let everything intialize
+Task.Wait(0.5)
+for _, hit in ipairs(trigger:GetOverlappingObjects()) do
+	ConsiderAttack(trigger, hit)
+end

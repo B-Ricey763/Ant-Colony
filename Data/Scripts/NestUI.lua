@@ -75,6 +75,7 @@ workerBreedButton.clickedEvent:Connect(function ()
 end)
 
 closeButton.clickedEvent:Connect(function ()
+	Events.Broadcast("NestUIClosed")
 	currentDump:Burn()
 	currentDump = nil 
 end)

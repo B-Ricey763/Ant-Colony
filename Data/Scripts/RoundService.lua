@@ -59,6 +59,7 @@ local function NewColony(player)
 	Task.Spawn(function()
 		Events.BroadcastToPlayer(player, "MoveCamera", nest:GetWorldPosition() + Vector3.UP * 1000)
 	end, 2)
+
 	return nest
 end
 

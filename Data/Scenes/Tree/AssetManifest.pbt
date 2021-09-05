@@ -44,6 +44,15 @@ Assets {
   }
 }
 Assets {
+  Id: 10685634544796111834
+  Name: "Bomb"
+  PlatformAssetType: 9
+  PrimaryAsset {
+    AssetType: "PlatformBrushAssetRef"
+    AssetId: "UI_Military_Icon_012"
+  }
+}
+Assets {
   Id: 7887238662729938253
   Name: "Sky Dome"
   PlatformAssetType: 6
