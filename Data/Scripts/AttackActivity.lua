@@ -8,6 +8,10 @@ local hitboxTrig = script:GetCustomProperty("HitboxTrigger"):WaitForObject()
 
 local ATTACK_SPEED = ant:GetCustomProperty("AttackSpeed")
 local DAMAGE = ant:GetCustomProperty("Damage")
+local MIN_DISTS = {
+	Ant = 100,
+	Nest = 1000,
+}
 
 local AttackActivity = {}
 
@@ -24,8 +28,6 @@ local function ConsiderAttack(trig, hit)
 		target = hit:FindAncestorByName("Ant") or hit:FindAncestorByName("Nest")
 	end
 end
-
-
 
 local function Attack(t)
 	-- shouldn't have to send an event for all clients, but I think that's the only way
@@ -49,12 +51,13 @@ function AttackActivity.tickHighestPriority(activity, dt)
 		return 
 	end
 
+	local minDist = MIN_DISTS[target.name] or 100 -- default just in case
 	local dist = (flatten(ant:GetWorldPosition()) - flatten(target:GetWorldPosition()))
 	if dist.size > 1000 then
 		-- we lose interest and go away
 		activity.priority = Priorities.INACTIVE
 		target = nil
-	elseif dist.size > 100 then
+	elseif dist.size > minDist then
 		local hit, diff = AntMover.MoveTo(ant, target, 1, 500)
 	elseif time() > lastAttackTime + ATTACK_SPEED then
 		Attack(target)

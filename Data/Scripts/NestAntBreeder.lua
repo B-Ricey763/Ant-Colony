@@ -21,6 +21,11 @@ local function FindAntTypeByName(name)
 	end
 end
 
+local function RandOrientAnt(antObj)
+	local randDir = math.random(360)
+	local rot = Rotation.New(0, 0, randDir)
+	antObj:SetRotation(rot)
+end
 local function BreedAnt(player, ant)
 	local antFolder = nest:GetCustomProperty("Ants"):WaitForObject()
 	local antObject = World.SpawnAsset(ANT_REFS[ant.name], { position = nest:GetWorldPosition(), parent = antFolder })
@@ -33,6 +38,8 @@ local function BreedAnt(player, ant)
 		player:RemoveResource(ant.name .. "Num", 1)
 		player:RemoveResource("Ants", 1)
 	end)
+	-- Make the ant go in a random direction off spawn
+	RandOrientAnt(antObject)
 end
 
 Events.ConnectForPlayer("Breed", function (player, breedType)

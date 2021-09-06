@@ -54,6 +54,7 @@ local function NewColony(player)
 	nest:SetNetworkedCustomProperty("Ants", antFolder)
 	-- both the player and nest have refs to each other
 	nest:FindDescendantByName("HitboxTrigger").team = player.team
+	nest:FindDescendantByName("Pheromone").team = player.team
 	player:SetPrivateNetworkedData("Nest", nest:GetReference())
 	-- we have to delay this just because the client script might not run immediately
 	Task.Spawn(function()
