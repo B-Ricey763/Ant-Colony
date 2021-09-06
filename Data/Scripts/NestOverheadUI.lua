@@ -6,6 +6,7 @@ local health = script:GetCustomProperty("Health"):WaitForObject()
 local name = script:GetCustomProperty("Name"):WaitForObject()
 local manageButton = script:GetCustomProperty("ManageButton"):WaitForObject()
 local owner = nil
+local changedListener = nil
 
 local function GetMax(str)
 	if owner:GetResource("NestLevel") > 0 then
@@ -17,8 +18,8 @@ end
 local function Display()
 	name.text = owner.name .. "'s Nest"
 	health.progress = owner:GetResource("Health") / GetMax("maxHealth") 
-	owner.resourceChangedEvent:Connect(function (p, resource, amount)
-		if resource == "Health" then
+	changedListener = owner.resourceChangedEvent:Connect(function (p, resource, amount)
+		if resource == "Health" and Object.IsValid(health) then
 			health.progress = amount / GetMax("maxHealth")
 		end
 	end)
@@ -53,5 +54,9 @@ nest.networkedPropertyChangedEvent:Connect(function (owner, name)
 	end
 end)
 
+script.destroyEvent:Connect(function ()
+	changedListener:Disconnect()
+end)
 
-local b = billboard.New(nest, script.parent, Vector3.UP * 500)
+
+local b = billboard.New(nest, script.parent, Vector3.UP * 1250)

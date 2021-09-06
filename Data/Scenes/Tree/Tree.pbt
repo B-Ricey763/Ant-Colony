@@ -766,7 +766,7 @@ Objects {
 }
 Objects {
   Id: 16029687196468950675
-  Name: "UI Container"
+  Name: "Tutorial"
   Transform {
     Location {
     }
@@ -780,11 +780,12 @@ Objects {
   }
   ParentId: 454358636617086563
   ChildIds: 6163999855004063277
+  ChildIds: 5751671022292465386
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
   Visible_v2 {
-    Value: "mc:evisibilitysetting:forceoff"
+    Value: "mc:evisibilitysetting:forceon"
   }
   CameraCollidable {
     Value: "mc:ecollisionsetting:inheritfromparent"
@@ -825,6 +826,39 @@ Objects {
   }
 }
 Objects {
+  Id: 5751671022292465386
+  Name: "ToggleTutorialUI"
+  Transform {
+    Location {
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 16029687196468950675
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  Script {
+    ScriptAsset {
+      Id: 2512593181206900922
+    }
+  }
+}
+Objects {
   Id: 6163999855004063277
   Name: "UI Scroll Panel"
   Transform {
@@ -839,9 +873,7 @@ Objects {
     }
   }
   ParentId: 16029687196468950675
-  ChildIds: 13009085727006964729
-  ChildIds: 1575487208944468898
-  ChildIds: 11109575412124796127
+  ChildIds: 6435397914076972753
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -866,6 +898,7 @@ Objects {
       Orientation {
         Value: "mc:eorientation:orient_vertical"
       }
+      ScrollPosition: 1
     }
     AnchorLayout {
       SelfAnchor {
@@ -882,8 +915,8 @@ Objects {
   }
 }
 Objects {
-  Id: 11109575412124796127
-  Name: "UI Image"
+  Id: 6435397914076972753
+  Name: "UI Panel"
   Transform {
     Location {
     }
@@ -896,6 +929,9 @@ Objects {
     }
   }
   ParentId: 6163999855004063277
+  ChildIds: 13009085727006964729
+  ChildIds: 1524055146014834325
+  ChildIds: 1575487208944468898
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -909,31 +945,15 @@ Objects {
     Value: "mc:eindicatorvisibility:visiblewhenselected"
   }
   Control {
-    Width: 200
-    Height: 200
+    Width: 484
+    Height: 1302
     RenderTransformPivot {
       Anchor {
         Value: "mc:euianchor:middlecenter"
       }
     }
-    Image {
-      Brush {
-        Id: 10685634544796111834
-      }
-      Color {
-        R: 1
-        G: 1
-        B: 1
-        A: 1
-      }
-      TeamSettings {
-      }
-      ShadowColor {
-        A: 1
-      }
-      ShadowOffset {
-      }
-      ScreenshotIndex: 1
+    Panel {
+      Opacity: 1
     }
     AnchorLayout {
       SelfAnchor {
@@ -951,7 +971,7 @@ Objects {
 }
 Objects {
   Id: 1575487208944468898
-  Name: "UI Text Box"
+  Name: "Title"
   Transform {
     Location {
     }
@@ -963,7 +983,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 6163999855004063277
+  ParentId: 6435397914076972753
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -977,7 +997,7 @@ Objects {
     Value: "mc:eindicatorvisibility:visiblewhenselected"
   }
   Control {
-    Width: 200
+    Width: 419
     Height: 60
     RenderTransformPivot {
       Anchor {
@@ -985,7 +1005,7 @@ Objects {
       }
     }
     Text {
-      Label: "Help"
+      Label: "How to play (t to toggle)"
       Color {
         R: 1
         G: 1
@@ -1028,8 +1048,8 @@ Objects {
   }
 }
 Objects {
-  Id: 13009085727006964729
-  Name: "UI Image"
+  Id: 1524055146014834325
+  Name: "UI Text Box"
   Transform {
     Location {
     }
@@ -1041,7 +1061,86 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 6163999855004063277
+  ParentId: 6435397914076972753
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  Control {
+    Width: 350
+    UIY: 79.1801
+    RenderTransformPivot {
+      Anchor {
+        Value: "mc:euianchor:middlecenter"
+      }
+    }
+    UseParentWidth: true
+    UseParentHeight: true
+    Text {
+      Label: "Your goal is to have as many ants as possible by the end of the game. You can accomplish this by retrieving food (from the yellow coral) or attacking other nests and stealing their food. \r\n\r\nYour ants only follow the pheromones you place. You have a choice of 4 pheromones: \r\n- Follow (blue): all ants are attracted \r\n- Food (green): same as follow, but only for workers\r\n- Fight (red): same as follow, but only for soldiers\r\n- Block (orange): ants are replled and go the opposite way \r\n\r\nYou can either click on the pheromone to select it, or press F to cycle through them. Place pheromones with Left Click, and delete them with Right click.\r\nUse pheromones to coerce ants to get food or attack enemies.\r\n\r\nYou can breed more ants by going to your ant\'s nest and clicking \'Manage Nest\'. Workers ants can get food, and soldiers attack enemy ants and nests.\r\n"
+      Color {
+        R: 1
+        G: 1
+        B: 1
+        A: 1
+      }
+      Size: 20
+      Justification {
+        Value: "mc:etextjustify:left"
+      }
+      AutoWrapText: true
+      Font {
+        Id: 841534158063459245
+      }
+      VerticalJustification {
+        Value: "mc:everticaljustification:top"
+      }
+      ShadowColor {
+        A: 1
+      }
+      ShadowOffset {
+      }
+      OutlineColor {
+        A: 1
+      }
+    }
+    AnchorLayout {
+      SelfAnchor {
+        Anchor {
+          Value: "mc:euianchor:topcenter"
+        }
+      }
+      TargetAnchor {
+        Anchor {
+          Value: "mc:euianchor:topcenter"
+        }
+      }
+    }
+  }
+}
+Objects {
+  Id: 13009085727006964729
+  Name: "Bg"
+  Transform {
+    Location {
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 6435397914076972753
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
