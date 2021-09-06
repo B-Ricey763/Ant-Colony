@@ -12,7 +12,7 @@ end
 
 local function OnBeginOverlap(trigger, hit)
 	local ant = hit:FindAncestorByName("Ant")
-	if Object.IsValid(ant) and hit.name == "HitboxTrigger" then
+	if Object.IsValid(ant) and hit.name == "HitboxTrigger" and hit.team == trigger.team then
 		if ant:GetCustomProperty("CarryingFood") == true and player:GetResource("Food") < GetMax(player, "maxFood") then
 			player:AddResource("Food", 1)
 			-- reset ant
@@ -21,6 +21,7 @@ local function OnBeginOverlap(trigger, hit)
 		end
 		ant:SetNetworkedCustomProperty("Health", ant:GetCustomProperty("MaxHealth"))
 		ant.lifeSpan = LIFESPAN -- replenish ant lifespan
+		print("Lifespan set")
 	end
 end
 
