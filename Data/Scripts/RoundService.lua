@@ -84,7 +84,7 @@ local function AwardWinner()
 		end
 	end
 
-	print(winner.name .. " was the winner!")
+	Events.Broadcast("PlayerVictory", winner)
 end
 
 

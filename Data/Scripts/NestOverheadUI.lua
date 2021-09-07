@@ -42,13 +42,15 @@ local function Manage()
 	end)
 end
 
-Events.Connect("NestUIClosed", function ()
+local closeConn = Events.Connect("NestUIClosed", function ()
+	if not Object.IsValid(script.parent) then return end
+	
 	script.parent.visibility = Visibility.FORCE_ON
 end)
 
 -- Handle both cases
 Manage()
-nest.networkedPropertyChangedEvent:Connect(function (owner, name)
+local netConn = nest.networkedPropertyChangedEvent:Connect(function (owner, name)
 	if name == "ownerId" then
 		Manage()
 	end
@@ -56,6 +58,8 @@ end)
 
 script.destroyEvent:Connect(function ()
 	changedListener:Disconnect()
+	closeConn:Disconnect()
+	netConn:Disconnect()
 end)
 
 
