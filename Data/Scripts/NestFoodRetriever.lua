@@ -26,3 +26,9 @@ local function OnBeginOverlap(trigger, hit)
 end
 
 antTrigger.beginOverlapEvent:Connect(OnBeginOverlap)
+
+-- Passive Food income
+while Object.IsValid(script) do
+	player:AddResource("Food", 1)
+	Task.Wait(10)
+end
