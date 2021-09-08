@@ -7,6 +7,6 @@ Assets {
   Marketplace {
     Description: "Provides convenience functions when working with tables. Most of them are self explanatory. A lot of the functions are inspired by tables in Roblox and other util modules. Lots of room to add more in the future."
   }
-  SerializationVersion: 97
+  SerializationVersion: 98
   DirectlyPublished: true
 }

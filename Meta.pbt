@@ -1,5 +1,5 @@
 GameId: "D9FF68A341C0063B303C53A135298F99"
 DisplayName: "Ant Colony"
-GameSerializationVersion: 97
+GameSerializationVersion: 98
 Framework: "Empty Project"
 StorageVersion: 2

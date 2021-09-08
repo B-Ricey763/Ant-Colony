@@ -40,5 +40,5 @@ Assets {
     Version: "1.3.0"
     Description: "A class for keeping track of loose items (networked objects, event listeners, and functions) that you need to destroy/disconnect/call once an event happens. Very similar to the Roblox modules Maid, Janitor, and, of course, Dumpster. "
   }
-  SerializationVersion: 97
+  SerializationVersion: 98
 }
