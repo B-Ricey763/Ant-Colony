@@ -601,8 +601,8 @@ Assets {
         Transform {
           Location {
             X: 99.999939
-            Y: 2.38418543e-05
-            Z: 66.4357147
+            Y: 2.19344874e-05
+            Z: 74.5828552
           }
           Rotation {
             Yaw: 135
@@ -668,6 +668,7 @@ Assets {
         Name: "AntAnimated"
         Transform {
           Location {
+            Z: 8.1471405
           }
           Rotation {
             Yaw: 180
