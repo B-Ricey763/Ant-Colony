@@ -19,6 +19,7 @@ Events.Connect("SpawnPher", function (id, pos, color)
 		local rot = hitResult:GetTransform():GetRotation() * Rotation.New(0, -90, 0)
 		p:SetWorldRotation(rot)
 		p:SetWorldPosition(pos + n*10)
+		p:SetScale(Vector3.New(1,1,3))
 	end
 end)
 

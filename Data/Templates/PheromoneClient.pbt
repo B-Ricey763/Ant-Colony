@@ -12,7 +12,7 @@ Assets {
           Scale {
             X: 1
             Y: 1
-            Z: 2
+            Z: 3
           }
         }
         ParentId: 4781671109827199097

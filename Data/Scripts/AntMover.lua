@@ -1,4 +1,4 @@
-local DIST_TO_GROUND = 100
+local DIST_TO_GROUND = 60
 local function flatten(vec)
 	return vec * Vector3.New(1, 1, 0)
 end
