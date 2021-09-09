@@ -84,7 +84,7 @@ Objects {
   }
   ParentId: 1175450298659140341
   Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
+    Value: "mc:ecollisionsetting:forceoff"
   }
   Visible_v2 {
     Value: "mc:evisibilitysetting:inheritfromparent"
@@ -132,7 +132,7 @@ Objects {
   }
   ParentId: 1175450298659140341
   Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
+    Value: "mc:ecollisionsetting:forceoff"
   }
   Visible_v2 {
     Value: "mc:evisibilitysetting:inheritfromparent"
@@ -180,7 +180,7 @@ Objects {
   }
   ParentId: 1175450298659140341
   Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
+    Value: "mc:ecollisionsetting:forceoff"
   }
   Visible_v2 {
     Value: "mc:evisibilitysetting:inheritfromparent"
@@ -227,7 +227,7 @@ Objects {
   }
   ParentId: 1175450298659140341
   Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
+    Value: "mc:ecollisionsetting:forceoff"
   }
   Visible_v2 {
     Value: "mc:evisibilitysetting:inheritfromparent"
@@ -314,6 +314,12 @@ Objects {
         }
         Overrides {
           Name: "CoreProxy.CameraCollidable"
+          Enum {
+            Value: "mc:ecollisionsetting:forceoff"
+          }
+        }
+        Overrides {
+          Name: "Collidable"
           Enum {
             Value: "mc:ecollisionsetting:forceoff"
           }
@@ -437,6 +443,12 @@ Objects {
         }
         Overrides {
           Name: "CoreProxy.CameraCollidable"
+          Enum {
+            Value: "mc:ecollisionsetting:forceoff"
+          }
+        }
+        Overrides {
+          Name: "Collidable"
           Enum {
             Value: "mc:ecollisionsetting:forceoff"
           }
@@ -568,6 +580,12 @@ Objects {
             Value: "mc:ecollisionsetting:forceoff"
           }
         }
+        Overrides {
+          Name: "Collidable"
+          Enum {
+            Value: "mc:ecollisionsetting:forceoff"
+          }
+        }
       }
     }
     ParameterOverrideMap {
@@ -691,6 +709,12 @@ Objects {
         }
         Overrides {
           Name: "CoreProxy.CameraCollidable"
+          Enum {
+            Value: "mc:ecollisionsetting:forceoff"
+          }
+        }
+        Overrides {
+          Name: "Collidable"
           Enum {
             Value: "mc:ecollisionsetting:forceoff"
           }
@@ -822,6 +846,12 @@ Objects {
             Value: "mc:ecollisionsetting:forceoff"
           }
         }
+        Overrides {
+          Name: "Collidable"
+          Enum {
+            Value: "mc:ecollisionsetting:forceoff"
+          }
+        }
       }
     }
     ParameterOverrideMap {
@@ -945,6 +975,12 @@ Objects {
         }
         Overrides {
           Name: "CoreProxy.CameraCollidable"
+          Enum {
+            Value: "mc:ecollisionsetting:forceoff"
+          }
+        }
+        Overrides {
+          Name: "Collidable"
           Enum {
             Value: "mc:ecollisionsetting:forceoff"
           }
@@ -1074,6 +1110,12 @@ Objects {
             Value: "mc:ecollisionsetting:forceoff"
           }
         }
+        Overrides {
+          Name: "Collidable"
+          Enum {
+            Value: "mc:ecollisionsetting:forceoff"
+          }
+        }
       }
     }
     ParameterOverrideMap {
@@ -1193,6 +1235,12 @@ Objects {
         }
         Overrides {
           Name: "CoreProxy.CameraCollidable"
+          Enum {
+            Value: "mc:ecollisionsetting:forceoff"
+          }
+        }
+        Overrides {
+          Name: "Collidable"
           Enum {
             Value: "mc:ecollisionsetting:forceoff"
           }
@@ -1324,6 +1372,12 @@ Objects {
             Value: "mc:ecollisionsetting:forceoff"
           }
         }
+        Overrides {
+          Name: "Collidable"
+          Enum {
+            Value: "mc:ecollisionsetting:forceoff"
+          }
+        }
       }
     }
     ParameterOverrideMap {
@@ -1447,6 +1501,12 @@ Objects {
             Value: "mc:ecollisionsetting:forceoff"
           }
         }
+        Overrides {
+          Name: "Collidable"
+          Enum {
+            Value: "mc:ecollisionsetting:forceoff"
+          }
+        }
       }
     }
     ParameterOverrideMap {
@@ -1566,6 +1626,12 @@ Objects {
         }
         Overrides {
           Name: "CoreProxy.CameraCollidable"
+          Enum {
+            Value: "mc:ecollisionsetting:forceoff"
+          }
+        }
+        Overrides {
+          Name: "Collidable"
           Enum {
             Value: "mc:ecollisionsetting:forceoff"
           }
@@ -1942,6 +2008,12 @@ Objects {
             Value: "mc:ecollisionsetting:forceoff"
           }
         }
+        Overrides {
+          Name: "Collidable"
+          Enum {
+            Value: "mc:ecollisionsetting:forceoff"
+          }
+        }
       }
     }
     ParameterOverrideMap {
@@ -2061,6 +2133,12 @@ Objects {
         }
         Overrides {
           Name: "CoreProxy.CameraCollidable"
+          Enum {
+            Value: "mc:ecollisionsetting:forceoff"
+          }
+        }
+        Overrides {
+          Name: "Collidable"
           Enum {
             Value: "mc:ecollisionsetting:forceoff"
           }
@@ -2192,6 +2270,12 @@ Objects {
             Value: "mc:ecollisionsetting:forceoff"
           }
         }
+        Overrides {
+          Name: "Collidable"
+          Enum {
+            Value: "mc:ecollisionsetting:forceoff"
+          }
+        }
       }
     }
     ParameterOverrideMap {
@@ -2315,6 +2399,12 @@ Objects {
             Value: "mc:ecollisionsetting:forceoff"
           }
         }
+        Overrides {
+          Name: "Collidable"
+          Enum {
+            Value: "mc:ecollisionsetting:forceoff"
+          }
+        }
       }
     }
     ParameterOverrideMap {
@@ -2432,6 +2522,12 @@ Objects {
         }
         Overrides {
           Name: "CoreProxy.CameraCollidable"
+          Enum {
+            Value: "mc:ecollisionsetting:forceoff"
+          }
+        }
+        Overrides {
+          Name: "Collidable"
           Enum {
             Value: "mc:ecollisionsetting:forceoff"
           }
@@ -2563,6 +2659,12 @@ Objects {
             Value: "mc:ecollisionsetting:forceoff"
           }
         }
+        Overrides {
+          Name: "Collidable"
+          Enum {
+            Value: "mc:ecollisionsetting:forceoff"
+          }
+        }
       }
     }
     ParameterOverrideMap {
@@ -2686,6 +2788,12 @@ Objects {
             Value: "mc:ecollisionsetting:forceoff"
           }
         }
+        Overrides {
+          Name: "Collidable"
+          Enum {
+            Value: "mc:ecollisionsetting:forceoff"
+          }
+        }
       }
     }
     ParameterOverrideMap {
@@ -2799,6 +2907,12 @@ Objects {
         }
         Overrides {
           Name: "CoreProxy.CameraCollidable"
+          Enum {
+            Value: "mc:ecollisionsetting:forceoff"
+          }
+        }
+        Overrides {
+          Name: "Collidable"
           Enum {
             Value: "mc:ecollisionsetting:forceoff"
           }
@@ -2917,6 +3031,12 @@ Objects {
             Value: "mc:ecollisionsetting:forceoff"
           }
         }
+        Overrides {
+          Name: "Collidable"
+          Enum {
+            Value: "mc:ecollisionsetting:forceoff"
+          }
+        }
       }
     }
     ParameterOverrideMap {
@@ -3027,6 +3147,12 @@ Objects {
         }
         Overrides {
           Name: "CoreProxy.CameraCollidable"
+          Enum {
+            Value: "mc:ecollisionsetting:forceoff"
+          }
+        }
+        Overrides {
+          Name: "Collidable"
           Enum {
             Value: "mc:ecollisionsetting:forceoff"
           }
@@ -3145,6 +3271,12 @@ Objects {
             Value: "mc:ecollisionsetting:forceoff"
           }
         }
+        Overrides {
+          Name: "Collidable"
+          Enum {
+            Value: "mc:ecollisionsetting:forceoff"
+          }
+        }
       }
     }
     ParameterOverrideMap {
@@ -3255,6 +3387,12 @@ Objects {
         }
         Overrides {
           Name: "CoreProxy.CameraCollidable"
+          Enum {
+            Value: "mc:ecollisionsetting:forceoff"
+          }
+        }
+        Overrides {
+          Name: "Collidable"
           Enum {
             Value: "mc:ecollisionsetting:forceoff"
           }
@@ -3374,6 +3512,12 @@ Objects {
             Value: "mc:ecollisionsetting:forceoff"
           }
         }
+        Overrides {
+          Name: "Collidable"
+          Enum {
+            Value: "mc:ecollisionsetting:forceoff"
+          }
+        }
       }
     }
     ParameterOverrideMap {
@@ -3485,6 +3629,12 @@ Objects {
         }
         Overrides {
           Name: "CoreProxy.CameraCollidable"
+          Enum {
+            Value: "mc:ecollisionsetting:forceoff"
+          }
+        }
+        Overrides {
+          Name: "Collidable"
           Enum {
             Value: "mc:ecollisionsetting:forceoff"
           }
@@ -3606,6 +3756,12 @@ Objects {
             Value: "mc:ecollisionsetting:forceoff"
           }
         }
+        Overrides {
+          Name: "Collidable"
+          Enum {
+            Value: "mc:ecollisionsetting:forceoff"
+          }
+        }
       }
     }
     ParameterOverrideMap {
@@ -3720,6 +3876,12 @@ Objects {
             Value: "mc:ecollisionsetting:forceoff"
           }
         }
+        Overrides {
+          Name: "Collidable"
+          Enum {
+            Value: "mc:ecollisionsetting:forceoff"
+          }
+        }
       }
     }
     ParameterOverrideMap {
@@ -3828,6 +3990,12 @@ Objects {
         }
         Overrides {
           Name: "CoreProxy.CameraCollidable"
+          Enum {
+            Value: "mc:ecollisionsetting:forceoff"
+          }
+        }
+        Overrides {
+          Name: "Collidable"
           Enum {
             Value: "mc:ecollisionsetting:forceoff"
           }

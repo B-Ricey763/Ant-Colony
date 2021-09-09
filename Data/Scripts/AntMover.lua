@@ -7,16 +7,17 @@ local function GetAntSpeed(ant)
 	return ant:GetCustomProperty("Speed") * ant:GetCustomProperty("SpeedMultiplier")
 end
 
-local function CastToGround(ant)
-	return World.Raycast(ant:GetWorldPosition(), ant:GetWorldPosition() - Vector3.UP * 10000)
+local function CastToGround(pos)
+	return World.Raycast(pos + Vector3.UP * 10000, pos - Vector3.UP * 10000)
 end
 
 local AntMover = {}
 
 function AntMover.Forward(ant, forward, mult)
-	local dist = GetAntSpeed(ant) * (mult or 1) -- to handle nil cases
+	mult = (mult or 1)
+	local dist = GetAntSpeed(ant) * mult -- to handle nil cases
 	-- Make ant respect gravity
-	local groundResult = CastToGround(ant)
+	local groundResult = CastToGround(ant:GetWorldPosition())
 	local heightOffGround = ant:GetWorldPosition().z
 	if groundResult and groundResult.other.name ~= "Pheromone" then -- may need to check for other objects in the future
 		heightOffGround = groundResult:GetImpactPosition().z + DIST_TO_GROUND
@@ -27,6 +28,13 @@ function AntMover.Forward(ant, forward, mult)
 		flatten(ant:GetWorldPosition()) + rot*Vector3.New(dist, 0, heightOffGround),
 		Vector3.ONE
 	)
+
+	-- raycast to prevent movement inside terrain
+	local hitResult =  CastToGround(trans:GetPosition())
+	if (hitResult) then
+		trans:SetPosition(hitResult:GetImpactPosition() + Vector3.New(0,0,DIST_TO_GROUND))
+	end
+
 	ant:SetTransform(trans)
 end
 

@@ -53,7 +53,7 @@ Assets {
           }
           Overrides {
             Name: "cs:AntLifespan"
-            Int: 180
+            Int: 60
           }
           Overrides {
             Name: "cs:ownerId"
