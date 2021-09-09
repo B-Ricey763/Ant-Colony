@@ -1,3 +1,4 @@
+
 Events.Connect("GetMouseHit", function ()
 	local hit = UI.GetCursorHitResult()
 	if hit then

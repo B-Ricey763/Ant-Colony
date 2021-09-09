@@ -21,7 +21,6 @@ local function OnBeginOverlap(trigger, hit)
 		end
 		ant:SetNetworkedCustomProperty("Health", ant:GetCustomProperty("MaxHealth"))
 		ant.lifeSpan = LIFESPAN -- replenish ant lifespan
-		print("Lifespan set")
 	end
 end
 

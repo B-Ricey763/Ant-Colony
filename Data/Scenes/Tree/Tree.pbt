@@ -1209,7 +1209,7 @@ Objects {
     Value: "mc:eindicatorvisibility:visiblewhenselected"
   }
   Control {
-    Width: 500
+    Width: 662
     Height: 500
     RenderTransformPivot {
       Anchor {
@@ -1267,7 +1267,7 @@ Objects {
     Value: "mc:eindicatorvisibility:visiblewhenselected"
   }
   Control {
-    Width: 484
+    Width: 651
     Height: 1302
     RenderTransformPivot {
       Anchor {
@@ -1407,7 +1407,7 @@ Objects {
     UseParentWidth: true
     UseParentHeight: true
     Text {
-      Label: "Your goal is to have as many ants as possible by the end of the game. You can accomplish this by retrieving food (from the yellow coral) or attacking other nests and stealing their food. \r\n\r\nYour ants only follow the pheromones you place. You have a choice of 4 pheromones: \r\n- Follow (blue): all ants are attracted \r\n- Food (green): same as follow, but only for workers\r\n- Fight (red): same as follow, but only for soldiers\r\n- Block (orange): ants are replled and go the opposite way \r\n\r\nYou can either click on the pheromone to select it, or press F to cycle through them. Place pheromones with Left Click, and delete them with Right click.\r\nUse pheromones to coerce ants to get food or attack enemies.\r\n\r\nYou can breed more ants by going to your ant\'s nest and clicking \'Manage Nest\'. Workers ants can get food, and soldiers attack enemy ants and nests.\r\n"
+      Label: "Controls:\r\n- WASD: camera movement\r\n- Right click drag: pan camera\r\n- Left click: interact with button or place pheromone\r\n- Right click (on pheromone): delete pheromone\r\n- F: Cycle pheromones\r\n\r\nYou have a choice of 4 pheromones: \r\n- Follow (blue): all ants are attracted \r\n- Food (green): same as follow, but only for workers\r\n- Fight (red): same as follow, but only for soldiers\r\n- Block (orange): ants are replled and go the opposite way \r\n\r\nYou can either click on the pheromone to select it, or press F to cycle through them. Place pheromones with Left Click, and delete them with Right click.\r\nUse pheromones to coerce ants to get food or attack enemies.\r\n\r\nYou can breed more ants by going to your ant\'s nest and clicking \'Manage Nest\'. Workers ants can get food, and soldiers attack enemy ants and nests."
       Color {
         R: 1
         G: 1
@@ -2016,7 +2016,6 @@ Objects {
       }
     }
     Text {
-      Label: "10/100"
       Color {
         R: 1
         G: 1
@@ -4112,7 +4111,7 @@ Objects {
         }
         Overrides {
           Name: "cs:RequiredPlayers"
-          Int: 2
+          Int: 1
         }
         Overrides {
           Name: "cs:CountdownTime"

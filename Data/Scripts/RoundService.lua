@@ -94,6 +94,7 @@ Events.Connect("GameStateChanged", function (oldState, newState)
 
 		local teamNum = 1
 		local function HandlePlayer(player)
+			player.team = teamNum
 			currentDump:Dump(NewColony(player))
 
 			local plotter = GivePherPlotter(player)	
