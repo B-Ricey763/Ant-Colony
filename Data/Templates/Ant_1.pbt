@@ -21,7 +21,7 @@ Assets {
         UnregisteredParameters {
           Overrides {
             Name: "cs:Speed"
-            Float: 3
+            Float: 7
           }
           Overrides {
             Name: "cs:Type"
@@ -124,9 +124,9 @@ Assets {
           Rotation {
           }
           Scale {
-            X: 10
-            Y: 10
-            Z: 10
+            X: 12
+            Y: 12
+            Z: 12
           }
         }
         ParentId: 10502976312462210973

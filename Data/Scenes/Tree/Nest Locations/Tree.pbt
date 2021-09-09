@@ -5,8 +5,9 @@ Objects {
   Name: "Location"
   Transform {
     Location {
-      X: -4200
-      Y: -3725
+      X: -4320.98975
+      Y: -10221.8721
+      Z: 706.516357
     }
     Rotation {
     }
@@ -41,8 +42,9 @@ Objects {
   Name: "Location"
   Transform {
     Location {
-      X: -3875
-      Y: 2900
+      X: -9926.1416
+      Y: -2126.50781
+      Z: -1014.36597
     }
     Rotation {
     }
@@ -77,8 +79,9 @@ Objects {
   Name: "Location"
   Transform {
     Location {
-      X: 2650
-      Y: 2800
+      X: 2561.71655
+      Y: 9383.38086
+      Z: -160.69165
     }
     Rotation {
     }
@@ -113,8 +116,9 @@ Objects {
   Name: "Location"
   Transform {
     Location {
-      X: 2925
-      Y: -3050
+      X: 7944.69141
+      Y: -2469.69434
+      Z: 298.761475
     }
     Rotation {
     }

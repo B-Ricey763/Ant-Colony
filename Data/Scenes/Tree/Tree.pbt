@@ -23,14 +23,14 @@ Objects {
   ChildIds: 8392845933411341608
   ChildIds: 454358636617086563
   ChildIds: 7367735074338159388
-  ChildIds: 16813558807825262224
   ChildIds: 10005074784157121906
   ChildIds: 7520989526994721992
   ChildIds: 6897298561226954270
   ChildIds: 2368975877374970626
-  ChildIds: 14982843161775482339
   ChildIds: 5427778489820607815
   ChildIds: 7685750237959686306
+  ChildIds: 862353579387282318
+  ChildIds: 12970298982235668036
   UnregisteredParameters {
   }
   Collidable_v2 {
@@ -43,6 +43,286 @@ Objects {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
   Folder {
+  }
+}
+Objects {
+  Id: 12970298982235668036
+  Name: "Spawn Point"
+  Transform {
+    Location {
+      X: 1038.93115
+      Y: 207.308472
+      Z: 390.871094
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 4781671109827199097
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:alwaysvisible"
+  }
+  PlayerSpawnPoint {
+    TeamInt: 1
+    PlayerScaleMultiplier: 1
+    SpawnEffectsTemplate {
+      Id: 841534158063459245
+    }
+    ShouldDecrowdPlayers: true
+  }
+}
+Objects {
+  Id: 862353579387282318
+  Name: "Terrain"
+  Transform {
+    Location {
+      Z: -2747.79248
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 4781671109827199097
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:forceon"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  Terrain {
+    Material {
+      Id: 5030354930978713592
+    }
+    VoxelSize: 100
+    OctreeDepth: 5
+    GeneratorID: "DEPRECATED"
+    Foliage {
+      Asset {
+        Id: 4105714613150027623
+      }
+      DistanceBetweenInstances: 300
+      MaterialChannel: 1
+      SpawnDistance: 22400
+      CullDistance {
+        Min: 10000
+        Max: 20000
+      }
+      CastShadow: true
+      ReceivesDecals: true
+      GroundSlopeAngle {
+        Max: 90
+      }
+      Scaling {
+        ScaleX {
+          Min: 0.2
+          Max: 1
+        }
+        ScaleY {
+          Min: 1
+          Max: 1
+        }
+        ScaleZ {
+          Min: 1
+          Max: 1
+        }
+      }
+      RotationAlignment: AlignToWorldUp
+      RandomYaw: true
+      RandomPitchAngle: 6
+      Materials {
+        key: "Shared_BaseMaterial"
+        value {
+          Id: 16683308601358407405
+        }
+      }
+      LocalPositionOffset {
+        Z: -10
+      }
+      LocalRotationOffset {
+      }
+      GlobalPositionOffset {
+        Z: -5
+      }
+      Height {
+        Min: -102400
+        Max: 102400
+      }
+    }
+    Foliage {
+      Asset {
+        Id: 14388474438489068814
+      }
+      DistanceBetweenInstances: 200
+      MaterialChannel: 1
+      SpawnDistance: 22400
+      CullDistance {
+        Min: 10000
+        Max: 20000
+      }
+      CastShadow: true
+      ReceivesDecals: true
+      GroundSlopeAngle {
+        Max: 90
+      }
+      Scaling {
+        ScaleX {
+          Min: 0.1
+          Max: 0.3
+        }
+        ScaleY {
+          Min: 1
+          Max: 1
+        }
+        ScaleZ {
+          Min: 1
+          Max: 1
+        }
+      }
+      RotationAlignment: AlignToWorldUp
+      RandomYaw: true
+      RandomPitchAngle: 20
+      Materials {
+        key: "Shared_BaseMaterial"
+        value {
+          Id: 16683308601358407405
+        }
+      }
+      LocalPositionOffset {
+        Z: -10
+      }
+      LocalRotationOffset {
+      }
+      GlobalPositionOffset {
+        Z: -10
+      }
+      Height {
+        Min: -102400
+        Max: 102400
+      }
+    }
+    Foliage {
+      Asset {
+        Id: 10835155324150586940
+      }
+      DistanceBetweenInstances: 200
+      SpawnDistance: 22400
+      CullDistance {
+        Min: 10000
+        Max: 20000
+      }
+      ReceivesDecals: true
+      GroundSlopeAngle {
+        Max: 20
+      }
+      Scaling {
+        Scaling: LockXY
+        ScaleX {
+          Min: 1
+          Max: 1
+        }
+        ScaleY {
+          Min: 1
+          Max: 1
+        }
+        ScaleZ {
+          Min: 0.1
+          Max: 0.5
+        }
+      }
+      RandomYaw: true
+      RandomPitchAngle: 6
+      Materials {
+        key: "Shared_BaseMaterial"
+        value {
+          Id: 15540049894418943816
+        }
+      }
+      LocalPositionOffset {
+        Z: -10
+      }
+      LocalRotationOffset {
+      }
+      GlobalPositionOffset {
+        Z: -5
+      }
+      Height {
+        Min: -102400
+        Max: 102400
+      }
+    }
+    Foliage {
+      Asset {
+        Id: 10835155324150586940
+      }
+      DistanceBetweenInstances: 500
+      SpawnDistance: 22400
+      CullDistance {
+        Min: 10000
+        Max: 20000
+      }
+      ReceivesDecals: true
+      GroundSlopeAngle {
+        Max: 20
+      }
+      Scaling {
+        ScaleX {
+          Min: 1
+          Max: 2
+        }
+        ScaleY {
+          Min: 1
+          Max: 1
+        }
+        ScaleZ {
+          Min: 0.1
+          Max: 0.5
+        }
+      }
+      RandomYaw: true
+      RandomPitchAngle: 6
+      Materials {
+        key: "Shared_BaseMaterial"
+        value {
+          Id: 15540049894418943816
+        }
+      }
+      LocalPositionOffset {
+        Z: -10
+      }
+      LocalRotationOffset {
+      }
+      GlobalPositionOffset {
+        Z: -10
+      }
+      Height {
+        Min: -102400
+        Max: 102400
+      }
+    }
+    MaxLOD: 32
   }
 }
 Objects {
@@ -134,49 +414,6 @@ Objects {
   }
 }
 Objects {
-  Id: 14982843161775482339
-  Name: "Default Floor"
-  Transform {
-    Location {
-      Z: -50
-    }
-    Rotation {
-    }
-    Scale {
-      X: 100
-      Y: 100
-      Z: 1
-    }
-  }
-  ParentId: 4781671109827199097
-  UnregisteredParameters {
-  }
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:forceon"
-  }
-  CoreMesh {
-    MeshAsset {
-      Id: 12095835209017042614
-    }
-    Teams {
-      IsTeamCollisionEnabled: true
-      IsEnemyCollisionEnabled: true
-    }
-    InteractWithTriggers: true
-    StaticMesh {
-      Physics {
-      }
-      BoundsScale: 1
-    }
-  }
-}
-Objects {
   Id: 2368975877374970626
   Name: "Runtime"
   Transform {
@@ -213,6 +450,7 @@ Objects {
   Name: "Food Locations"
   Transform {
     Location {
+      Z: -52.3212891
     }
     Rotation {
     }
@@ -245,6 +483,7 @@ Objects {
   Name: "Nest Locations"
   Transform {
     Location {
+      Z: 208.654053
     }
     Rotation {
     }
@@ -623,41 +862,6 @@ Objects {
     BlueprintAsset {
       Id: 7887238662729938253
     }
-  }
-}
-Objects {
-  Id: 16813558807825262224
-  Name: "Spawn Point"
-  Transform {
-    Location {
-      Z: -375
-    }
-    Rotation {
-    }
-    Scale {
-      X: 1
-      Y: 1
-      Z: 1
-    }
-  }
-  ParentId: 4781671109827199097
-  UnregisteredParameters {
-  }
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  EditorIndicatorVisibility {
-    Value: "mc:eindicatorvisibility:alwaysvisible"
-  }
-  PlayerSpawnPoint {
-    TeamInt: 1
-    PlayerScaleMultiplier: 1
   }
 }
 Objects {
