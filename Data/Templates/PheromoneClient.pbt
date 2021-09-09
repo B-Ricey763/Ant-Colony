@@ -12,7 +12,7 @@ Assets {
           Scale {
             X: 1
             Y: 1
-            Z: 1
+            Z: 2
           }
         }
         ParentId: 4781671109827199097
@@ -24,15 +24,15 @@ Assets {
           Overrides {
             Name: "ma:Shared_BaseMaterial:id"
             AssetReference {
-              Id: 247491278714534575
+              Id: 9380945477228822454
             }
           }
           Overrides {
             Name: "ma:Shared_BaseMaterial:color"
             Color {
-              R: 0.170000017
-              G: 1
-              B: 0.901059866
+              R: 12.8741264
+              G: 100
+              B: 8.00000381
               A: 1
             }
           }
@@ -55,7 +55,7 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: 883985107983124514
+            Id: 11767570182938301858
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -73,21 +73,12 @@ Assets {
       }
     }
     Assets {
-      Id: 883985107983124514
-      Name: "Sphere"
+      Id: 11767570182938301858
+      Name: "Cone - Concave"
       PlatformAssetType: 1
       PrimaryAsset {
         AssetType: "StaticMeshAssetRef"
-        AssetId: "sm_sphere_002"
-      }
-    }
-    Assets {
-      Id: 247491278714534575
-      Name: "Emissive Glow Opaque"
-      PlatformAssetType: 2
-      PrimaryAsset {
-        AssetType: "MaterialAssetRef"
-        AssetId: "fxma_opaque_emissive"
+        AssetId: "sm_cone_convex_001"
       }
     }
     PrimaryAssetId {

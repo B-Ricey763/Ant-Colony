@@ -58,7 +58,7 @@ function AttackActivity.tickHighestPriority(activity, dt)
 		activity.priority = Priorities.INACTIVE
 		target = nil
 	elseif dist.size > minDist then
-		local hit, diff = AntMover.MoveTo(ant, target, 1, 500)
+		local hit, diff = AntMover.MoveTo(ant, target, dt, 500)
 	elseif time() > lastAttackTime + ATTACK_SPEED then
 		Attack(target)
 		lastAttackTime = time()

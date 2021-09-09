@@ -15,10 +15,10 @@ function FoodActivity.tick(activity, dt)
 	end
 end
 
-function FoodActivity.tickHighestPriority(activity)
+function FoodActivity.tickHighestPriority(activity, dt)
 	local currentPher = PherTracker.context.Current
 	if Object.IsValid(currentPher) then
-		local arrived = AntMover.MoveTo(ant, currentPher)
+		local arrived = AntMover.MoveTo(ant, currentPher, dt)
 		if arrived then
 			activity.priority = Priorities.INACTIVE
 			PherTracker.context.Current = nil

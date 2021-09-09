@@ -18,7 +18,7 @@ function Roam.tickHighestPriority(activity, dt)
 	end
 	-- this just gets the ant moving in a somewhat random pattern
 	-- local rot = Rotation.New(0, 0, randDir)
-	AntMover.Forward(ant, ant:GetTransform():GetForwardVector())
+	AntMover.Forward(ant, ant:GetTransform():GetForwardVector(), dt)
 
 	timeLeft = timeLeft - dt
 end

@@ -358,6 +358,56 @@ Objects {
         Max: 102400
       }
     }
+    Foliage {
+      Asset {
+        Id: 10835155324150586940
+      }
+      DistanceBetweenInstances: 300
+      MaterialChannel: 1
+      SpawnDistance: 22400
+      CullDistance {
+        Min: 10000
+        Max: 20000
+      }
+      ReceivesDecals: true
+      GroundSlopeAngle {
+        Max: 90
+      }
+      Scaling {
+        ScaleX {
+          Min: 0.1
+          Max: 2
+        }
+        ScaleY {
+          Min: 1
+          Max: 1
+        }
+        ScaleZ {
+          Min: 1
+          Max: 1
+        }
+      }
+      RotationAlignment: AlignToWorldUp
+      RandomYaw: true
+      RandomPitchAngle: 6
+      Materials {
+        key: "Shared_BaseMaterial"
+        value {
+          Id: 16683308601358407405
+        }
+      }
+      LocalPositionOffset {
+        Z: -10
+      }
+      LocalRotationOffset {
+      }
+      GlobalPositionOffset {
+      }
+      Height {
+        Min: -102400
+        Max: 102400
+      }
+    }
     MaxLOD: 32
   }
 }
@@ -398,7 +448,7 @@ Objects {
   Name: "PlayerPrison"
   Transform {
     Location {
-      Z: -1000
+      Z: -974.31
     }
     Rotation {
     }
@@ -668,6 +718,18 @@ Objects {
         B: 0.77
         A: 1
       }
+    }
+    Overrides {
+      Name: "bp:Shadow Cascade Count"
+      Int: 3
+    }
+    Overrides {
+      Name: "bp:Dynamic Shadow Distance"
+      Float: 20
+    }
+    Overrides {
+      Name: "bp:Soft Distance Shadows"
+      Bool: true
     }
   }
   Collidable_v2 {
@@ -4131,7 +4193,7 @@ Objects {
     }
     Overrides {
       Name: "cs:Speed"
-      Int: 20
+      Int: 4000
     }
   }
   Collidable_v2 {

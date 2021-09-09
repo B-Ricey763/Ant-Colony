@@ -21,7 +21,7 @@ Assets {
         UnregisteredParameters {
           Overrides {
             Name: "cs:Speed"
-            Float: 5
+            Float: 400
           }
           Overrides {
             Name: "cs:Type"

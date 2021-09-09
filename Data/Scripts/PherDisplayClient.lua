@@ -5,8 +5,21 @@ local DeleteSound = script:GetCustomProperty("DeleteSound"):WaitForObject()
 Events.Connect("SpawnPher", function (id, pos, color)
 	ClickSound:Play()
 	local p = World.SpawnAsset(PHER_CLIENT, { parent = script.parent, position = pos })
-	p:SetColor(color)
-	p.name = id 
+	p:SetColor(color*100)
+	p.name = id
+
+	local player = Game.GetLocalPlayer()
+	local p0 = player:GetViewWorldPosition()
+	local dir = (pos - p0):GetNormalized()
+	local hitResult = World.Raycast(pos-(dir*100), pos+(dir*100), {ignorePlayers = true})
+	if (hitResult) then
+		local n = hitResult:GetImpactNormal();
+		--CoreDebug.DrawLine(hitResult:GetImpactPosition(), hitResult:GetImpactPosition() + n*100 , {thickness = 3, color = Color.GREEN, duration = 10})
+
+		local rot = hitResult:GetTransform():GetRotation() * Rotation.New(0, -90, 0)
+		p:SetWorldRotation(rot)
+		p:SetWorldPosition(pos + n*10)
+	end
 end)
 
 Events.Connect("DestroyPher", function (id)
