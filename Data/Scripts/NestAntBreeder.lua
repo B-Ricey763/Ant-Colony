@@ -3,6 +3,7 @@ local LIFESPAN = nest:GetCustomProperty("AntLifespan")
 local AntTypes = require(nest:GetCustomProperty("AntTypes"))
 local TableUtil = require(nest:GetCustomProperty("TableUtil"))
 local NestLevels = require(nest:GetCustomProperty("NestLevels"))
+local SpawnSound = script:GetCustomProperty("SpawnSound"):WaitForObject()
 
 local ANT_REFS = {
 	Worker = nest:GetCustomProperty("WorkerAnt"),
@@ -27,6 +28,8 @@ local function RandOrientAnt(antObj)
 	antObj:SetRotation(rot)
 end
 local function BreedAnt(player, ant)
+	SpawnSound:Play()
+
 	local antFolder = nest:GetCustomProperty("Ants"):WaitForObject()
 	local antObject = World.SpawnAsset(ANT_REFS[ant.name], { position = nest:GetWorldPosition(), parent = antFolder })
 	antObject.lifeSpan = LIFESPAN -- seconds, but this will refresh each time they return to the colony

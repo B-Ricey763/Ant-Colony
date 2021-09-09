@@ -22,7 +22,6 @@ Objects {
   ChildIds: 11597600141301826485
   ChildIds: 9576951935212435405
   ChildIds: 12714067542726692821
-  ChildIds: 7839871099400316208
   ChildIds: 4741451879244529076
   UnregisteredParameters {
   }
@@ -561,51 +560,6 @@ Objects {
     SubobjectId: 1660701934579842156
     InstanceId: 6025170810818115258
     TemplateId: 9439221140441414754
-  }
-}
-Objects {
-  Id: 7839871099400316208
-  Name: "Nest"
-  Transform {
-    Scale {
-      X: 1
-      Y: 1
-      Z: 1
-    }
-  }
-  ParentId: 4781671109827199097
-  WantsNetworking: true
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  TemplateInstance {
-    ParameterOverrideMap {
-      key: 2524265454032193188
-      value {
-        Overrides {
-          Name: "Name"
-          String: "Nest"
-        }
-        Overrides {
-          Name: "Position"
-          Vector {
-            X: -150
-            Y: -675
-          }
-        }
-        Overrides {
-          Name: "Rotation"
-          Rotator {
-          }
-        }
-      }
-    }
-    TemplateAsset {
-      Id: 7135105357064074460
-    }
   }
 }
 Objects {

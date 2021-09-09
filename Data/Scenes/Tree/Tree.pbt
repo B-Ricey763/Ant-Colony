@@ -4075,7 +4075,7 @@ Objects {
         }
         Overrides {
           Name: "cs:RoundDuration"
-          Float: 420
+          Float: 600
         }
       }
     }
@@ -4170,6 +4170,8 @@ Objects {
     }
   }
   ParentId: 8012439127383893651
+  UnregisteredParameters {
+  }
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -4234,11 +4236,25 @@ Objects {
     }
   }
   ParentId: 11323072938959794239
+  ChildIds: 1047018245907219594
+  ChildIds: 11844344003705736670
   UnregisteredParameters {
     Overrides {
       Name: "cs:PheromoneClient"
       AssetReference {
         Id: 8756663139210238839
+      }
+    }
+    Overrides {
+      Name: "cs:ClickSound"
+      ObjectReference {
+        SelfId: 1047018245907219594
+      }
+    }
+    Overrides {
+      Name: "cs:DeleteSound"
+      ObjectReference {
+        SelfId: 11844344003705736670
       }
     }
   }
@@ -4258,6 +4274,78 @@ Objects {
     ScriptAsset {
       Id: 16708675242364163830
     }
+  }
+}
+Objects {
+  Id: 11844344003705736670
+  Name: "Clunky Click 01 SFX"
+  Transform {
+    Location {
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 4996203729211021938
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  AudioInstance {
+    AudioAsset {
+      Id: 6544983616475859657
+    }
+    Volume: 1
+    Falloff: -1
+    Radius: -1
+  }
+}
+Objects {
+  Id: 1047018245907219594
+  Name: "Crispy Click 01 SFX"
+  Transform {
+    Location {
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 4996203729211021938
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  AudioInstance {
+    AudioAsset {
+      Id: 13958349693925145497
+    }
+    Volume: 1
+    Falloff: -1
+    Radius: -1
   }
 }
 Objects {

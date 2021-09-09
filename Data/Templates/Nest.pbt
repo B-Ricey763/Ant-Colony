@@ -19,6 +19,8 @@ Assets {
         ChildIds: 16948506006131246756
         ChildIds: 5288328143641997138
         ChildIds: 7553776193849367170
+        ChildIds: 1579751937298286109
+        ChildIds: 2655075490869749270
         ChildIds: 8665522750775552507
         UnregisteredParameters {
           Overrides {
@@ -115,6 +117,14 @@ Assets {
           }
         }
         ParentId: 2524265454032193188
+        UnregisteredParameters {
+          Overrides {
+            Name: "cs:SpawnSound"
+            ObjectReference {
+              SubObjectId: 1579751937298286109
+            }
+          }
+        }
         WantsNetworking: true
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
@@ -152,6 +162,7 @@ Assets {
         ChildIds: 16321086256260597762
         ChildIds: 54196432698546914
         ChildIds: 9911070672485469393
+        ChildIds: 1900995566298355330
         WantsNetworking: true
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
@@ -280,6 +291,39 @@ Assets {
         Script {
           ScriptAsset {
             Id: 528607838593141041
+          }
+        }
+      }
+      Objects {
+        Id: 1900995566298355330
+        Name: "DamageSoundPlayer"
+        Transform {
+          Location {
+          }
+          Rotation {
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 5288328143641997138
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        Script {
+          ScriptAsset {
+            Id: 834346235161507982
           }
         }
       }
@@ -827,6 +871,95 @@ Assets {
         }
       }
       Objects {
+        Id: 1579751937298286109
+        Name: "SpawnSound"
+        Transform {
+          Location {
+            Z: 200
+          }
+          Rotation {
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 2524265454032193188
+        WantsNetworking: true
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        AudioInstance {
+          AudioAsset {
+            Id: 2305384533118072087
+          }
+          Volume: 1
+          Falloff: -1
+          Radius: -1
+          EnableOcclusion: true
+          IsSpatializationEnabled: true
+          IsAttenuationEnabled: true
+        }
+      }
+      Objects {
+        Id: 2655075490869749270
+        Name: "DamageSound"
+        Transform {
+          Location {
+          }
+          Rotation {
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 2524265454032193188
+        UnregisteredParameters {
+          Overrides {
+            Name: "cs:DamageSound"
+            ObjectReference {
+              SubObjectId: 2655075490869749270
+            }
+          }
+        }
+        WantsNetworking: true
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        AudioInstance {
+          AudioAsset {
+            Id: 11993725954444829397
+          }
+          Volume: 1
+          Falloff: -1
+          Radius: -1
+          EnableOcclusion: true
+          IsSpatializationEnabled: true
+          IsAttenuationEnabled: true
+        }
+      }
+      Objects {
         Id: 8665522750775552507
         Name: "Collider"
         Transform {
@@ -889,6 +1022,24 @@ Assets {
       PrimaryAsset {
         AssetType: "MaterialAssetRef"
         AssetId: "dirt_001"
+      }
+    }
+    Assets {
+      Id: 2305384533118072087
+      Name: "Fast Liquid Bubbles Bloop Water Bubbling Pops 01 SFX"
+      PlatformAssetType: 7
+      PrimaryAsset {
+        AssetType: "AudioAssetRef"
+        AssetId: "sfx_fast_liquid_bubbles_bloop_water_bubbling_pops_01_Cue_ref"
+      }
+    }
+    Assets {
+      Id: 11993725954444829397
+      Name: "Shield Hit Impact 01 SFX"
+      PlatformAssetType: 7
+      PrimaryAsset {
+        AssetType: "AudioAssetRef"
+        AssetId: "sfx_shield_hit_impact_01a_Cue_ref"
       }
     }
     Assets {

@@ -17,6 +17,15 @@ Assets {
   }
 }
 Assets {
+  Id: 13958349693925145497
+  Name: "Crispy Click 01 SFX"
+  PlatformAssetType: 7
+  PrimaryAsset {
+    AssetType: "AudioAssetRef"
+    AssetId: "sfx_ui_crispy_click_01_Cue_ref"
+  }
+}
+Assets {
   Id: 13084265199108517588
   Name: "Icon Arrow"
   PlatformAssetType: 9
@@ -50,6 +59,15 @@ Assets {
   PrimaryAsset {
     AssetType: "BlueprintAssetRef"
     AssetId: "CORESKY_Sky"
+  }
+}
+Assets {
+  Id: 6544983616475859657
+  Name: "Clunky Click 01 SFX"
+  PlatformAssetType: 7
+  PrimaryAsset {
+    AssetType: "AudioAssetRef"
+    AssetId: "sfx_ui_chunky_click_01_Cue_ref"
   }
 }
 Assets {
