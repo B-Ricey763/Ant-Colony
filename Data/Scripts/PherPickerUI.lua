@@ -17,3 +17,11 @@ for i, butt in pairs(pherButtons:GetChildren()) do
 		Events.BroadcastToServer("SwitchToPher", butt.name)
 	end)
 end
+
+Events.Connect("GameStateChanged", function (old, new)
+	if new ~= 1 then
+		script.parent.visibility = Visibility.FORCE_OFF
+	else
+		script.parent.visibility = Visibility.INHERIT
+	end
+end)

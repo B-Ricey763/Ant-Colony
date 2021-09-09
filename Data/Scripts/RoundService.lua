@@ -91,8 +91,9 @@ end
 Events.Connect("GameStateChanged", function (oldState, newState)
 	if newState == ROUND_STATE then
 		currentDump = Dumpster.New()
-		for i, player in ipairs(Game.GetPlayers()) do
-			player.team = i -- assign each player a team number, 1-4
+
+		local teamNum = 1
+		local function HandlePlayer(player)
 			currentDump:Dump(NewColony(player))
 
 			local plotter = GivePherPlotter(player)	
@@ -103,7 +104,18 @@ Events.Connect("GameStateChanged", function (oldState, newState)
 					equip:Unequip()
 				end
 			end)
+
+			teamNum = teamNum + 1
 		end
+
+		-- Hanlde players initially
+		for i, player in ipairs(Game.GetPlayers()) do
+			HandlePlayer(player)
+		end
+		-- Handle players joining in progress
+		currentDump:Dump(Game.playerJoinedEvent:Connect(function (plr)
+			HandlePlayer(plr)
+		end))
 
 		for i = 1, #foodLocations:GetChildren() do
 			currentDump:Dump(NewFood())

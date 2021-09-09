@@ -33,6 +33,8 @@ local function Manage()
 	end
 
 	if player.id ~= nest:GetCustomProperty("ownerId") then return end
+	-- Let the player know its theirs
+	name.text = "Your nest"
 
 	manageButton.visibility = Visibility.INHERIT
 	manageButton.clickedEvent:Connect(function ()
@@ -63,4 +65,4 @@ script.destroyEvent:Connect(function ()
 end)
 
 
-local b = billboard.New(nest, script.parent, Vector3.UP * 1250)
+local b = billboard.New(nest, script.parent, Vector3.UP * 1000)
