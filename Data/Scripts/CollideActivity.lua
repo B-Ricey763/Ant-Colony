@@ -16,11 +16,14 @@ local currentResult = nil
 
 function Collide.tick(activity, dt)
 	-- project a ray forward, checking for obstacles
-	local hitResult = World.Raycast(ant:GetPosition(), ant:GetTransform():TransformPosition(Vector3.FORWARD * 100))
+	local opts = {
+		checkObjects = World.FindObjectsByName("Border Wall")
+	}
+	local hitResult = World.Raycast(ant:GetPosition(), ant:GetTransform():TransformPosition(Vector3.FORWARD * 100), opts)
 	if hitResult and hitResult.other.name ~= "Pheromone" then
 		-- disabled for now...
-		--activity.priority = Priorities.URGENT + 1 -- it should always fire
-		--currentResult = hitResult
+		activity.priority = Priorities.URGENT + 1 -- it should always fire
+		currentResult = hitResult
 	end
 end
 

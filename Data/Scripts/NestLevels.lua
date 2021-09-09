@@ -4,7 +4,7 @@ return {
 		maxHealth = 100,
 		maxFood = 100,
 		maxAnts = 25,
-		maxPher = 50,
+		maxPher = 250,
 	},
 	{
 		cost = 100,

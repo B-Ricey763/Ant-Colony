@@ -6,4 +6,5 @@ Events.Connect("GetMouseHit", function ()
 	else
 		Events.BroadcastToServer("MouseHit", nil) -- send nothing, but server still needs to update
 	end
+	wasClicked = false
 end)

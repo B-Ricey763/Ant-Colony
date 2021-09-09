@@ -86,6 +86,6 @@ player.resourceChangedEvent:Connect(function (player, resource)
 	elseif resource == AntTypes[currentAntIndex].name .. "Num" then
 		antNum.text = ("%i total"):format(player:GetResource(resource))
 	elseif resource == "Ants" then
-		totalAntNum.text = player:GetResource(resource) .. "/" .. GetMax("maxAnts") .. " total ants"
+		totalAntNum.text = player:GetResource(resource) .. " total ants"
 	end
 end)

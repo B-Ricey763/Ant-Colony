@@ -23,6 +23,7 @@ Objects {
   ChildIds: 9576951935212435405
   ChildIds: 12714067542726692821
   ChildIds: 4741451879244529076
+  ChildIds: 15630421200723345303
   UnregisteredParameters {
   }
   Collidable_v2 {
@@ -35,6 +36,39 @@ Objects {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
   Folder {
+  }
+}
+Objects {
+  Id: 15630421200723345303
+  Name: "Nest"
+  Transform {
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 4781671109827199097
+  WantsNetworking: true
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  TemplateInstance {
+    ParameterOverrideMap {
+      key: 2524265454032193188
+      value {
+        Overrides {
+          Name: "Name"
+          String: "Nest"
+        }
+      }
+    }
+    TemplateAsset {
+      Id: 7135105357064074460
+    }
   }
 }
 Objects {

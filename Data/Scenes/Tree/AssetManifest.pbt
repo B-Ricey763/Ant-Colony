@@ -26,12 +26,12 @@ Assets {
   }
 }
 Assets {
-  Id: 13084265199108517588
-  Name: "Icon Arrow"
+  Id: 12180544799063427018
+  Name: "Icon Arrow Swap"
   PlatformAssetType: 9
   PrimaryAsset {
     AssetType: "PlatformBrushAssetRef"
-    AssetId: "Icon_ArrowSpin"
+    AssetId: "Icon_ArrowSwap"
   }
 }
 Assets {

@@ -49,7 +49,9 @@ Events.ConnectForPlayer("Breed", function (player, breedType)
 	if player.id == nest:GetCustomProperty("ownerId") then
 		local ant = FindAntTypeByName(breedType)
 		local food = player:GetResource("Food")
-		if ant and food >= ant.cost and player:GetResource("Ants") < GetMax(player, "maxAnts") then
+		if ant and food >= ant.cost 
+	--		and player:GetResource("Ants") < GetMax(player, "maxAnts") 
+		then
 			player:RemoveResource("Food", ant.cost)
 			local queuedName = ant.name .. "Queued"
 			player:AddResource(queuedName, 1)

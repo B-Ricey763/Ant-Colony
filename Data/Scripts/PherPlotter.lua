@@ -33,6 +33,7 @@ local function WaitForMouseUpdate()
 end
 
 local function OnPlotExecute(ability)
+	print("exectued")
 	WaitForMouseUpdate()
 
 	local hit = ability:GetTargetData().hitObject
