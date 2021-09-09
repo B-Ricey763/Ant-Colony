@@ -4131,7 +4131,7 @@ Objects {
     }
     Overrides {
       Name: "cs:Speed"
-      Int: 10
+      Int: 20
     }
   }
   Collidable_v2 {
