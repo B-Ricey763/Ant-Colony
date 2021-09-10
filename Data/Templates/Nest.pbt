@@ -361,6 +361,7 @@ Assets {
         ParentId: 2524265454032193188
         ChildIds: 14983112654768895967
         ChildIds: 11897309993486708010
+        ChildIds: 12657602247224544786
         WantsNetworking: true
         Collidable_v2 {
           Value: "mc:ecollisionsetting:forceoff"
@@ -2037,8 +2038,8 @@ Assets {
           Value: "mc:eindicatorvisibility:visiblewhenselected"
         }
         Control {
-          Width: 200
-          Height: 60
+          Width: 112
+          Height: 40
           RenderTransformPivot {
             Anchor {
               Value: "mc:euianchor:middlecenter"
@@ -2053,7 +2054,7 @@ Assets {
               B: 1
               A: 1
             }
-            Size: 28
+            Size: 16
             Justification {
               Value: "mc:etextjustify:center"
             }
@@ -2062,7 +2063,7 @@ Assets {
               Id: 841534158063459245
             }
             VerticalJustification {
-              Value: "mc:everticaljustification:top"
+              Value: "mc:everticaljustification:center"
             }
             ShadowColor {
               A: 1
@@ -2116,9 +2117,9 @@ Assets {
           Value: "mc:eindicatorvisibility:visiblewhenselected"
         }
         Control {
-          Width: 450
-          Height: 44
-          UIY: -1.486
+          Width: 200
+          Height: 20
+          UIY: -42.0694351
           RenderTransformPivot {
             Anchor {
               Value: "mc:euianchor:middlecenter"
@@ -2197,6 +2198,7 @@ Assets {
         Control {
           Width: 200
           Height: 50
+          UIY: -40.5834351
           RenderTransformPivot {
             Anchor {
               Value: "mc:euianchor:middlecenter"
@@ -2265,6 +2267,39 @@ Assets {
                 Value: "mc:euianchor:bottomcenter"
               }
             }
+          }
+        }
+      }
+      Objects {
+        Id: 12657602247224544786
+        Name: "NestClientScript"
+        Transform {
+          Location {
+          }
+          Rotation {
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 7553776193849367170
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        Script {
+          ScriptAsset {
+            Id: 7316572509868228884
           }
         }
       }

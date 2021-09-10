@@ -1284,7 +1284,7 @@ Objects {
   }
   Control {
     Width: 500
-    Height: 500
+    Height: 400
     UIX: 1099.10144
     UIY: 414.739685
     RenderTransformPivot {
@@ -1476,9 +1476,9 @@ Objects {
     Value: "mc:eindicatorvisibility:visiblewhenselected"
   }
   Control {
-    Width: 472
-    Height: 60
-    UIY: -24.3812466
+    Width: 329
+    Height: 30
+    UIY: -102.166252
     RenderTransformPivot {
       Anchor {
         Value: "mc:euianchor:middlecenter"
@@ -1993,7 +1993,7 @@ Objects {
   Control {
     Width: 200
     Height: 60
-    UIY: -16.0214
+    UIY: -34.6222
     RenderTransformPivot {
       Anchor {
         Value: "mc:euianchor:middlecenter"
@@ -2266,9 +2266,9 @@ Objects {
     Value: "mc:eindicatorvisibility:visiblewhenselected"
   }
   Control {
-    Width: 472
-    Height: 60
-    UIY: 120
+    Width: 300
+    Height: 40
+    UIY: 95
     RenderTransformPivot {
       Anchor {
         Value: "mc:euianchor:middlecenter"
@@ -2362,9 +2362,9 @@ Objects {
         B: 1
         A: 1
       }
-      Size: 20
+      Size: 14
       Justification {
-        Value: "mc:etextjustify:left"
+        Value: "mc:etextjustify:center"
       }
       AutoWrapText: true
       Font {
@@ -2426,8 +2426,8 @@ Objects {
     Value: "mc:eindicatorvisibility:visiblewhenselected"
   }
   Control {
-    Width: 472
-    Height: 60
+    Width: 300
+    Height: 40
     UIY: 50
     RenderTransformPivot {
       Anchor {
@@ -2522,9 +2522,9 @@ Objects {
         B: 1
         A: 1
       }
-      Size: 20
+      Size: 14
       Justification {
-        Value: "mc:etextjustify:left"
+        Value: "mc:etextjustify:center"
       }
       AutoWrapText: true
       Font {
@@ -3507,8 +3507,8 @@ Objects {
     Value: "mc:eindicatorvisibility:visiblewhenselected"
   }
   Control {
-    Width: 500
-    Height: 100
+    Width: 400
+    Height: 40
     UIX: 1100
     UIY: 100
     RenderTransformPivot {
@@ -3569,6 +3569,7 @@ Objects {
       }
     }
     UseParentWidth: true
+    UseParentHeight: true
     Text {
       Label: "BRicey\'s Nest"
       Color {
@@ -3577,7 +3578,7 @@ Objects {
         B: 1
         A: 1
       }
-      Size: 22
+      Size: 12
       Justification {
         Value: "mc:etextjustify:center"
       }
@@ -3586,7 +3587,7 @@ Objects {
         Id: 841534158063459245
       }
       VerticalJustification {
-        Value: "mc:everticaljustification:top"
+        Value: "mc:everticaljustification:center"
       }
       ShadowColor {
         A: 1
@@ -3601,12 +3602,12 @@ Objects {
     AnchorLayout {
       SelfAnchor {
         Anchor {
-          Value: "mc:euianchor:topcenter"
+          Value: "mc:euianchor:middlecenter"
         }
       }
       TargetAnchor {
         Anchor {
-          Value: "mc:euianchor:topcenter"
+          Value: "mc:euianchor:middlecenter"
         }
       }
     }
@@ -3648,6 +3649,7 @@ Objects {
       }
     }
     UseParentWidth: true
+    UseParentHeight: true
     Text {
       Label: "BRicey\'s Nest"
       Color {
@@ -3656,7 +3658,7 @@ Objects {
         B: 1
         A: 1
       }
-      Size: 22
+      Size: 12
       Justification {
         Value: "mc:etextjustify:center"
       }
@@ -3665,7 +3667,7 @@ Objects {
         Id: 841534158063459245
       }
       VerticalJustification {
-        Value: "mc:everticaljustification:top"
+        Value: "mc:everticaljustification:center"
       }
       ShadowColor {
         A: 1
@@ -3680,12 +3682,12 @@ Objects {
     AnchorLayout {
       SelfAnchor {
         Anchor {
-          Value: "mc:euianchor:topcenter"
+          Value: "mc:euianchor:middlecenter"
         }
       }
       TargetAnchor {
         Anchor {
-          Value: "mc:euianchor:topcenter"
+          Value: "mc:euianchor:middlecenter"
         }
       }
     }
@@ -4512,7 +4514,7 @@ Objects {
         }
         Overrides {
           Name: "cs:RoundDuration"
-          Float: 600
+          Float: 900
         }
       }
     }

@@ -20,6 +20,9 @@ local function OnBeginOverlap(trigger, hit)
 			ant:SetNetworkedCustomProperty("CarryingFood", false)
 			ant:SetNetworkedCustomProperty("SpeedMultiplier", 1)
 			foodCollectSound:Play()
+
+			-- broadcasts food retrieved to client player
+			Events.BroadcastToPlayer(player, "EVENT_FOOD_RETRIEVED", ant:GetWorldPosition())
 		end
 		ant:SetNetworkedCustomProperty("Health", ant:GetCustomProperty("MaxHealth"))
 		ant.lifeSpan = LIFESPAN -- replenish ant lifespan
