@@ -1,7 +1,7 @@
-Name: "Location_7"
-RootId: 11318614928231208649
+Name: "Location_9"
+RootId: 2425827516148940073
 Objects {
-  Id: 16780217456292329196
+  Id: 8108508066195048968
   Name: "DummyGizmo"
   Transform {
     Scale {
@@ -10,7 +10,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 11318614928231208649
+  ParentId: 2425827516148940073
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }

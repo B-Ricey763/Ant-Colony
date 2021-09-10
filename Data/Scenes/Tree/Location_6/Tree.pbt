@@ -1,8 +1,8 @@
 Name: "Location_6"
-RootId: 14560655331335805579
+RootId: 2947680905571674797
 Objects {
-  Id: 125260869375460161
-  Name: "DummyGizmoGreen"
+  Id: 17777806701555296177
+  Name: "DummyGizmo"
   Transform {
     Scale {
       X: 1
@@ -10,7 +10,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 14560655331335805579
+  ParentId: 2947680905571674797
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -23,7 +23,7 @@ Objects {
       value {
         Overrides {
           Name: "Name"
-          String: "DummyGizmoGreen"
+          String: "DummyGizmo"
         }
         Overrides {
           Name: "Scale"
@@ -36,7 +36,7 @@ Objects {
       }
     }
     TemplateAsset {
-      Id: 16126119447339413533
+      Id: 16049342254769890196
     }
   }
 }
