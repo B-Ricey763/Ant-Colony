@@ -59,7 +59,13 @@ local function NewColony(player)
 	-- we have to delay this just because the client script might not run immediately
 	Task.Spawn(function()
 		Events.BroadcastToPlayer(player, "MoveCamera", nest:GetWorldPosition() + Vector3.UP * 1000)
-	end, 2)
+
+		-- for testing:
+		-- while true do
+		-- 	player:RemoveResource("Health", 1)
+		-- 	Task.Wait(1)
+		-- end
+	end, 1)
 
 	return nest
 end

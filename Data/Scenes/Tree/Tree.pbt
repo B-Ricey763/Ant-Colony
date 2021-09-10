@@ -54,7 +54,7 @@ Objects {
     Location {
       X: 1038.93115
       Y: 207.308472
-      Z: 390.871094
+      Z: -10800
     }
     Rotation {
     }
@@ -481,7 +481,7 @@ Objects {
   Name: "PlayerPrison"
   Transform {
     Location {
-      Z: -974.31
+      Z: -60950
     }
     Rotation {
     }

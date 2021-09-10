@@ -29,7 +29,10 @@ function Tick(dt)
 		local screenDelta = cursorPosition - previousCursorPosition
 		previousCursorPosition = cursorPosition
 
-		cam:SetRotation(cam:GetRotation() + Rotation.New(0, -screenDelta.y, screenDelta.x) * ROT_SPEED)
+		local nextY = cam:GetRotation().y - screenDelta.y
+		-- clamp the pitch so you can't loop around
+		local clampedY = nextY < 85 and nextY > -85 and -screenDelta.y or 0
+		cam:SetRotation(cam:GetRotation() + Rotation.New(0, clampedY, screenDelta.x) * ROT_SPEED)
 	else
 		previousCursorPosition = nil
 	end
