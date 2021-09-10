@@ -64,16 +64,6 @@ Objects {
           Name: "Name"
           String: "Nest"
         }
-        Overrides {
-          Name: "Position"
-          Vector {
-          }
-        }
-        Overrides {
-          Name: "Rotation"
-          Rotator {
-          }
-        }
       }
     }
     TemplateAsset {

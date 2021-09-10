@@ -27,7 +27,7 @@ Objects {
     Value: "mc:evisibilitysetting:forceoff"
   }
   CameraCollidable {
-    Value: "mc:ecollisionsetting:forceoff"
+    Value: "mc:ecollisionsetting:inheritfromparent"
   }
   EditorIndicatorVisibility {
     Value: "mc:eindicatorvisibility:visiblewhenselected"
@@ -75,7 +75,7 @@ Objects {
     Value: "mc:evisibilitysetting:forceoff"
   }
   CameraCollidable {
-    Value: "mc:ecollisionsetting:forceoff"
+    Value: "mc:ecollisionsetting:inheritfromparent"
   }
   EditorIndicatorVisibility {
     Value: "mc:eindicatorvisibility:visiblewhenselected"
@@ -122,7 +122,7 @@ Objects {
     Value: "mc:evisibilitysetting:forceoff"
   }
   CameraCollidable {
-    Value: "mc:ecollisionsetting:forceoff"
+    Value: "mc:ecollisionsetting:inheritfromparent"
   }
   EditorIndicatorVisibility {
     Value: "mc:eindicatorvisibility:visiblewhenselected"
@@ -169,7 +169,7 @@ Objects {
     Value: "mc:evisibilitysetting:forceoff"
   }
   CameraCollidable {
-    Value: "mc:ecollisionsetting:forceoff"
+    Value: "mc:ecollisionsetting:inheritfromparent"
   }
   EditorIndicatorVisibility {
     Value: "mc:eindicatorvisibility:visiblewhenselected"
