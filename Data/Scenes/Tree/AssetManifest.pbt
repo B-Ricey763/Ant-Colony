@@ -71,6 +71,15 @@ Assets {
   }
 }
 Assets {
+  Id: 2207462438860050554
+  Name: "\"Maybe Someday\" Music Construction Kit (Layers) 01"
+  PlatformAssetType: 10
+  PrimaryAsset {
+    AssetType: "AudioBlueprintAssetRef"
+    AssetId: "abp_maybesomeday_layers_kit_ref"
+  }
+}
+Assets {
   Id: 883985107983124514
   Name: "Sphere"
   PlatformAssetType: 1

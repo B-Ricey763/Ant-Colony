@@ -33,6 +33,7 @@ Objects {
   ChildIds: 862353579387282318
   ChildIds: 1175450298659140341
   ChildIds: 12970298982235668036
+  ChildIds: 2316054496251135866
   UnregisteredParameters {
   }
   Collidable_v2 {
@@ -45,6 +46,51 @@ Objects {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
   Folder {
+  }
+}
+Objects {
+  Id: 2316054496251135866
+  Name: "\"Maybe Someday\" Music Construction Kit (Layers) 01"
+  Transform {
+    Location {
+      X: 6270.97217
+      Y: -841.300537
+      Z: -709.48291
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 4781671109827199097
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  Blueprint {
+    BlueprintAsset {
+      Id: 2207462438860050554
+    }
+    TeamSettings {
+    }
+    AudioBP {
+      AutoPlay: true
+      Repeat: true
+      Volume: 0.2
+      Falloff: 3600
+      Radius: 400
+    }
   }
 }
 Objects {

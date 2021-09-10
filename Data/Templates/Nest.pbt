@@ -2337,7 +2337,7 @@ Assets {
             Id: 2305384533118072087
           }
           Volume: 1
-          Falloff: -1
+          Falloff: 8000
           Radius: -1
           EnableOcclusion: true
           IsSpatializationEnabled: true
@@ -2426,7 +2426,7 @@ Assets {
             Id: 14786859017433589806
           }
           Volume: 1
-          Falloff: -1
+          Falloff: 6000
           Radius: -1
           EnableOcclusion: true
           IsSpatializationEnabled: true

@@ -2,8 +2,15 @@ local pherButtons = script:GetCustomProperty("PherButtons"):WaitForObject()
 local pherType = script:GetCustomProperty("PherType"):WaitForObject()
 local border = script:GetCustomProperty("Border"):WaitForObject()
 
+local DisplayNames = {
+	Follow = "Attract All",
+	Food = "Attract Worker",
+	Fight = "Attract Soldier",
+	Block = "Repel All"
+}
+
 Events.Connect("PherSwitch", function (pherName)
-	pherType.text = pherName
+	pherType.text = DisplayNames[pherName]
 	-- haha butt
 	for i, butt in pairs(pherButtons:GetChildren()) do
 		if butt.name == pherName then
