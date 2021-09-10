@@ -2,6 +2,7 @@ local nest = script.parent.parent
 local antTrigger = nest:GetCustomProperty("AntTrigger"):WaitForObject()
 local NestLevels = require(nest:GetCustomProperty("NestLevels"))
 local LIFESPAN = nest:GetCustomProperty("AntLifespan")
+local foodCollectSound = script:GetCustomProperty("FoodCollectSound"):WaitForObject()
 
 Task.Wait(0.5)
 local player = Game.FindPlayer(nest:GetCustomProperty("ownerId"))
@@ -18,6 +19,7 @@ local function OnBeginOverlap(trigger, hit)
 			-- reset ant
 			ant:SetNetworkedCustomProperty("CarryingFood", false)
 			ant:SetNetworkedCustomProperty("SpeedMultiplier", 1)
+			foodCollectSound:Play()
 		end
 		ant:SetNetworkedCustomProperty("Health", ant:GetCustomProperty("MaxHealth"))
 		ant.lifeSpan = LIFESPAN -- replenish ant lifespan

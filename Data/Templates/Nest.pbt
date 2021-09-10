@@ -21,6 +21,7 @@ Assets {
         ChildIds: 7553776193849367170
         ChildIds: 1579751937298286109
         ChildIds: 2655075490869749270
+        ChildIds: 15695827722355163171
         ChildIds: 8665522750775552507
         UnregisteredParameters {
           Overrides {
@@ -276,6 +277,14 @@ Assets {
           }
         }
         ParentId: 5288328143641997138
+        UnregisteredParameters {
+          Overrides {
+            Name: "cs:FoodCollectSound"
+            ObjectReference {
+              SubObjectId: 15695827722355163171
+            }
+          }
+        }
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -309,6 +318,14 @@ Assets {
           }
         }
         ParentId: 5288328143641997138
+        UnregisteredParameters {
+          Overrides {
+            Name: "cs:DamageSound"
+            ObjectReference {
+              SubObjectId: 2655075490869749270
+            }
+          }
+        }
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -2330,7 +2347,48 @@ Assets {
         }
         AudioInstance {
           AudioAsset {
-            Id: 11993725954444829397
+            Id: 5647621733377981756
+          }
+          Pitch: -754.620239
+          Volume: 1.29522181
+          Falloff: 5000
+          Radius: 1000
+          EnableOcclusion: true
+          IsSpatializationEnabled: true
+          IsAttenuationEnabled: true
+        }
+      }
+      Objects {
+        Id: 15695827722355163171
+        Name: "FoodCollectSound"
+        Transform {
+          Location {
+          }
+          Rotation {
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 2524265454032193188
+        WantsNetworking: true
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        AudioInstance {
+          AudioAsset {
+            Id: 14786859017433589806
           }
           Volume: 1
           Falloff: -1
@@ -2496,12 +2554,21 @@ Assets {
       }
     }
     Assets {
-      Id: 11993725954444829397
-      Name: "Shield Hit Impact 01 SFX"
+      Id: 5647621733377981756
+      Name: "Impact Ground Dirt 01 SFX"
       PlatformAssetType: 7
       PrimaryAsset {
         AssetType: "AudioAssetRef"
-        AssetId: "sfx_shield_hit_impact_01a_Cue_ref"
+        AssetId: "sfx_bullet_impact_ground_dirt_01_Cue_ref"
+      }
+    }
+    Assets {
+      Id: 14786859017433589806
+      Name: "Bubble Pop Coin Collect 01 SFX"
+      PlatformAssetType: 7
+      PrimaryAsset {
+        AssetType: "AudioAssetRef"
+        AssetId: "sfx_bubble_pop_coin_collect_01_Cue_ref"
       }
     }
     Assets {
