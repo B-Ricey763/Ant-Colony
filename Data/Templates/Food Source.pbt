@@ -15,13 +15,17 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 15146144627536064546
+        ParentId: 4781671109827199097
         ChildIds: 4494021318730891717
         ChildIds: 15287162475141928865
         UnregisteredParameters {
           Overrides {
             Name: "cs:SlowMultiplier"
             Float: 0.75
+          }
+          Overrides {
+            Name: "cs:Food"
+            Int: 30
           }
         }
         WantsNetworking: true
