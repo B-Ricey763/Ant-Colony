@@ -1,10 +1,14 @@
 local pherTrigger = script:GetCustomProperty("PherTrigger"):WaitForObject()
 local hitboxTrigger = script.parent:FindChildByName("HitboxTrigger")
+local ant = script.parent.parent
+local PheromoneTypes = {CoreString.Split(ant:GetCustomProperty("Pheromones"), ",")}
+
 local root = script:FindTemplateRoot();
 
 local numTrack = 5
 local pheromones = {}
 Current = nil
+local DeltaTime = 0.1
 
 -- forget pheromones too far away
 local function ForgetPheromone()
@@ -58,13 +62,13 @@ local function GetClosestPheromone(filter)
 
 			local offset = Vector3.New(0,0,50)
 			CoreDebug.DrawLine(p0+offset, p1+offset, {
-				duration = dt,
+				duration = DeltaTime,
 				color = Color.YELLOW,
 				thickness = 3
 			})
 
 			CoreDebug.DrawBox(p0, Vector3.New(50), {
-				duration = dt,
+				duration = DeltaTime,
 				color = Color.BLUE,
 				thickness = 3
 			})
@@ -97,8 +101,9 @@ local function ForgetInvalidPheromones()
 	pheromones = validPheromones
 end
 
--- continuously track pheromones
-function Tick(dt)
+local function TickAnt(dt)
+	DeltaTime = dt
+
 	local i = GetClosestPheromone()
 	if (i>=0) then
 		Current = pheromones[i]
@@ -107,12 +112,27 @@ function Tick(dt)
 	if (Object.IsValid(Current)) then
 		local offset = Vector3.New(0,0,50)
 		CoreDebug.DrawLine(script.parent:GetWorldPosition()+offset, Current:GetWorldPosition()+offset, {
-			duration = dt,
+			duration = DeltaTime,
 			color = Color.GREEN,
 			thickness = 6
 		})
 	end
+
 end
+
+-- use timer to tick slower
+local SlowTick = nil
+SlowTick = function ()
+	local dt = 0.2
+	Task.Wait(dt)
+
+	-- we tick ant in here to get some breathing room in behavior reflex
+	TickAnt(dt)
+	
+	Task.Spawn(SlowTick)
+end
+Task.Spawn(SlowTick)
+
 
 -- make sure we dont have multiple entries of any pheromone
 local function RemoveDuplicatePheromones()
@@ -132,18 +152,26 @@ end
 local function OnBeginOverlap(trigger, hit)
 	if hit:IsA("CoreObject") and hit.name == "Pheromone" and (hit.team == 0 or hit.team == hitboxTrigger.team)  then -- make sure the teams match, but neatural stuff always passes
 
-		-- insert pheromones we are tracking
-		table.insert(pheromones, hit)
-		-- forget pheromones
-		ForgetPheromone();
-		-- forget invalid ones if we have here
-		ForgetInvalidPheromones()
-		-- remove duplicates
-		RemoveDuplicatePheromones()
+		-- check if we can track this pheromone
+		local canTrack = false
+		for _,pherType in ipairs(PheromoneTypes) do
+			canTrack = (canTrack or (hit:GetCustomProperty("Type") == pherType))
+		end
 
-		--print(#pheromones)
+		if (canTrack) then
+			-- insert pheromones we are tracking
+			table.insert(pheromones, hit)
+			-- forget pheromones
+			ForgetPheromone();
+			-- forget invalid ones if we have here
+			ForgetInvalidPheromones()
+			-- remove duplicates
+			RemoveDuplicatePheromones()
 
-		Current = hit
+			--print(#pheromones)
+
+			Current = hit
+		end
 
 	end
 end

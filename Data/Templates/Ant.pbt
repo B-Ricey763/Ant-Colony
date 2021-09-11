@@ -44,6 +44,10 @@ Assets {
             Float: 10
           }
           Overrides {
+            Name: "cs:Pheromones"
+            String: "Food,Follow,Block"
+          }
+          Overrides {
             Name: "cs:Speed:tooltip"
             String: "How fast the ant will move"
           }
@@ -123,9 +127,9 @@ Assets {
           Rotation {
           }
           Scale {
-            X: 15
-            Y: 15
-            Z: 15
+            X: 12
+            Y: 12
+            Z: 12
           }
         }
         ParentId: 3124942802132398722
