@@ -26,6 +26,15 @@ Assets {
   }
 }
 Assets {
+  Id: 12444863828599237588
+  Name: "Grass Short"
+  PlatformAssetType: 1
+  PrimaryAsset {
+    AssetType: "StaticMeshAssetRef"
+    AssetId: "sm_grass_generic_002"
+  }
+}
+Assets {
   Id: 12180544799063427018
   Name: "Icon Arrow Swap"
   PlatformAssetType: 9
@@ -62,12 +71,30 @@ Assets {
   }
 }
 Assets {
+  Id: 6899553333035498366
+  Name: "Grass Tall"
+  PlatformAssetType: 1
+  PrimaryAsset {
+    AssetType: "StaticMeshAssetRef"
+    AssetId: "sm_grass_generic_001"
+  }
+}
+Assets {
   Id: 6544983616475859657
   Name: "Clunky Click 01 SFX"
   PlatformAssetType: 7
   PrimaryAsset {
     AssetType: "AudioAssetRef"
     AssetId: "sfx_ui_chunky_click_01_Cue_ref"
+  }
+}
+Assets {
+  Id: 2444979424080741709
+  Name: "Container - Square Thin 01"
+  PlatformAssetType: 1
+  PrimaryAsset {
+    AssetType: "StaticMeshAssetRef"
+    AssetId: "sm_container_square_thin_ref"
   }
 }
 Assets {
