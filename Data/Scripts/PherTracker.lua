@@ -39,13 +39,17 @@ end
 
 -- get the closest pheromone
 local function GetClosestPheromone(filter)
+	if (not Object.IsValid(pherTrigger)) then
+		return -1
+	end
+
 	local f = function(distance)
 		return false
 	end
 	filter = (filter or f)
 	local D = 99999999999999
 	local I = -1
-	local threshold = pherTrigger:GetScale().x*100 * 0.24
+	local threshold = pherTrigger:GetScale().x*100 * 0.1
 	local forward = root:GetWorldTransform():GetForwardVector()
 	for i,pher in ipairs(pheromones) do
 		if (Object.IsValid(pher)) then
