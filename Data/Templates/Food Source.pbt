@@ -25,7 +25,7 @@ Assets {
           }
           Overrides {
             Name: "cs:Food"
-            Int: 30
+            Int: 50
           }
         }
         WantsNetworking: true
