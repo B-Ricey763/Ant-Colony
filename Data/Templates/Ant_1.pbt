@@ -124,9 +124,9 @@ Assets {
           Rotation {
           }
           Scale {
-            X: 12
-            Y: 12
-            Z: 12
+            X: 15
+            Y: 15
+            Z: 15
           }
         }
         ParentId: 10502976312462210973
@@ -283,7 +283,6 @@ Assets {
         ChildIds: 6649872007075768282
         ChildIds: 2159861745317026564
         ChildIds: 6581077015713510238
-        ChildIds: 3509259035256970920
         ChildIds: 13662231590664022302
         ChildIds: 593686138465484550
         UnregisteredParameters {
@@ -459,39 +458,6 @@ Assets {
         Script {
           ScriptAsset {
             Id: 16709068358421791926
-          }
-        }
-      }
-      Objects {
-        Id: 3509259035256970920
-        Name: "RetrieveActivity"
-        Transform {
-          Location {
-          }
-          Rotation {
-          }
-          Scale {
-            X: 1
-            Y: 1
-            Z: 1
-          }
-        }
-        ParentId: 15392640040166782688
-        Collidable_v2 {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Visible_v2 {
-          Value: "mc:evisibilitysetting:inheritfromparent"
-        }
-        CameraCollidable {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        EditorIndicatorVisibility {
-          Value: "mc:eindicatorvisibility:visiblewhenselected"
-        }
-        Script {
-          ScriptAsset {
-            Id: 9997027585310727671
           }
         }
       }

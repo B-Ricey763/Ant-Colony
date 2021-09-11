@@ -23,7 +23,9 @@ local function flatten(vec)
 end
 
 local function ConsiderAttack(trig, hit)
-	if hit.name == "HitboxTrigger" and not ant:IsAncestorOf(hit) and hit.team ~= hitboxTrig.team then 
+	if hit.name == "HitboxTrigger" and (not ant:IsAncestorOf(hit)) and (hit.team ~= hitboxTrig.team) then 
+		print(hitboxTrig.team)
+		print(hit.team)
 		activityHandler:FindActivity("Attack").priority = Priorities.URGENT
 		target = hit:FindAncestorByName("Ant") or hit:FindAncestorByName("Nest")
 	end
@@ -46,10 +48,23 @@ local function Attack(t)
 end
 
 function AttackActivity.tickHighestPriority(activity, dt)
-	if not Object.IsValid(target) then
+	if not (Object.IsValid(target) and Object.IsValid(ant)) then
 		activity.priority = Priorities.INACTIVE
 		return 
 	end
+
+	local offset = Vector3.New(0,0,50)
+	CoreDebug.DrawLine(ant:GetWorldPosition()+offset, target:GetWorldPosition()+offset, {
+		duration = dt,
+		color = Color.RED,
+		thickness = 8
+	})
+
+	CoreDebug.DrawBox(target:GetWorldPosition(), Vector3.New(50), {
+		duration = dt,
+		color = Color.RED,
+		thickness = 8
+	})
 
 	local minDist = MIN_DISTS[target.name] or 100 -- default just in case
 	local dist = (flatten(ant:GetWorldPosition()) - flatten(target:GetWorldPosition()))
