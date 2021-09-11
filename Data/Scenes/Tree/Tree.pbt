@@ -1110,7 +1110,7 @@ Objects {
     }
     Overrides {
       Name: "bp:Intensity"
-      Float: 3
+      Float: 3.78143287
     }
     Overrides {
       Name: "bp:Lower Hemisphere Color"
@@ -1144,9 +1144,9 @@ Objects {
     Overrides {
       Name: "bp:Tint Color"
       Color {
-        R: 0.502886474
-        G: 0.48514995
-        B: 0.752942204
+        R: 0.647969723
+        G: 0.623
+        B: 1
         A: 1
       }
     }

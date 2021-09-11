@@ -1,6 +1,39 @@
 Name: "BackgroundEnvironment"
 RootId: 15369098779791569026
 Objects {
+  Id: 15442480679667172118
+  Name: "BGTRees"
+  Transform {
+    Location {
+      Z: -2538.86377
+    }
+    Rotation {
+    }
+    Scale {
+      X: 100
+      Y: 100
+      Z: 100
+    }
+  }
+  ParentId: 15369098779791569026
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  Folder {
+    IsFilePartition: true
+    FilePartitionName: "BGTRees"
+  }
+}
+Objects {
   Id: 13931878563265333163
   Name: "Hill 01"
   Transform {
