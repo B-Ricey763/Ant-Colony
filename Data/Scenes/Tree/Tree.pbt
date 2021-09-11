@@ -40,6 +40,7 @@ Objects {
   ChildIds: 16807337671138433227
   ChildIds: 8676458600167757910
   ChildIds: 1887203783997398228
+  ChildIds: 8197066908022997927
   UnregisteredParameters {
   }
   Collidable_v2 {
@@ -52,6 +53,137 @@ Objects {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
   Folder {
+  }
+}
+Objects {
+  Id: 8197066908022997927
+  Name: "House Flies Volume VFX"
+  Transform {
+    Location {
+      X: -948.499878
+      Y: -4954.39111
+      Z: 249.589417
+    }
+    Rotation {
+    }
+    Scale {
+      X: 20.3383865
+      Y: 20.3383865
+      Z: 20.3383865
+    }
+  }
+  ParentId: 4781671109827199097
+  ChildIds: 17936554433468701341
+  UnregisteredParameters {
+    Overrides {
+      Name: "bp:Life"
+      Float: 1
+    }
+    Overrides {
+      Name: "bp:Fly Scale Multiplier"
+      Float: 50
+    }
+    Overrides {
+      Name: "bp:Density"
+      Float: 3.07605839
+    }
+    Overrides {
+      Name: "bp:Local Space"
+      Bool: true
+    }
+    Overrides {
+      Name: "bp:Upward Velocity Max"
+      Float: 10
+    }
+    Overrides {
+      Name: "bp:Curl Speed"
+      Vector {
+        X: 1
+        Y: 1
+        Z: 1
+      }
+    }
+  }
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  Blueprint {
+    BlueprintAsset {
+      Id: 8038159976798024602
+    }
+    TeamSettings {
+    }
+    Vfx {
+      AutoPlay: true
+    }
+  }
+  Relevance {
+    Value: "mc:eproxyrelevance:critical"
+  }
+}
+Objects {
+  Id: 17936554433468701341
+  Name: "Ambience Nature Insects Buzzing Set 01 SFX"
+  Transform {
+    Location {
+      X: 4.64518
+      Y: -15.27174
+      Z: -9.9174366
+    }
+    Rotation {
+    }
+    Scale {
+      X: 0.0491681099
+      Y: 0.0491681099
+      Z: 0.0491681099
+    }
+  }
+  ParentId: 8197066908022997927
+  UnregisteredParameters {
+    Overrides {
+      Name: "bp:Type"
+      Enum {
+        Value: "mc:esfx_nature_insect_buzzing:15"
+      }
+    }
+  }
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  Blueprint {
+    BlueprintAsset {
+      Id: 4324511045157881128
+    }
+    TeamSettings {
+    }
+    AudioBP {
+      AutoPlay: true
+      Repeat: true
+      Volume: 1
+      Falloff: 8000
+      Radius: 800
+      EnableOcclusion: true
+      IsSpatializationEnabled: true
+      IsAttenuationEnabled: true
+    }
   }
 }
 Objects {
@@ -871,6 +1003,7 @@ Objects {
     }
   }
   ParentId: 4781671109827199097
+  ChildIds: 12720895350529678793
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -893,6 +1026,59 @@ Objects {
       AutoPlay: true
       Repeat: true
       Volume: 0.2
+      Falloff: 3600
+      Radius: 400
+    }
+  }
+}
+Objects {
+  Id: 12720895350529678793
+  Name: "Ambience Nature Forest Birds Set 01 SFX"
+  Transform {
+    Location {
+      X: -3223.24658
+      Y: 1076.8728
+      Z: 843.940674
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 2316054496251135866
+  UnregisteredParameters {
+    Overrides {
+      Name: "bp:Type"
+      Enum {
+        Value: "mc:esfx_nature_forest_birds:16"
+      }
+    }
+  }
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  Blueprint {
+    BlueprintAsset {
+      Id: 15172180549504871240
+    }
+    TeamSettings {
+    }
+    AudioBP {
+      AutoPlay: true
+      Repeat: true
+      Volume: 1.5
       Falloff: 3600
       Radius: 400
     }
