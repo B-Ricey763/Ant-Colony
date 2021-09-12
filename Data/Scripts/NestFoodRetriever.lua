@@ -22,7 +22,7 @@ local function OnBeginOverlap(trigger, hit)
 			foodCollectSound:Play()
 
 			-- broadcasts food retrieved to client player
-			Events.BroadcastToPlayer(player, "EVENT_FOOD_RETRIEVED", ant:GetWorldPosition())
+			Events.BroadcastToPlayer(player, "EVENT_FOOD_RETRIEVED", ant:GetWorldPosition(), 1)
 		end
 		ant:SetNetworkedCustomProperty("Health", ant:GetCustomProperty("MaxHealth"))
 		ant.lifeSpan = LIFESPAN -- replenish ant lifespan

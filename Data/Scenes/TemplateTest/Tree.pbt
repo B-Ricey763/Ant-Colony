@@ -19,7 +19,7 @@ Objects {
   ChildIds: 14713340454944924967
   ChildIds: 10005074784157121906
   ChildIds: 14982843161775482339
-  ChildIds: 11597600141301826485
+  ChildIds: 16799324959067691655
   ChildIds: 9576951935212435405
   ChildIds: 12714067542726692821
   ChildIds: 4741451879244529076
@@ -752,9 +752,15 @@ Objects {
   }
 }
 Objects {
-  Id: 11597600141301826485
+  Id: 16799324959067691655
   Name: "Ant"
   Transform {
+    Location {
+      X: 1650
+      Y: -625
+    }
+    Rotation {
+    }
     Scale {
       X: 1
       Y: 1
@@ -762,6 +768,62 @@ Objects {
     }
   }
   ParentId: 4781671109827199097
+  UnregisteredParameters {
+    Overrides {
+      Name: "cs:Speed"
+      Float: 550
+    }
+    Overrides {
+      Name: "cs:Type"
+      String: "Soldier"
+    }
+    Overrides {
+      Name: "cs:SpeedMultiplier"
+      Float: 1
+    }
+    Overrides {
+      Name: "cs:Health"
+      Float: 15
+    }
+    Overrides {
+      Name: "cs:Damage"
+      Float: 1
+    }
+    Overrides {
+      Name: "cs:AttackSpeed"
+      Float: 0.5
+    }
+    Overrides {
+      Name: "cs:MaxHealth"
+      Float: 15
+    }
+    Overrides {
+      Name: "cs:Pheromones"
+      String: "Follow,Fight,Block,Retrieve"
+    }
+    Overrides {
+      Name: "cs:CustomTeamColor"
+      Color {
+        A: 1
+      }
+    }
+    Overrides {
+      Name: "cs:Speed:tooltip"
+      String: "How fast the ant will move"
+    }
+    Overrides {
+      Name: "cs:SpeedMultiplier:isrep"
+      Bool: true
+    }
+    Overrides {
+      Name: "cs:Health:isrep"
+      Bool: true
+    }
+    Overrides {
+      Name: "cs:CustomTeamColor:isrep"
+      Bool: true
+    }
+  }
   WantsNetworking: true
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
@@ -769,31 +831,22 @@ Objects {
   Visible_v2 {
     Value: "mc:evisibilitysetting:inheritfromparent"
   }
-  TemplateInstance {
-    ParameterOverrideMap {
-      key: 6085474421704206694
-      value {
-        Overrides {
-          Name: "Name"
-          String: "Ant"
-        }
-        Overrides {
-          Name: "Position"
-          Vector {
-            X: 1650
-            Y: -625
-          }
-        }
-        Overrides {
-          Name: "Rotation"
-          Rotator {
-          }
-        }
-      }
-    }
-    TemplateAsset {
-      Id: 11666330275160844173
-    }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  Folder {
+    IsFilePartition: true
+    FilePartitionName: "Ant"
+  }
+  InstanceHistory {
+    SelfId: 16799324959067691655
+    SubobjectId: 6085474421704206694
+    InstanceId: 11597600141301826485
+    TemplateId: 11666330275160844173
+    WasRoot: true
   }
 }
 Objects {

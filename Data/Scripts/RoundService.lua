@@ -164,10 +164,13 @@ Events.Connect("KilledNest", function (killerAnt, victimPlayer, victimNest)
 
 	-- Add on the bounty
 	killerPlayer:SetResource("Food", killerPlayer:GetResource("Food") + victimPlayer:GetResource("Food"))
+	Events.BroadcastToPlayer(killerPlayer, "EVENT_FOOD_RETRIEVED", victimNest:GetWorldPosition(), victimPlayer:GetResource("Food"))
 
 	for _, equip in ipairs(victimPlayer:GetEquipment()) do
 		equip:Unequip()
 	end
+
+	Events.BroadcastToPlayer(victimPlayer, "NestDestroyed")
 	-- For right now, just get rid of the nest. This is subjec to change
 	victimNest:Destroy()
 end) 

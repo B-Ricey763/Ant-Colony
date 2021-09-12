@@ -32,3 +32,7 @@ Events.Connect("GameStateChanged", function (old, new)
 		script.parent.visibility = Visibility.INHERIT
 	end
 end)
+
+Events.Connect("NestDestroyed", function ()
+	script.parent.visibility = Visibility.FORCE_OFF
+end)

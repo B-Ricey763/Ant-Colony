@@ -594,6 +594,7 @@ Assets {
         ChildIds: 18136374303903605752
         ChildIds: 17940166606055831803
         ChildIds: 13355168202863297960
+        ChildIds: 10752483868962289240
         WantsNetworking: true
         Collidable_v2 {
           Value: "mc:ecollisionsetting:forceoff"
@@ -4472,7 +4473,8 @@ Assets {
         Name: "AttackVFX"
         Transform {
           Location {
-            X: 150
+            X: -78.5195312
+            Z: 24.809433
           }
           Rotation {
           }
@@ -4483,6 +4485,16 @@ Assets {
           }
         }
         ParentId: 13532279741720607089
+        UnregisteredParameters {
+          Overrides {
+            Name: "bp:Color"
+            Color {
+              R: 0.409999967
+              G: 0.252516538
+              A: 1
+            }
+          }
+        }
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -4530,6 +4542,12 @@ Assets {
               SubObjectId: 17940166606055831803
             }
           }
+          Overrides {
+            Name: "cs:AttackSFX"
+            ObjectReference {
+              SubObjectId: 10752483868962289240
+            }
+          }
         }
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
@@ -4547,6 +4565,47 @@ Assets {
           ScriptAsset {
             Id: 3475605915820015184
           }
+        }
+      }
+      Objects {
+        Id: 10752483868962289240
+        Name: "AttackSound"
+        Transform {
+          Location {
+            X: -56.8387451
+            Z: 47.8080597
+          }
+          Rotation {
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 13532279741720607089
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        AudioInstance {
+          AudioAsset {
+            Id: 14900485359441015965
+          }
+          Volume: 1
+          Falloff: 750
+          Radius: 500
+          EnableOcclusion: true
+          IsSpatializationEnabled: true
+          IsAttenuationEnabled: true
         }
       }
     }
@@ -4620,6 +4679,15 @@ Assets {
       PrimaryAsset {
         AssetType: "VfxBlueprintAssetRef"
         AssetId: "fxbp_plasma_impact"
+      }
+    }
+    Assets {
+      Id: 14900485359441015965
+      Name: "Cracking Break Impact Hit 01 SFX"
+      PlatformAssetType: 7
+      PrimaryAsset {
+        AssetType: "AudioAssetRef"
+        AssetId: "sfx_cracking_break_impact_hit_01_Cue_ref"
       }
     }
     PrimaryAssetId {
