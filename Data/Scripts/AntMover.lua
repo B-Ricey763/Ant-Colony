@@ -7,8 +7,14 @@ local function GetAntSpeed(ant)
 	return ant:GetCustomProperty("Speed") * ant:GetCustomProperty("SpeedMultiplier")
 end
 
+-- fill detect ground and reject pheromones and other stuff
 local function CastToGround(pos)
-	return World.Raycast(pos + Vector3.UP * 10000, pos - Vector3.UP * 10000)
+	local hit = World.Raycast(pos + Vector3.UP * 10000, pos - Vector3.UP * 10000)
+	if (hit.other.name ~= "Pheromone") then
+		return hit
+	else
+		return false
+	end
 end
 
 local AntMover = {}
@@ -19,8 +25,8 @@ function AntMover.Forward(ant, forward, mult)
 	-- Make ant respect gravity
 	local groundResult = CastToGround(ant:GetWorldPosition())
 	local heightOffGround = ant:GetWorldPosition().z
-	if groundResult and groundResult.other.name ~= "Pheromone" then -- may need to check for other objects in the future
-		print(groundResult.other.name)
+	if (groundResult) then -- may need to check for other objects in the future
+		--print(groundResult.other.name)
 		heightOffGround = groundResult:GetImpactPosition().z + DIST_TO_GROUND
 	end
 	local rot = Rotation.New(flatten(forward), Vector3.UP)
@@ -32,7 +38,7 @@ function AntMover.Forward(ant, forward, mult)
 
 	-- raycast to prevent movement inside terrain
 	local hitResult =  CastToGround(trans:GetPosition())
-	if (hitResult and hitResult.other.name ~= "Pheromone") then
+	if (hitResult) then
 		trans:SetPosition(hitResult:GetImpactPosition() + Vector3.New(0,0,DIST_TO_GROUND))
 	end
 
