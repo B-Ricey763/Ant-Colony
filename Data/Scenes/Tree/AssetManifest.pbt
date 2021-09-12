@@ -62,6 +62,24 @@ Assets {
   }
 }
 Assets {
+  Id: 10634360137505549932
+  Name: "Container - Square 01"
+  PlatformAssetType: 1
+  PrimaryAsset {
+    AssetType: "StaticMeshAssetRef"
+    AssetId: "sm_container_square_ref"
+  }
+}
+Assets {
+  Id: 8994880844297190679
+  Name: "Icon Keybinding"
+  PlatformAssetType: 9
+  PrimaryAsset {
+    AssetType: "PlatformBrushAssetRef"
+    AssetId: "Icon_Keybinding"
+  }
+}
+Assets {
   Id: 8038159976798024602
   Name: "House Flies Volume VFX"
   PlatformAssetType: 8

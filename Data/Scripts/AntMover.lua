@@ -10,7 +10,7 @@ end
 -- fill detect ground and reject pheromones and other stuff
 local function CastToGround(pos)
 	local hit = World.Raycast(pos + Vector3.UP * 10000, pos - Vector3.UP * 10000)
-	if (hit.other.name ~= "Pheromone") then
+	if (hit and hit.other.name ~= "Pheromone") then
 		return hit
 	else
 		return false
