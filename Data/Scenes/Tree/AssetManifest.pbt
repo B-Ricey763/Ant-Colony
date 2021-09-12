@@ -17,6 +17,15 @@ Assets {
   }
 }
 Assets {
+  Id: 16840871775677235523
+  Name: "BG Highlighted 001"
+  PlatformAssetType: 9
+  PrimaryAsset {
+    AssetType: "PlatformBrushAssetRef"
+    AssetId: "BackgroundHighlighted_020"
+  }
+}
+Assets {
   Id: 15172180549504871240
   Name: "Ambience Nature Forest Birds Set 01 SFX"
   PlatformAssetType: 10
@@ -77,6 +86,15 @@ Assets {
   PrimaryAsset {
     AssetType: "BlueprintAssetRef"
     AssetId: "CORESKY_Sky"
+  }
+}
+Assets {
+  Id: 7305316984996280080
+  Name: "Icon Trash Can"
+  PlatformAssetType: 9
+  PrimaryAsset {
+    AssetType: "PlatformBrushAssetRef"
+    AssetId: "Icon_Trash"
   }
 }
 Assets {

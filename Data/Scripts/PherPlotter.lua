@@ -32,20 +32,36 @@ local function WaitForMouseUpdate()
 	repeat Task.Wait() until mouseUpdated
 end
 
+local isErasing = false
+
+local function CastForPhers(start, fin)
+	-- Change the number value to whatever readius you please
+	return World.SpherecastAll(start, fin, 150, {
+		shouldDebugRender = true,
+		
+	})
+end
+
 local function OnPlotExecute(ability)
 	WaitForMouseUpdate()
 
 	local hit = ability:GetTargetData().hitObject
-	if Object.IsValid(hit) and hit.name == "Pheromone" then
-		Events.BroadcastToPlayer(ability.owner, "DestroyPher", hit.id)
-		hit:Destroy()
-		ability.owner:RemoveResource("Pher", 1)
+	local hitPos = ability:GetTargetData():GetHitPosition()
+	local pherFolder = script.parent:GetCustomProperty("Pheromones"):WaitForObject()
+	if isErasing then
+		local hits = CastForPhers(ability.owner:GetViewWorldPosition(), hitPos) 
+		for _, hit in ipairs(hits) do
+			if hit and hit.other.name == "Pheromone" then
+				Events.BroadcastToPlayer(ability.owner, "DestroyPher", hit.other.id)
+				hit.other:Destroy()
+				ability.owner:RemoveResource("Pher", 1)
+			end
+		end
 	elseif Object.IsValid(hit) and 
 		not hit.parent:GetCustomProperty("HasUI") 
 		and ability.owner:GetResource("Pher") < GetMax(ability.owner, "maxPher") 
 	then
 
-		local pherFolder = script.parent:GetCustomProperty("Pheromones"):WaitForObject()
 		local newPher = World.SpawnAsset(pher, { position = ability:GetTargetData():GetHitPosition(), parent = pherFolder })
 		Events.BroadcastToPlayer(ability.owner, "SpawnPher", newPher.id, newPher:GetWorldPosition(), PHER_COLORS[pherIndex])
 		newPher:SetNetworkedCustomProperty("Type", PHER_TYPES[pherIndex])
@@ -108,11 +124,23 @@ dump:Dump(plotAbility.executeEvent:Connect(OnPlotExecute))
 dump:Dump(Events.ConnectForPlayer("MouseHit", OnMouseHitRecieved))
 dump:Dump(Events.ConnectForPlayer("SwitchToPher", SwitchToPher))
 
-script.destroyEvent:Connect(function ()
-	dump:Burn()
-end)
 
 -- We call this to intialize the UI on the client side,
 -- so it updates off the bat
 repeat Task.Wait() until switchAbility.owner
 OnSwitchExecute(switchAbility)
+dump:Dump(switchAbility.owner.bindingPressedEvent:Connect(function (player, bind)
+	if bind == "ability_extra_22" then -- the "e" key
+		isErasing = not isErasing -- toggle erase mode
+		Events.BroadcastToPlayer(player, "EraseToggled", isErasing)
+	end
+end))
+
+dump:Dump(Events.ConnectForPlayer("EraseToggle", function (player)
+	isErasing = not isErasing -- toggle erase mode
+	Events.BroadcastToPlayer(player, "EraseToggled", isErasing)
+end))
+
+script.destroyEvent:Connect(function ()
+	dump:Burn()
+end)
