@@ -33,11 +33,14 @@ local function WaitForMouseUpdate()
 end
 
 local function OnPlotExecute(ability)
-	print("exectued")
 	WaitForMouseUpdate()
 
 	local hit = ability:GetTargetData().hitObject
-	if Object.IsValid(hit) and 
+	if Object.IsValid(hit) and hit.name == "Pheromone" then
+		Events.BroadcastToPlayer(ability.owner, "DestroyPher", hit.id)
+		hit:Destroy()
+		ability.owner:RemoveResource("Pher", 1)
+	elseif Object.IsValid(hit) and 
 		not hit.parent:GetCustomProperty("HasUI") 
 		and ability.owner:GetResource("Pher") < GetMax(ability.owner, "maxPher") 
 	then
@@ -53,6 +56,7 @@ local function OnPlotExecute(ability)
 		-- this is kinda lazy way to do it, but we DO NOT want a pheromone spawning whenever they click
 		Events.BroadcastToPlayer(ability.owner, hit.parent.name .. "UI",hit.parent:GetReference())
 	end
+
 end
 
 local function OnSwitchExecute(ability)

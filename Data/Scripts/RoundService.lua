@@ -129,7 +129,6 @@ Events.Connect("GameStateChanged", function (oldState, newState)
 
 		-- A failsafe just in case not everything gets destroyed
 		currentDump:Dump(function ()
-			ClearChildren(antFolder)
 			ClearChildren(nestFolder)
 			ClearChildren(foodFolder)
 			ClearChildren(pherFolder)
@@ -137,9 +136,13 @@ Events.Connect("GameStateChanged", function (oldState, newState)
 	elseif newState == ROUND_STATE + 1 then
 		-- check for winner
 		AwardWinner()
+
 		-- clean up all of the items we added
 		currentDump:Burn()
 		currentDump = nil
+	elseif newState == ROUND_STATE - 1 then
+		-- Can't do this bc of scoreboard at end of round
+		ClearChildren(antFolder)
 	end
 end)
 
@@ -160,7 +163,3 @@ Events.Connect("KilledNest", function (killerAnt, victimPlayer, victimNest)
 	-- For right now, just get rid of the nest. This is subjec to change
 	victimNest:Destroy()
 end) 
-
-
-
-

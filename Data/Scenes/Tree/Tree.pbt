@@ -1442,6 +1442,8 @@ Objects {
   ChildIds: 2630764859283149919
   ChildIds: 17682070005074088652
   ChildIds: 14627584684384134422
+  ChildIds: 13421413746022116574
+  ChildIds: 444298040515984642
   Collidable_v2 {
     Value: "mc:ecollisionsetting:forceoff"
   }
@@ -1455,6 +1457,90 @@ Objects {
     Value: "mc:eindicatorvisibility:visiblewhenselected"
   }
   NetworkContext {
+  }
+}
+Objects {
+  Id: 444298040515984642
+  Name: "Scoreboard"
+  Transform {
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 454358636617086563
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  TemplateInstance {
+    ParameterOverrideMap {
+      key: 3772104818986187317
+      value {
+        Overrides {
+          Name: "Name"
+          String: "Scoreboard"
+        }
+        Overrides {
+          Name: "Scale"
+          Vector {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        Overrides {
+          Name: "cs:Binding"
+          String: "ability_extra_19"
+        }
+      }
+    }
+    TemplateAsset {
+      Id: 5493994092328103754
+    }
+  }
+}
+Objects {
+  Id: 13421413746022116574
+  Name: "Game State Display"
+  Transform {
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 454358636617086563
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  TemplateInstance {
+    ParameterOverrideMap {
+      key: 11397727575064778677
+      value {
+        Overrides {
+          Name: "Name"
+          String: "Game State Display"
+        }
+        Overrides {
+          Name: "Scale"
+          Vector {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+      }
+    }
+    TemplateAsset {
+      Id: 16474228639282710872
+    }
   }
 }
 Objects {
@@ -1500,8 +1586,20 @@ Objects {
           Float: 0
         }
         Overrides {
+          Name: "Anchor"
+          Enum {
+            Value: "mc:euianchor:topcenter"
+          }
+        }
+        Overrides {
           Name: "UIY"
-          Float: -325
+          Float: 0
+        }
+        Overrides {
+          Name: "Dock"
+          Enum {
+            Value: "mc:euianchor:topcenter"
+          }
         }
       }
     }
@@ -3094,7 +3192,7 @@ Objects {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
   Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
+    Value: "mc:evisibilitysetting:forceoff"
   }
   CameraCollidable {
     Value: "mc:ecollisionsetting:inheritfromparent"
@@ -4837,7 +4935,11 @@ Objects {
         }
         Overrides {
           Name: "cs:RoundDuration"
-          Float: 900
+          Float: 20
+        }
+        Overrides {
+          Name: "cs:RoundEndDuration"
+          Float: 5
         }
       }
     }

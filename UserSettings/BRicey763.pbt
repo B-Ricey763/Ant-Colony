@@ -188,4 +188,4 @@ ObjectSettings {
     }
   }
 }
-LastSavedScene: "TemplateTest"
+LastSavedScene: "Main"

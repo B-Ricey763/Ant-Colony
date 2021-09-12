@@ -291,7 +291,6 @@ Assets {
           Value: "mc:eindicatorvisibility:visiblewhenselected"
         }
         Ability {
-          IsEnabled: true
           CastPhaseSettings {
             Duration: 0.15
             CanMove: true
