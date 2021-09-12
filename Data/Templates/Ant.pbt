@@ -45,7 +45,7 @@ Assets {
           }
           Overrides {
             Name: "cs:Pheromones"
-            String: "Food,Follow,Block"
+            String: "Food,Follow,Block,Retrieve"
           }
           Overrides {
             Name: "cs:Speed:tooltip"

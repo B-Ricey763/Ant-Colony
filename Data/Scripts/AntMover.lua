@@ -20,6 +20,7 @@ function AntMover.Forward(ant, forward, mult)
 	local groundResult = CastToGround(ant:GetWorldPosition())
 	local heightOffGround = ant:GetWorldPosition().z
 	if groundResult and groundResult.other.name ~= "Pheromone" then -- may need to check for other objects in the future
+		print(groundResult.other.name)
 		heightOffGround = groundResult:GetImpactPosition().z + DIST_TO_GROUND
 	end
 	local rot = Rotation.New(flatten(forward), Vector3.UP)
@@ -31,7 +32,7 @@ function AntMover.Forward(ant, forward, mult)
 
 	-- raycast to prevent movement inside terrain
 	local hitResult =  CastToGround(trans:GetPosition())
-	if (hitResult) then
+	if (hitResult and hitResult.other.name ~= "Pheromone") then
 		trans:SetPosition(hitResult:GetImpactPosition() + Vector3.New(0,0,DIST_TO_GROUND))
 	end
 

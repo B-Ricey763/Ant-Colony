@@ -109,14 +109,14 @@ local function TickAnt(dt)
 		Current = pheromones[i]
 	end
 
-	if (Object.IsValid(Current)) then
-		local offset = Vector3.New(0,0,50)
-		CoreDebug.DrawLine(script.parent:GetWorldPosition()+offset, Current:GetWorldPosition()+offset, {
-			duration = DeltaTime,
-			color = Color.GREEN,
-			thickness = 6
-		})
-	end
+	-- if (Object.IsValid(Current)) then
+	-- 	local offset = Vector3.New(0,0,50)
+	-- 	CoreDebug.DrawLine(script.parent:GetWorldPosition()+offset, Current:GetWorldPosition()+offset, {
+	-- 		duration = DeltaTime,
+	-- 		color = Color.GREEN,
+	-- 		thickness = 6
+	-- 	})
+	-- end
 
 end
 
