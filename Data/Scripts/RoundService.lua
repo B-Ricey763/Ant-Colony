@@ -18,6 +18,13 @@ local occupiedNestLocations = {}
 local occupiedFoodLocations = {}
 local currentDump = nil
 
+local TEAM_COLORS = {
+	Color.RED,
+	Color.BLUE,
+	Color.GREEN,
+	Color.YELLOW
+}
+
 local function ClearChildren(object)
 	for _, child in ipairs(object:GetChildren()) do
 		child:Destroy()
@@ -50,6 +57,7 @@ local function NewColony(player)
 	player:SetResource("Ants", 0)
 	player:SetResource("Food", 10) -- a generic number
 	local nest = World.SpawnAsset(NEST_ASSET, { position = GetRandomNestPos(), parent = nestFolder })
+	nest:SetNetworkedCustomProperty("CustomTeamColor", TEAM_COLORS[player.team])
 	nest:SetNetworkedCustomProperty("ownerId", player.id)
 	nest:SetNetworkedCustomProperty("Ants", antFolder)
 	-- both the player and nest have refs to each other
@@ -108,15 +116,15 @@ Events.Connect("GameStateChanged", function (oldState, newState)
 
 			teamNum = teamNum + 1
 		end
+		-- Handle players joining in progress
+		currentDump:Dump(Game.playerJoinedEvent:Connect(function (plr)
+			HandlePlayer(plr)
+		end))
 
 		-- Hanlde players initially
 		for i, player in ipairs(Game.GetPlayers()) do
 			HandlePlayer(player)
 		end
-		-- Handle players joining in progress
-		currentDump:Dump(Game.playerJoinedEvent:Connect(function (plr)
-			HandlePlayer(plr)
-		end))
 
 		for i = 1, #foodLocations:GetChildren() do
 			currentDump:Dump(NewFood())

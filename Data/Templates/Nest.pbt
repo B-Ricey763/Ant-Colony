@@ -78,11 +78,21 @@ Assets {
             }
           }
           Overrides {
+            Name: "cs:CustomTeamColor"
+            Color {
+              A: 1
+            }
+          }
+          Overrides {
             Name: "cs:ownerId:isrep"
             Bool: true
           }
           Overrides {
             Name: "cs:Ants:isrep"
+            Bool: true
+          }
+          Overrides {
+            Name: "cs:CustomTeamColor:isrep"
             Bool: true
           }
         }
@@ -362,6 +372,7 @@ Assets {
         ChildIds: 14983112654768895967
         ChildIds: 11897309993486708010
         ChildIds: 12657602247224544786
+        ChildIds: 15968477625003191615
         WantsNetworking: true
         Collidable_v2 {
           Value: "mc:ecollisionsetting:forceoff"
@@ -2285,6 +2296,14 @@ Assets {
           }
         }
         ParentId: 7553776193849367170
+        UnregisteredParameters {
+          Overrides {
+            Name: "cs:TeamColorDecal"
+            ObjectReference {
+              SelfId: 841534158063459245
+            }
+          }
+        }
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -2300,6 +2319,125 @@ Assets {
         Script {
           ScriptAsset {
             Id: 7316572509868228884
+          }
+        }
+      }
+      Objects {
+        Id: 15968477625003191615
+        Name: "TeamColor"
+        Transform {
+          Location {
+          }
+          Rotation {
+          }
+          Scale {
+            X: 4
+            Y: 4
+            Z: 3.77912
+          }
+        }
+        ParentId: 7553776193849367170
+        ChildIds: 5569471467791004531
+        UnregisteredParameters {
+          Overrides {
+            Name: "bp:Corner Rounding"
+            Float: 1
+          }
+          Overrides {
+            Name: "bp:Color"
+            Color {
+            }
+          }
+          Overrides {
+            Name: "bp:Indent"
+            Float: 0
+          }
+          Overrides {
+            Name: "bp:Stroke Width"
+            Float: 0.0770395398
+          }
+          Overrides {
+            Name: "bp:Emissive Boost"
+            Float: 1.91300464
+          }
+          Overrides {
+            Name: "bp:Stroke Color"
+            Color {
+              R: 0.338807881
+              G: 1
+              B: 0.0400000215
+              A: 1
+            }
+          }
+          Overrides {
+            Name: "bp:Blur"
+            Float: 0.0499224067
+          }
+        }
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        Blueprint {
+          BlueprintAsset {
+            Id: 3220104819674743387
+          }
+          TeamSettings {
+          }
+          DecalBP {
+          }
+        }
+        Relevance {
+          Value: "mc:eproxyrelevance:medium"
+        }
+      }
+      Objects {
+        Id: 5569471467791004531
+        Name: "TeamColorDisplay"
+        Transform {
+          Location {
+            Z: -103.384766
+          }
+          Rotation {
+          }
+          Scale {
+            X: 10
+            Y: 10
+            Z: 2.08414984
+          }
+        }
+        ParentId: 15968477625003191615
+        UnregisteredParameters {
+          Overrides {
+            Name: "cs:Root"
+            ObjectReference {
+              SubObjectId: 2524265454032193188
+            }
+          }
+        }
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        Script {
+          ScriptAsset {
+            Id: 2530898997614350979
           }
         }
       }
@@ -2577,6 +2715,15 @@ Assets {
       PrimaryAsset {
         AssetType: "StaticMeshAssetRef"
         AssetId: "sm_grass_generic_001"
+      }
+    }
+    Assets {
+      Id: 3220104819674743387
+      Name: "2D Basic Shapes Decal"
+      PlatformAssetType: 14
+      PrimaryAsset {
+        AssetType: "DecalBlueprintAssetRef"
+        AssetId: "dcl_basicShapes"
       }
     }
     Assets {

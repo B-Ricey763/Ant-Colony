@@ -32,6 +32,7 @@ local function BreedAnt(player, ant)
 
 	local antFolder = nest:GetCustomProperty("Ants"):WaitForObject()
 	local antObject = World.SpawnAsset(ANT_REFS[ant.name], { position = nest:GetWorldPosition(), parent = antFolder })
+	antObject:SetNetworkedCustomProperty("CustomTeamColor", nest:GetCustomProperty("CustomTeamColor"))
 	antObject.lifeSpan = LIFESPAN -- seconds, but this will refresh each time they return to the colony
 	antObject:FindDescendantByName("HitboxTrigger").team = player.team
 	print(ant.name .. " ant team: " .. antObject:FindDescendantByName("HitboxTrigger").team)

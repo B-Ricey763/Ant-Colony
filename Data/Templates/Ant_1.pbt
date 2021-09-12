@@ -52,6 +52,12 @@ Assets {
             String: "Follow,Fight,Block,Retrieve"
           }
           Overrides {
+            Name: "cs:CustomTeamColor"
+            Color {
+              A: 1
+            }
+          }
+          Overrides {
             Name: "cs:Speed:tooltip"
             String: "How fast the ant will move"
           }
@@ -61,6 +67,10 @@ Assets {
           }
           Overrides {
             Name: "cs:Health:isrep"
+            Bool: true
+          }
+          Overrides {
+            Name: "cs:CustomTeamColor:isrep"
             Bool: true
           }
         }
@@ -620,6 +630,7 @@ Assets {
         ParentId: 13532279741720607089
         ChildIds: 5702728255659678964
         ChildIds: 17590692102651082015
+        ChildIds: 11501496481856237019
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -4307,6 +4318,115 @@ Assets {
         }
       }
       Objects {
+        Id: 11501496481856237019
+        Name: "TeamColor"
+        Transform {
+          Location {
+            X: -67.0090332
+            Y: 0.0159912109
+            Z: 73.1192551
+          }
+          Rotation {
+            Yaw: 179.999985
+          }
+          Scale {
+            X: 0.2
+            Y: 0.2
+            Z: -0.22676681
+          }
+        }
+        ParentId: 498234235071796752
+        ChildIds: 16565145571183525393
+        UnregisteredParameters {
+          Overrides {
+            Name: "bp:Shape Index"
+            Int: 2
+          }
+          Overrides {
+            Name: "bp:Shape Fill"
+            Float: 0.700733602
+          }
+          Overrides {
+            Name: "bp:Emissive Boost"
+            Float: 4.77493763
+          }
+          Overrides {
+            Name: "bp:Color"
+            Color {
+              R: 0.686357498
+              G: 1
+              B: 0.36
+              A: 1
+            }
+          }
+        }
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        Blueprint {
+          BlueprintAsset {
+            Id: 6412508969258821711
+          }
+          TeamSettings {
+          }
+          DecalBP {
+          }
+        }
+        Relevance {
+          Value: "mc:eproxyrelevance:medium"
+        }
+      }
+      Objects {
+        Id: 16565145571183525393
+        Name: "TeamColorDisplay"
+        Transform {
+          Location {
+          }
+          Rotation {
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 11501496481856237019
+        UnregisteredParameters {
+          Overrides {
+            Name: "cs:Root"
+            ObjectReference {
+              SubObjectId: 6085474421704206694
+            }
+          }
+        }
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        Script {
+          ScriptAsset {
+            Id: 2530898997614350979
+          }
+        }
+      }
+      Objects {
         Id: 18136374303903605752
         Name: "AntClient"
         Transform {
@@ -4482,6 +4602,15 @@ Assets {
       PrimaryAsset {
         AssetType: "StaticMeshAssetRef"
         AssetId: "sm_cylinder_hq_002"
+      }
+    }
+    Assets {
+      Id: 6412508969258821711
+      Name: "Glow Shape Decal"
+      PlatformAssetType: 14
+      PrimaryAsset {
+        AssetType: "DecalBlueprintAssetRef"
+        AssetId: "bp_decal_glow"
       }
     }
     Assets {

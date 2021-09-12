@@ -48,6 +48,12 @@ Assets {
             String: "Food,Follow,Block,Retrieve"
           }
           Overrides {
+            Name: "cs:CustomTeamColor"
+            Color {
+              A: 1
+            }
+          }
+          Overrides {
             Name: "cs:Speed:tooltip"
             String: "How fast the ant will move"
           }
@@ -61,6 +67,10 @@ Assets {
           }
           Overrides {
             Name: "cs:Health:isrep"
+            Bool: true
+          }
+          Overrides {
+            Name: "cs:CustomTeamColor:isrep"
             Bool: true
           }
         }
@@ -583,6 +593,7 @@ Assets {
         ChildIds: 11821413564342300754
         ChildIds: 12426467816950704265
         ChildIds: 2745240353881996908
+        ChildIds: 1461237421270760430
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -4104,6 +4115,115 @@ Assets {
         }
       }
       Objects {
+        Id: 1461237421270760430
+        Name: "TeamColor"
+        Transform {
+          Location {
+            X: -70.907196
+            Y: 1.69055984e-05
+            Z: 49.084816
+          }
+          Rotation {
+            Yaw: -179.999985
+          }
+          Scale {
+            X: 0.358561695
+            Y: 0.350591123
+            Z: 0.176279381
+          }
+        }
+        ParentId: 16554549312552608365
+        ChildIds: 7763468942427690421
+        UnregisteredParameters {
+          Overrides {
+            Name: "bp:Shape Index"
+            Int: 2
+          }
+          Overrides {
+            Name: "bp:Shape Fill"
+            Float: 0.456679404
+          }
+          Overrides {
+            Name: "bp:Emissive Boost"
+            Float: 1.71883643
+          }
+          Overrides {
+            Name: "bp:Color"
+            Color {
+              R: 0.686357498
+              G: 1
+              B: 0.36
+              A: 1
+            }
+          }
+        }
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        Blueprint {
+          BlueprintAsset {
+            Id: 6412508969258821711
+          }
+          TeamSettings {
+          }
+          DecalBP {
+          }
+        }
+        Relevance {
+          Value: "mc:eproxyrelevance:medium"
+        }
+      }
+      Objects {
+        Id: 7763468942427690421
+        Name: "TeamColorDisplay"
+        Transform {
+          Location {
+          }
+          Rotation {
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 1461237421270760430
+        UnregisteredParameters {
+          Overrides {
+            Name: "cs:Root"
+            ObjectReference {
+              SubObjectId: 3849646725671175769
+            }
+          }
+        }
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        Script {
+          ScriptAsset {
+            Id: 2530898997614350979
+          }
+        }
+      }
+      Objects {
         Id: 1390767814793935368
         Name: "AntClient"
         Transform {
@@ -4215,6 +4335,15 @@ Assets {
       PrimaryAsset {
         AssetType: "StaticMeshAssetRef"
         AssetId: "sm_cylinder_hq_002"
+      }
+    }
+    Assets {
+      Id: 6412508969258821711
+      Name: "Glow Shape Decal"
+      PlatformAssetType: 14
+      PrimaryAsset {
+        AssetType: "DecalBlueprintAssetRef"
+        AssetId: "bp_decal_glow"
       }
     }
     PrimaryAssetId {
