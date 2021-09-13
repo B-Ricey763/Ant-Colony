@@ -669,9 +669,9 @@ Objects {
         Overrides {
           Name: "Scale"
           Vector {
-            X: 0.999999642
-            Y: 2.23019743
-            Z: 1.25355613
+            X: 1.40276
+            Y: 1.40276
+            Z: 1.40276
           }
         }
       }
@@ -731,9 +731,9 @@ Objects {
         Overrides {
           Name: "Scale"
           Vector {
-            X: 0.999999642
-            Y: 2.2402935
-            Z: 1.25752306
+            X: 1.40276
+            Y: 1.40276
+            Z: 1.40276
           }
         }
       }
@@ -793,9 +793,9 @@ Objects {
         Overrides {
           Name: "Scale"
           Vector {
-            X: 0.999999642
-            Y: 2.2260406
-            Z: 1.24414849
+            X: 1.40276
+            Y: 1.40276
+            Z: 1.40276
           }
         }
       }
@@ -833,7 +833,7 @@ Objects {
         Overrides {
           Name: "Position"
           Vector {
-            X: -87.7376099
+            X: -88.6502228
             Y: 344.331696
             Z: 2.37451172
           }
@@ -959,7 +959,7 @@ Objects {
   Transform {
     Location {
       X: -275.930176
-      Y: 133.973755
+      Y: 123.098541
       Z: 8.11474609
     }
     Rotation {
@@ -1115,7 +1115,7 @@ Objects {
   Transform {
     Location {
       X: -172.854736
-      Y: -370.174
+      Y: -381.088
       Z: 8.11474609
     }
     Rotation {
@@ -1221,7 +1221,7 @@ Objects {
   Transform {
     Location {
       X: 100.362961
-      Y: 133.973755
+      Y: 115.056419
       Z: 8.11474609
     }
     Rotation {
@@ -1376,7 +1376,7 @@ Objects {
   Transform {
     Location {
       X: 234.315903
-      Y: -370.203308
+      Y: -382.616821
       Z: 8.11474609
     }
     Rotation {

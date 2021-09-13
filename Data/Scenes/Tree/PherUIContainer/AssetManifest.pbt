@@ -8,15 +8,6 @@ Assets {
   }
 }
 Assets {
-  Id: 9826552089909264759
-  Name: "Frame Beveled 006"
-  PlatformAssetType: 9
-  PrimaryAsset {
-    AssetType: "PlatformBrushAssetRef"
-    AssetId: "FrameSolid8px__015"
-  }
-}
-Assets {
   Id: 3135361702167103863
   Name: "Frame Outlined 006"
   PlatformAssetType: 9

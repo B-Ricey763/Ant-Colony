@@ -10,9 +10,9 @@ Assets {
         Name: "TutorialUICorners"
         Transform {
           Scale {
-            X: 0.999999702
-            Y: 2.21482015
-            Z: 1.26339602
+            X: 1.40276
+            Y: 1.40276
+            Z: 1.40276
           }
         }
         ParentId: 7230362894523753966
@@ -41,8 +41,8 @@ Assets {
             }
             Opacity: 1
             CanvasWorldSize {
-              X: 200
-              Y: 200
+              X: 320
+              Y: 180
             }
             RedrawTime: 30
           }
@@ -88,8 +88,8 @@ Assets {
           Value: "mc:eindicatorvisibility:visiblewhenselected"
         }
         Control {
-          Width: 200
-          Height: 200
+          Width: 320
+          Height: 180
           RenderTransformPivot {
             Anchor {
               Value: "mc:euianchor:middlecenter"
@@ -97,7 +97,7 @@ Assets {
           }
           Image {
             Brush {
-              Id: 2166159249354424303
+              Id: 242018258896389014
             }
             Color {
               R: 1
@@ -130,12 +130,12 @@ Assets {
       }
     }
     Assets {
-      Id: 2166159249354424303
-      Name: "Frame Outline Thin 001"
+      Id: 242018258896389014
+      Name: "Frame Beveled 001"
       PlatformAssetType: 9
       PrimaryAsset {
         AssetType: "PlatformBrushAssetRef"
-        AssetId: "FrameOutline_020"
+        AssetId: "FrameSolid8px_020"
       }
     }
     PrimaryAssetId {

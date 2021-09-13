@@ -8,21 +8,21 @@ Assets {
   }
 }
 Assets {
+  Id: 17169321654057950911
+  Name: "UI Gradient Rectangular 001"
+  PlatformAssetType: 9
+  PrimaryAsset {
+    AssetType: "PlatformBrushAssetRef"
+    AssetId: "UI_Basic_Shape_002"
+  }
+}
+Assets {
   Id: 16910278292812118833
   Name: "Sun Light"
   PlatformAssetType: 6
   PrimaryAsset {
     AssetType: "BlueprintAssetRef"
     AssetId: "CORESKY_SunLight"
-  }
-}
-Assets {
-  Id: 16840871775677235523
-  Name: "BG Highlighted 001"
-  PlatformAssetType: 9
-  PrimaryAsset {
-    AssetType: "PlatformBrushAssetRef"
-    AssetId: "BackgroundHighlighted_020"
   }
 }
 Assets {
@@ -104,15 +104,6 @@ Assets {
   PrimaryAsset {
     AssetType: "BlueprintAssetRef"
     AssetId: "CORESKY_Sky"
-  }
-}
-Assets {
-  Id: 7305316984996280080
-  Name: "Icon Trash Can"
-  PlatformAssetType: 9
-  PrimaryAsset {
-    AssetType: "PlatformBrushAssetRef"
-    AssetId: "Icon_Trash"
   }
 }
 Assets {
