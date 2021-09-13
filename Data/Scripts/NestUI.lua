@@ -19,6 +19,7 @@ local antNum = script:GetCustomProperty("AntNum"):WaitForObject()
 local totalAntNum = script:GetCustomProperty("TotalAntNum"):WaitForObject()
 local currentDump = nil
 local currentAntIndex = 1
+local currentVisibility = nil
 
 local function GetMax(str)
 	if player:GetResource("NestLevel") > 0 then
@@ -82,6 +83,17 @@ closeButton.clickedEvent:Connect(function ()
 	Events.Broadcast("NestUIClosed")
 	currentDump:Burn()
 	currentDump = nil 
+end)
+
+Events.Connect("ShowTutorial", function()
+	if not Object.IsValid(container) then return end
+	currentVisibility = container.visibility
+	container.visibility = Visibility.FORCE_OFF
+end)
+
+Events.Connect("HideTutorial", function()
+	if not Object.IsValid(container) then return end
+	container.visibility = currentVisibility
 end)
 
 player.resourceChangedEvent:Connect(function (player, resource)

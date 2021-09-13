@@ -7,6 +7,7 @@ local name = script:GetCustomProperty("Name"):WaitForObject()
 local manageButton = script:GetCustomProperty("ManageButton"):WaitForObject()
 local owner = nil
 local changedListener = nil
+local currentVisibility = nil
 
 local function GetMax(str)
 	if owner:GetResource("NestLevel") > 0 then
@@ -48,6 +49,17 @@ local closeConn = Events.Connect("NestUIClosed", function ()
 	if not Object.IsValid(script.parent) then return end
 	
 	script.parent.visibility = Visibility.FORCE_ON
+end)
+
+Events.Connect("ShowTutorial", function()
+	if not Object.IsValid(script.parent) then return end
+	currentVisibility = script.parent.visibility
+	script.parent.visibility = Visibility.FORCE_OFF
+end)
+
+Events.Connect("HideTutorial", function()
+	if not Object.IsValid(script.parent) then return end
+	script.parent.visibility = currentVisibility
 end)
 
 -- Handle both cases

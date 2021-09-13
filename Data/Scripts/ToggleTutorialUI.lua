@@ -14,9 +14,11 @@ player.bindingPressedEvent:Connect(function (p, binding)
 			player:SetOverrideCamera(propTutorialCamera)
 			propTutorialCamera:SetPosition(InitPosition)
 			parent.visibility = Visibility.FORCE_ON
+			Events.Broadcast("ShowTutorial")
 		else
 			player:ClearOverrideCamera()
 			parent.visibility = Visibility.FORCE_OFF
+			Events.Broadcast("HideTutorial")
 		end
 		viewTutorial = (not viewTutorial)
 	end
