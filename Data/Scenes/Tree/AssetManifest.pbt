@@ -26,6 +26,15 @@ Assets {
   }
 }
 Assets {
+  Id: 15585596697487262566
+  Name: "Emissive Glow Transparent"
+  PlatformAssetType: 2
+  PrimaryAsset {
+    AssetType: "MaterialAssetRef"
+    AssetId: "mi_basic_emissive_001"
+  }
+}
+Assets {
   Id: 15172180549504871240
   Name: "Ambience Nature Forest Birds Set 01 SFX"
   PlatformAssetType: 10
@@ -86,6 +95,15 @@ Assets {
   PrimaryAsset {
     AssetType: "PlatformBrushAssetRef"
     AssetId: "FrameSolid8px__015"
+  }
+}
+Assets {
+  Id: 9471374831252195517
+  Name: "Sphere"
+  PlatformAssetType: 1
+  PrimaryAsset {
+    AssetType: "StaticMeshAssetRef"
+    AssetId: "sm_sphere_002"
   }
 }
 Assets {

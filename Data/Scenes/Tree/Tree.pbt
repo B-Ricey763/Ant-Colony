@@ -5939,6 +5939,8 @@ Objects {
   }
   ParentId: 4781671109827199097
   ChildIds: 4996203729211021938
+  ChildIds: 13696280083334848235
+  ChildIds: 6448414864873549506
   Collidable_v2 {
     Value: "mc:ecollisionsetting:forceoff"
   }
@@ -5952,6 +5954,137 @@ Objects {
     Value: "mc:eindicatorvisibility:visiblewhenselected"
   }
   NetworkContext {
+  }
+}
+Objects {
+  Id: 6448414864873549506
+  Name: "Sphere"
+  Transform {
+    Location {
+    }
+    Rotation {
+    }
+    Scale {
+      X: 3.03638268
+      Y: 3.03638268
+      Z: 3.03638268
+    }
+  }
+  ParentId: 11323072938959794239
+  UnregisteredParameters {
+    Overrides {
+      Name: "ma:Shared_BaseMaterial:id"
+      AssetReference {
+        Id: 15585596697487262566
+      }
+    }
+    Overrides {
+      Name: "ma:Shared_BaseMaterial:color"
+      Color {
+        R: 0.1
+        G: 0.00199999823
+        B: 0.00199999823
+        A: 0.1
+      }
+    }
+  }
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:forceoff"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:forceoff"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:forceoff"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  CoreMesh {
+    MeshAsset {
+      Id: 9471374831252195517
+    }
+    Teams {
+      IsTeamCollisionEnabled: true
+      IsEnemyCollisionEnabled: true
+    }
+    DisableCastShadows: true
+    DisableReceiveDecals: true
+    DisableAngularMotionBlur: true
+    StaticMesh {
+      Physics {
+        Mass: 100
+        LinearDamping: 0.01
+      }
+      BoundsScale: 1
+    }
+  }
+}
+Objects {
+  Id: 13696280083334848235
+  Name: "PheromoneClient"
+  Transform {
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 11323072938959794239
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  TemplateInstance {
+    ParameterOverrideMap {
+      key: 15722002967888165853
+      value {
+        Overrides {
+          Name: "Name"
+          String: "PheromoneClient"
+        }
+        Overrides {
+          Name: "Scale"
+          Vector {
+            X: 1
+            Y: 1
+            Z: 3
+          }
+        }
+        Overrides {
+          Name: "ma:Shared_BaseMaterial:color"
+          Color {
+            R: 12.8740549
+            G: 100
+            B: 7.99999809
+            A: 1
+          }
+        }
+        Overrides {
+          Name: "Visible"
+          Enum {
+            Value: "mc:evisibilitysetting:forceoff"
+          }
+        }
+        Overrides {
+          Name: "DisableCastShadows"
+          Bool: true
+        }
+        Overrides {
+          Name: "DisableReceiveDecals"
+          Bool: true
+        }
+        Overrides {
+          Name: "Mesh.DisableAngularMotionBlur"
+          Bool: true
+        }
+      }
+    }
+    TemplateAsset {
+      Id: 8756663139210238839
+    }
   }
 }
 Objects {
@@ -5988,6 +6121,21 @@ Objects {
       Name: "cs:DeleteSound"
       ObjectReference {
         SelfId: 11844344003705736670
+      }
+    }
+    Overrides {
+      Name: "cs:ClientVisual"
+      ObjectReference {
+        SelfId: 12484427374287293942
+        SubObjectId: 15722002967888165853
+        InstanceId: 13696280083334848235
+        TemplateId: 8756663139210238839
+      }
+    }
+    Overrides {
+      Name: "cs:EraserVisual"
+      ObjectReference {
+        SelfId: 6448414864873549506
       }
     }
   }

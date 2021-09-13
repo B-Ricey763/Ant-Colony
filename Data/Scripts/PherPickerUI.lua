@@ -9,7 +9,7 @@ local DisplayNames = {
 	Block = "Repel All"
 }
 
-Events.Connect("PherSwitch", function (pherName)
+Events.Connect("PherSwitch", function (pherName, color)
 	pherType.text = DisplayNames[pherName]
 	-- haha butt
 	for i, butt in pairs(pherButtons:GetChildren()) do

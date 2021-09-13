@@ -78,7 +78,7 @@ end
 local function OnSwitchExecute(ability)
 	pherIndex = pherIndex % #PHER_TYPES + 1
 	-- also need to notify client for UI update
-	Events.BroadcastToPlayer(ability.owner,"PherSwitch",PHER_TYPES[pherIndex])
+	Events.BroadcastToPlayer(ability.owner,"PherSwitch", PHER_TYPES[pherIndex], PHER_COLORS[pherIndex])
 end
 
 local function SwitchToPher(player, name)
