@@ -590,7 +590,7 @@ Assets {
           }
         }
         ParentId: 17937364273216284170
-        ChildIds: 11821413564342300754
+        ChildIds: 15442707543592320330
         ChildIds: 12426467816950704265
         ChildIds: 2745240353881996908
         ChildIds: 1461237421270760430
@@ -611,21 +611,18 @@ Assets {
         }
       }
       Objects {
-        Id: 11821413564342300754
+        Id: 15442707543592320330
         Name: "FoodVisual"
         Transform {
           Location {
-            X: 99.999939
-            Y: 2.19344874e-05
-            Z: 74.5828552
-          }
-          Rotation {
-            Yaw: 135
+            X: 104.5849
+            Y: 9.71352565e-05
+            Z: 80.6903534
           }
           Scale {
-            X: 1
-            Y: 1
-            Z: 1
+            X: 0.361457556
+            Y: 0.361457556
+            Z: 0.361457556
           }
         }
         ParentId: 16554549312552608365
@@ -633,14 +630,15 @@ Assets {
           Overrides {
             Name: "ma:Shared_BaseMaterial:id"
             AssetReference {
-              Id: 8336247760868913969
+              Id: 4686690056851062644
             }
           }
           Overrides {
             Name: "ma:Shared_BaseMaterial:color"
             Color {
-              R: 0.950000048
-              G: 0.905960381
+              R: 1
+              G: 0.772119284
+              B: 0.0699999928
               A: 1
             }
           }
@@ -663,7 +661,7 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: 883985107983124514
+            Id: 13710161915374590549
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -4119,17 +4117,17 @@ Assets {
         Name: "TeamColor"
         Transform {
           Location {
-            X: -70.907196
-            Y: 1.69055984e-05
-            Z: 49.084816
+            X: -58.8437195
+            Y: 2.77644134
+            Z: 51.8300934
           }
           Rotation {
             Yaw: -179.999985
           }
           Scale {
-            X: 0.358561695
-            Y: 0.350591123
-            Z: 0.176279381
+            X: 0.415593296
+            Y: 0.427740842
+            Z: 0.245955348
           }
         }
         ParentId: 16554549312552608365
@@ -4145,7 +4143,7 @@ Assets {
           }
           Overrides {
             Name: "bp:Emissive Boost"
-            Float: 1.71883643
+            Float: 3.80548882
           }
           Overrides {
             Name: "bp:Color"
@@ -4179,7 +4177,7 @@ Assets {
           }
         }
         Relevance {
-          Value: "mc:eproxyrelevance:medium"
+          Value: "mc:eproxyrelevance:critical"
         }
       }
       Objects {
@@ -4242,7 +4240,7 @@ Assets {
           Overrides {
             Name: "cs:FoodVisual"
             ObjectReference {
-              SubObjectId: 11821413564342300754
+              SubObjectId: 15442707543592320330
             }
           }
         }
@@ -4266,21 +4264,12 @@ Assets {
       }
     }
     Assets {
-      Id: 883985107983124514
-      Name: "Sphere"
+      Id: 13710161915374590549
+      Name: "Rock 03"
       PlatformAssetType: 1
       PrimaryAsset {
         AssetType: "StaticMeshAssetRef"
-        AssetId: "sm_sphere_002"
-      }
-    }
-    Assets {
-      Id: 8336247760868913969
-      Name: "Food Cheese 01"
-      PlatformAssetType: 2
-      PrimaryAsset {
-        AssetType: "MaterialAssetRef"
-        AssetId: "mi_food_generic_cheese_001_uv"
+        AssetId: "sm_rock_generic_003"
       }
     }
     Assets {

@@ -4323,16 +4323,16 @@ Assets {
         Name: "TeamColor"
         Transform {
           Location {
-            X: -67.0090332
-            Y: 0.0159912109
-            Z: 73.1192551
+            X: -67.0087585
+            Y: 0.0160071794
+            Z: 73.1192627
           }
           Rotation {
             Yaw: 179.999985
           }
           Scale {
-            X: 0.2
-            Y: 0.2
+            X: 0.358574212
+            Y: 0.349033177
             Z: -0.22676681
           }
         }
@@ -4383,7 +4383,7 @@ Assets {
           }
         }
         Relevance {
-          Value: "mc:eproxyrelevance:medium"
+          Value: "mc:eproxyrelevance:critical"
         }
       }
       Objects {

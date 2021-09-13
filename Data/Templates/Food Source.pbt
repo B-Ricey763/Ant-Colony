@@ -180,6 +180,7 @@ Assets {
         }
         ParentId: 9812288447714917136
         ChildIds: 8558658788443552906
+        ChildIds: 13453806695578418850
         WantsNetworking: true
         Collidable_v2 {
           Value: "mc:ecollisionsetting:forceoff"
@@ -201,13 +202,17 @@ Assets {
         Name: "Food Source"
         Transform {
           Location {
+            Z: 3.97572327
           }
           Rotation {
+            Pitch: 4.32628918
+            Yaw: 22.2552834
+            Roll: 1.04267287
           }
           Scale {
-            X: 1.5
-            Y: 1.5
-            Z: 1.5
+            X: 1.26210368
+            Y: 1.26210368
+            Z: 1.26210368
           }
         }
         ParentId: 15287162475141928865
@@ -215,10 +220,28 @@ Assets {
           Overrides {
             Name: "ma:Shared_BaseMaterial:color"
             Color {
-              R: 0.88
-              G: 0.856688738
+              R: 0.786
+              G: 0.76517868
               A: 1
             }
+          }
+          Overrides {
+            Name: "ma:Shared_BaseMaterial:id"
+            AssetReference {
+              Id: 4686690056851062644
+            }
+          }
+          Overrides {
+            Name: "ma:Shared_BaseMaterial:smart"
+            Bool: false
+          }
+          Overrides {
+            Name: "ma:Shared_BaseMaterial:utile"
+            Float: 1.36399651
+          }
+          Overrides {
+            Name: "ma:Shared_BaseMaterial:vtile"
+            Float: 1.59484971
           }
         }
         Collidable_v2 {
@@ -235,7 +258,83 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: 12523867466540647354
+            Id: 4214934300711528327
+          }
+          Teams {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          StaticMesh {
+            Physics {
+              Mass: 100
+              LinearDamping: 0.01
+            }
+            BoundsScale: 1
+          }
+        }
+      }
+      Objects {
+        Id: 13453806695578418850
+        Name: "Food Source"
+        Transform {
+          Location {
+            Z: 3.97572327
+          }
+          Rotation {
+            Pitch: 4.32628918
+            Yaw: 62.7419624
+            Roll: 1.04266274
+          }
+          Scale {
+            X: 1.26210439
+            Y: 1.26210308
+            Z: 2.90160203
+          }
+        }
+        ParentId: 15287162475141928865
+        UnregisteredParameters {
+          Overrides {
+            Name: "ma:Shared_BaseMaterial:color"
+            Color {
+              R: 0.786
+              G: 0.76517868
+              A: 1
+            }
+          }
+          Overrides {
+            Name: "ma:Shared_BaseMaterial:id"
+            AssetReference {
+              Id: 4686690056851062644
+            }
+          }
+          Overrides {
+            Name: "ma:Shared_BaseMaterial:smart"
+            Bool: false
+          }
+          Overrides {
+            Name: "ma:Shared_BaseMaterial:utile"
+            Float: 1.36399651
+          }
+          Overrides {
+            Name: "ma:Shared_BaseMaterial:vtile"
+            Float: 1.59484971
+          }
+        }
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        CoreMesh {
+          MeshAsset {
+            Id: 4214934300711528327
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -252,12 +351,12 @@ Assets {
       }
     }
     Assets {
-      Id: 12523867466540647354
-      Name: "Coral Spikes Big"
+      Id: 4214934300711528327
+      Name: "Rock Pile 002"
       PlatformAssetType: 1
       PrimaryAsset {
         AssetType: "StaticMeshAssetRef"
-        AssetId: "sm_coral_spike_big_01"
+        AssetId: "sm_rocks_small_002"
       }
     }
     PrimaryAssetId {

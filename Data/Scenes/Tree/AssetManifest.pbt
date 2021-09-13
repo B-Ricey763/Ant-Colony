@@ -44,12 +44,12 @@ Assets {
   }
 }
 Assets {
-  Id: 12180544799063427018
-  Name: "Icon Arrow Swap"
+  Id: 13453768334500915074
+  Name: "Fantasy Frame 003"
   PlatformAssetType: 9
   PrimaryAsset {
     AssetType: "PlatformBrushAssetRef"
-    AssetId: "Icon_ArrowSwap"
+    AssetId: "UI_Fantasy_Frame_003"
   }
 }
 Assets {
@@ -77,6 +77,15 @@ Assets {
   PrimaryAsset {
     AssetType: "StaticMeshAssetRef"
     AssetId: "sm_container_square_ref"
+  }
+}
+Assets {
+  Id: 9826552089909264759
+  Name: "Frame Beveled 006"
+  PlatformAssetType: 9
+  PrimaryAsset {
+    AssetType: "PlatformBrushAssetRef"
+    AssetId: "FrameSolid8px__015"
   }
 }
 Assets {
@@ -116,6 +125,15 @@ Assets {
   }
 }
 Assets {
+  Id: 6264143815198025427
+  Name: "BG Gradient 002"
+  PlatformAssetType: 9
+  PrimaryAsset {
+    AssetType: "PlatformBrushAssetRef"
+    AssetId: "BackgroundFlat_019"
+  }
+}
+Assets {
   Id: 4324511045157881128
   Name: "Ambience Nature Insects Buzzing Set 01 SFX"
   PlatformAssetType: 10
@@ -125,12 +143,48 @@ Assets {
   }
 }
 Assets {
+  Id: 3758468186316007037
+  Name: "Center Arrow 002 Wedge"
+  PlatformAssetType: 9
+  PrimaryAsset {
+    AssetType: "PlatformBrushAssetRef"
+    AssetId: "CenterArrow_002Wedge"
+  }
+}
+Assets {
+  Id: 3069311282427466900
+  Name: "Icon mouse Left"
+  PlatformAssetType: 9
+  PrimaryAsset {
+    AssetType: "PlatformBrushAssetRef"
+    AssetId: "Icon_MouseLMB"
+  }
+}
+Assets {
+  Id: 2252454453571138735
+  Name: "UI Gradient Circular 001"
+  PlatformAssetType: 9
+  PrimaryAsset {
+    AssetType: "PlatformBrushAssetRef"
+    AssetId: "UI_Basic_Shape_001"
+  }
+}
+Assets {
   Id: 2207462438860050554
   Name: "\"Maybe Someday\" Music Construction Kit (Layers) 01"
   PlatformAssetType: 10
   PrimaryAsset {
     AssetType: "AudioBlueprintAssetRef"
     AssetId: "abp_maybesomeday_layers_kit_ref"
+  }
+}
+Assets {
+  Id: 1268146667524348362
+  Name: "UI Basic Shape Circle"
+  PlatformAssetType: 9
+  PrimaryAsset {
+    AssetType: "PlatformBrushAssetRef"
+    AssetId: "UI_Basic_Shape_Circle"
   }
 }
 Assets {

@@ -1,4 +1,13 @@
 Assets {
+  Id: 15850950866265445545
+  Name: "Icon Block"
+  PlatformAssetType: 9
+  PrimaryAsset {
+    AssetType: "PlatformBrushAssetRef"
+    AssetId: "Icon_Block"
+  }
+}
+Assets {
   Id: 13668177723742032643
   Name: "Icon Water"
   PlatformAssetType: 9

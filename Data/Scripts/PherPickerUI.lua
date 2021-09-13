@@ -14,7 +14,10 @@ Events.Connect("PherSwitch", function (pherName)
 	-- haha butt
 	for i, butt in pairs(pherButtons:GetChildren()) do
 		if butt.name == pherName then
-			border.parent = butt
+			local anchor = butt:FindChildByName("BorderAnchor")
+			if (anchor) then
+				border.parent = anchor
+			end
 		end
 	end
 end) 

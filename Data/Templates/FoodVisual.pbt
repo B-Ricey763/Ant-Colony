@@ -10,9 +10,9 @@ Assets {
         Name: "FoodVisual"
         Transform {
           Scale {
-            X: 1
-            Y: 1
-            Z: 1
+            X: 0.361457556
+            Y: 0.361457556
+            Z: 0.361457556
           }
         }
         ParentId: 4781671109827199097
@@ -20,14 +20,15 @@ Assets {
           Overrides {
             Name: "ma:Shared_BaseMaterial:id"
             AssetReference {
-              Id: 8336247760868913969
+              Id: 4686690056851062644
             }
           }
           Overrides {
             Name: "ma:Shared_BaseMaterial:color"
             Color {
-              R: 0.950000048
-              G: 0.905960381
+              R: 1
+              G: 0.772119284
+              B: 0.0699999928
               A: 1
             }
           }
@@ -50,7 +51,7 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: 883985107983124514
+            Id: 13710161915374590549
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -67,21 +68,12 @@ Assets {
       }
     }
     Assets {
-      Id: 883985107983124514
-      Name: "Sphere"
+      Id: 13710161915374590549
+      Name: "Rock 03"
       PlatformAssetType: 1
       PrimaryAsset {
         AssetType: "StaticMeshAssetRef"
-        AssetId: "sm_sphere_002"
-      }
-    }
-    Assets {
-      Id: 8336247760868913969
-      Name: "Food Cheese 01"
-      PlatformAssetType: 2
-      PrimaryAsset {
-        AssetType: "MaterialAssetRef"
-        AssetId: "mi_food_generic_cheese_001_uv"
+        AssetId: "sm_rock_generic_003"
       }
     }
     PrimaryAssetId {

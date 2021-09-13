@@ -2194,11 +2194,12 @@ Assets {
           }
         }
         ParentId: 14429168247670439619
+        ChildIds: 6108132259074173034
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
         Visible_v2 {
-          Value: "mc:evisibilitysetting:forceoff"
+          Value: "mc:evisibilitysetting:forceon"
         }
         CameraCollidable {
           Value: "mc:ecollisionsetting:inheritfromparent"
@@ -2223,20 +2224,20 @@ Assets {
             FontSize: 20
             ButtonColor {
               R: 1
-              G: 1
-              B: 1
+              G: 0.851920545
+              B: 0.480000019
               A: 1
             }
             HoveredColor {
-              R: 0.609375
-              G: 0.609375
-              B: 0.609375
+              R: 1
+              G: 0.917351
+              B: 0.76
               A: 1
             }
             PressedColor {
-              R: 0.270833343
-              G: 0.270833343
-              B: 0.270833343
+              R: 0.665
+              G: 0.553579509
+              B: 0.29925
               A: 1
             }
             DisabledColor {
@@ -2246,7 +2247,7 @@ Assets {
               A: 1
             }
             Brush {
-              Id: 841534158063459245
+              Id: 6264143815198025427
             }
             IsButtonEnabled: true
             ClickMode {
@@ -2265,7 +2266,6 @@ Assets {
             }
             ShadowOffset {
             }
-            ScaleToFit: true
           }
           AnchorLayout {
             SelfAnchor {
@@ -2276,6 +2276,77 @@ Assets {
             TargetAnchor {
               Anchor {
                 Value: "mc:euianchor:bottomcenter"
+              }
+            }
+          }
+        }
+      }
+      Objects {
+        Id: 6108132259074173034
+        Name: "UI Image"
+        Transform {
+          Location {
+            X: -7962.20459
+            Y: 1009.19653
+            Z: -459.411102
+          }
+          Rotation {
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 3968948418615930842
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        Control {
+          Width: 200
+          Height: 50
+          RenderTransformPivot {
+            Anchor {
+              Value: "mc:euianchor:middlecenter"
+            }
+          }
+          Image {
+            Brush {
+              Id: 18415975555460205783
+            }
+            Color {
+              R: 1
+              G: 1
+              B: 1
+              A: 1
+            }
+            TeamSettings {
+            }
+            ShadowColor {
+              A: 1
+            }
+            ShadowOffset {
+            }
+            ScreenshotIndex: 1
+          }
+          AnchorLayout {
+            SelfAnchor {
+              Anchor {
+                Value: "mc:euianchor:topleft"
+              }
+            }
+            TargetAnchor {
+              Anchor {
+                Value: "mc:euianchor:topleft"
               }
             }
           }
@@ -2396,7 +2467,7 @@ Assets {
           }
         }
         Relevance {
-          Value: "mc:eproxyrelevance:medium"
+          Value: "mc:eproxyrelevance:critical"
         }
       }
       Objects {
@@ -2715,6 +2786,24 @@ Assets {
       PrimaryAsset {
         AssetType: "StaticMeshAssetRef"
         AssetId: "sm_grass_generic_001"
+      }
+    }
+    Assets {
+      Id: 6264143815198025427
+      Name: "BG Gradient 002"
+      PlatformAssetType: 9
+      PrimaryAsset {
+        AssetType: "PlatformBrushAssetRef"
+        AssetId: "BackgroundFlat_019"
+      }
+    }
+    Assets {
+      Id: 18415975555460205783
+      Name: "Frame Outline Thin 002"
+      PlatformAssetType: 9
+      PrimaryAsset {
+        AssetType: "PlatformBrushAssetRef"
+        AssetId: "FrameOutline_019"
       }
     }
     Assets {
