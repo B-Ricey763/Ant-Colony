@@ -101,7 +101,10 @@ Events.Connect("GameStateChanged", function (oldState, newState)
 		currentDump = Dumpster.New()
 
 		local teamNum = 1
+
+		-- handle player join
 		local function HandlePlayer(player)
+
 			player.team = teamNum
 			currentDump:Dump(NewColony(player))
 
@@ -116,6 +119,17 @@ Events.Connect("GameStateChanged", function (oldState, newState)
 
 			teamNum = teamNum + 1
 		end
+
+		-- handle player leaving
+		local function HandlePlayerLeft(player)
+			local nest = player:GetPrivateNetworkedData("Nest")
+			if (nest) then
+				Events.BroadcastToPlayer(player, "NestDestroyed")
+				-- For right now, just get rid of the nest. This is subjec to change
+				nest:GetObject():Destroy()
+			end
+		end
+
 		-- Handle players joining in progress
 		currentDump:Dump(Game.playerJoinedEvent:Connect(function (plr)
 			HandlePlayer(plr)
@@ -125,6 +139,11 @@ Events.Connect("GameStateChanged", function (oldState, newState)
 		for i, player in ipairs(Game.GetPlayers()) do
 			HandlePlayer(player)
 		end
+
+		-- handle player leaving
+		Game.playerLeftEvent:Connect(function (plr)
+			HandlePlayerLeft(plr)
+		end)
 
 		for i = 1, #foodLocations:GetChildren() do
 			currentDump:Dump(NewFood())
