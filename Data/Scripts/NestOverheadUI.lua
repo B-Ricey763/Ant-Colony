@@ -59,7 +59,9 @@ end)
 
 Events.Connect("HideTutorial", function()
 	if not Object.IsValid(script.parent) then return end
-	script.parent.visibility = currentVisibility
+	if (currentVisibility) then
+		script.parent.visibility = currentVisibility
+	end
 end)
 
 -- Handle both cases
