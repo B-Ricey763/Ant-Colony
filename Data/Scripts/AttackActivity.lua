@@ -85,8 +85,10 @@ local PeriodicallyForget = nil
 PeriodicallyForget = function ()
 	Task.Wait(0.5)
 
-	for _, hit in ipairs(trigger:GetOverlappingObjects()) do
-		ConsiderAttack(trigger, hit)
+	if (Object.IsValid(trigger)) then
+		for _, hit in ipairs(trigger:GetOverlappingObjects()) do
+			ConsiderAttack(trigger, hit)
+		end
 	end
 
 	Task.Spawn(PeriodicallyForget)

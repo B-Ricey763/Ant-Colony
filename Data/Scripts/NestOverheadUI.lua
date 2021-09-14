@@ -6,32 +6,22 @@ local health = script:GetCustomProperty("Health"):WaitForObject()
 local name = script:GetCustomProperty("Name"):WaitForObject()
 local manageButton = script:GetCustomProperty("ManageButton"):WaitForObject()
 local owner = nil
-local changedListener = nil
 local currentVisibility = nil
 
 local function GetMax(str)
-	if owner:GetResource("NestLevel") > 0 then
+	if owner and owner:GetResource("NestLevel") > 0 then
 		return NestLevels[owner:GetResource("NestLevel")][str]
 	end
-	return ""
-end
-
-local function Display()
-	name.text = owner.name .. "'s Nest"
-	health.progress = owner:GetResource("Health") / GetMax("maxHealth") 
-	changedListener = owner.resourceChangedEvent:Connect(function (p, resource, amount)
-		if resource == "Health" and Object.IsValid(health) then
-			health.progress = amount / GetMax("maxHealth")
-		end
-	end)
+	return -1
 end
 
 -- This is stupid because I don't know if the owner will be set or not, oh well!!!
-local function Manage()
-	owner = Game.FindPlayer(nest:GetCustomProperty("ownerId"))
-	if owner then
-		Display()
-	end
+local bHasLocalPlayer = false
+local function SetupForLocalPlayer()
+
+	-- only manage once for local player
+	if (bHasLocalPlayer) then return end
+	bHasLocalPlayer = true
 
 	if player.id ~= nest:GetCustomProperty("ownerId") then return end
 	-- Let the player know its theirs
@@ -64,18 +54,36 @@ Events.Connect("HideTutorial", function()
 	end
 end)
 
--- Handle both cases
-Manage()
-local netConn = nest.networkedPropertyChangedEvent:Connect(function (owner, name)
-	if name == "ownerId" then
-		Manage()
+-- update function to detect changes
+local tsk = nil
+local update = function()
+	-- end this task
+	if (not Object.IsValid(nest)) then
+		if (tsk) then
+			tsk:Cancel()
+		end
+		return
 	end
-end)
+
+	local pl = Game.FindPlayer(nest:GetCustomProperty("ownerId"))
+	if (Object.IsValid(pl)) then
+		owner = pl
+ 		name.text = pl.name .. "'s Nest"
+		SetupForLocalPlayer()
+
+		-- update health
+		if Object.IsValid(health) then
+			health.progress = pl:GetResource("Health") / GetMax("maxHealth")
+		end
+	end
+end
+local tsk = Task.Spawn(update)
+tsk.repeatCount = -1
+tsk.repeatInterval = 0.1
+
 
 script.destroyEvent:Connect(function ()
-	changedListener:Disconnect()
 	closeConn:Disconnect()
-	netConn:Disconnect()
 end)
 
 

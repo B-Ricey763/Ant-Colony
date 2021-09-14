@@ -45,6 +45,7 @@ function Tick(dt)
 	end
 end
 
-Events.Connect("MoveCamera", function (pos)
+Events.Connect("MoveCamera", function (pos, target)
 	cam:SetPosition(pos)
+	cam:LookAt(target)
 end)

@@ -51,7 +51,7 @@ end
 local function NewColony(player)
 	player:ClearResources()
 	player:SetResource("NestLevel", 1)
-	Task.Wait(3)
+	--Task.Wait(1)
 	player:SetResource("Health", NestLevels[1].maxHealth)
 	player:SetResource("Pher", 0)
 	player:SetResource("Ants", 0)
@@ -64,10 +64,11 @@ local function NewColony(player)
 	nest:FindDescendantByName("HitboxTrigger").team = player.team
 	nest:FindDescendantByName("Pheromone").team = player.team
 	player:SetPrivateNetworkedData("Nest", nest:GetReference())
-	-- we have to delay this just because the client script might not run immediately
+	-- move the camera to look at the nest
 	Task.Spawn(function()
-		Events.BroadcastToPlayer(player, "MoveCamera", nest:GetWorldPosition() + Vector3.UP * 1000)
-	end, 2)
+		Events.BroadcastToPlayer(player, "MoveCamera", nest:GetWorldPosition() + Vector3.UP * 1000 - (Vector3.RIGHT+Vector3.FORWARD) * 1000, nest:GetWorldPosition())
+	end, 0.5)
+
 
 	return nest
 end
@@ -118,6 +119,11 @@ Events.Connect("GameStateChanged", function (oldState, newState)
 			end)
 
 			teamNum = teamNum + 1
+
+			-- stop players joining
+			if (teamNum>4) then
+				Game.StopAcceptingPlayers()
+			end
 		end
 
 		-- handle player leaving

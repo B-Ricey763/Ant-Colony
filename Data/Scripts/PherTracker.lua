@@ -9,6 +9,14 @@ local numTrack = 5
 local pheromones = {}
 Current = nil
 local DeltaTime = 0.1
+-- time to allow tracking all closest pheromones (not just the ones in front)
+local TrackAllTime = 1.5
+
+-- set to 0 so we know when to stop tracking all pheromones
+Task.Spawn(function()
+	TrackAllTime = 0
+	print("stop track all")
+end, TrackAllTime)
 
 -- forget pheromones too far away
 local function ForgetPheromone()
@@ -47,7 +55,7 @@ local function GetClosestPheromone(filter)
 		return -1
 	end
 
-	local f = function(distance)
+	local f = function(distance, p)
 		return false
 	end
 	filter = (filter or f)
@@ -77,7 +85,7 @@ local function GetClosestPheromone(filter)
 			local dot = d .. forward
 			local distance = d.size
 			if (distance<D) then
-				if (dot>0 or filter(distance)) then
+				if (dot>0 or filter(distance, pher)) then
 					D = distance
 					I = i
 				end
@@ -104,12 +112,17 @@ end
 local function TickAnt(dt)
 	DeltaTime = dt
 
-	local i = GetClosestPheromone()
+	local trackAll = function(distance, pher)
+		--local isCarryingFood = ant:GetNetworkedCustomProperty("CarryingFood")
+		local pherType = pher:GetCustomProperty("Type")
+		return ((TrackAllTime>0) and (pherType~="Retrieve"))
+	end
+	local i = GetClosestPheromone(trackAll)
 	if (i>=0) then
 		Current = pheromones[i]
 	end
 
-	if (Object.IsValid(Current) and Object.IsValid(script.parent)) then
+	if (Object.IsValid(script) and Object.IsValid(Current) and Object.IsValid(script.parent)) then
 		local offset = Vector3.New(0,0,50)
 		CoreDebug.DrawLine(script.parent:GetWorldPosition()+offset, Current:GetWorldPosition()+offset, {
 			duration = DeltaTime,
@@ -150,6 +163,7 @@ local function RemoveDuplicatePheromones()
 end
 
 local function OnBeginOverlap(trigger, hit)
+
 	if hit:IsA("CoreObject") and hit.name == "Pheromone" and (hit.team == 0 or hit.team == hitboxTrigger.team)  then -- make sure the teams match, but neatural stuff always passes
 
 		-- check if we can track this pheromone
@@ -185,7 +199,7 @@ PeriodicallyForget = function ()
 	ForgetInvalidPheromones()
 
 	-- track far away pheromones if they are the closest ants remember
-	local filter = function(distance)
+	local filter = function(distance, pher)
 		return distance>pherTrigger:GetScale().x*100*2
 	end
 	local i = GetClosestPheromone(filter)
@@ -198,3 +212,19 @@ end
 Task.Spawn(PeriodicallyForget)
 
 pherTrigger.beginOverlapEvent:Connect(OnBeginOverlap)
+
+-- handle initial overlaps
+-- need to wait a bit for team to be assigned
+Task.Spawn(function()
+	local InitialOverlaps = pherTrigger:GetOverlappingObjects()
+	for _, obj in ipairs(InitialOverlaps) do
+
+		CoreDebug.DrawBox(obj:GetWorldPosition(), Vector3.New(50), {
+			duration = 5,
+			color = Color.CYAN,
+			thickness = 4
+		})
+
+		OnBeginOverlap(pherTrigger, obj)
+	end
+end, 0.2)
