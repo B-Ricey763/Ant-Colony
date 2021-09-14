@@ -170,6 +170,10 @@ Events.Connect("GameStateChanged", function (oldState, newState)
 		-- check for winner
 		AwardWinner()
 
+		-- quick fix: don't accept anymore players, allow only 1 round per game instance for now
+		-- otherwise it bugs
+		Game.StopAcceptingPlayers()
+
 		-- clean up all of the items we added
 		currentDump:Burn()
 		currentDump = nil

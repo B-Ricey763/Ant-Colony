@@ -216,7 +216,14 @@ pherTrigger.beginOverlapEvent:Connect(OnBeginOverlap)
 -- handle initial overlaps
 -- need to wait a bit for team to be assigned
 Task.Spawn(function()
-	local InitialOverlaps = pherTrigger:GetOverlappingObjects()
+	local r = pherTrigger:GetScale().x*50*2
+	local InitialOverlaps = World.FindObjectsOverlappingSphere(ant:GetWorldPosition(), r)
+	CoreDebug.DrawSphere(ant:GetWorldPosition(), r, {
+		duration = 5,
+		color = Color.BLUE,
+		thickness = 4
+	})
+	-- trigger on overlap
 	for _, obj in ipairs(InitialOverlaps) do
 
 		CoreDebug.DrawBox(obj:GetWorldPosition(), Vector3.New(50), {

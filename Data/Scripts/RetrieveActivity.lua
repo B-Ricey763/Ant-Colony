@@ -11,6 +11,15 @@ local retrievePher = nil
 function RetrieveActivity.tick(activity, dt)
 	local currentPher = PherTracker.context.Current
 	if Object.IsValid(currentPher) and currentPher:GetCustomProperty("Type") == "Retrieve" then
+
+		local pherRoot = currentPher:FindTemplateRoot()
+		local isCarryingFood = ant:GetCustomProperty("CarryingFood")
+
+		-- move towards nest only if we have food
+		if (pherRoot.name=="Nest") and (not isCarryingFood) then
+			return
+		end
+
 		retrievePher = currentPher
 		activity.priority = Priorities.PRIMARY + 25 -- should be pretty important
 	end
