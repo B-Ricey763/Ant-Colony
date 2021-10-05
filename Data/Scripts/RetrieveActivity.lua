@@ -34,6 +34,9 @@ function RetrieveActivity.tickHighestPriority(activity, dt)
 			PherTracker.context.Current = nil
 			retrievePher = nil
 			AntMover.Forward(ant, -diff:GetNormalized(), dt)
+			-- ant can live longer when retrieving
+			ant.lifeSpan = ant.lifeSpan + 30
+			--print("ant life: " .. ant.lifeSpan)
 		end
 	else
 		retrievePher = nil

@@ -55,6 +55,7 @@ Events.Connect("EraseToggled", function (isErasing)
 		ClientVisual.visibility = Visibility.FORCE_ON
 		EraserVisual.visibility = Visibility.FORCE_OFF
 	end
+	IS_ERASING = isErasing
 end)
 
 Events.Connect("DestroyPher", function (id)

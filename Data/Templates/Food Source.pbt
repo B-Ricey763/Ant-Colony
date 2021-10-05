@@ -181,6 +181,7 @@ Assets {
         ParentId: 9812288447714917136
         ChildIds: 8558658788443552906
         ChildIds: 13453806695578418850
+        ChildIds: 8647753597173426244
         WantsNetworking: true
         Collidable_v2 {
           Value: "mc:ecollisionsetting:forceoff"
@@ -349,6 +350,119 @@ Assets {
           }
         }
       }
+      Objects {
+        Id: 8647753597173426244
+        Name: "Flare Ray VFX"
+        Transform {
+          Location {
+            Z: -84.0363617
+          }
+          Rotation {
+            Pitch: 90
+          }
+          Scale {
+            X: 30
+            Y: 8
+            Z: 1
+          }
+        }
+        ParentId: 15287162475141928865
+        UnregisteredParameters {
+          Overrides {
+            Name: "bp:Color"
+            Color {
+              R: 0.966887355
+              G: 1
+              A: 1
+            }
+          }
+          Overrides {
+            Name: "bp:Color B"
+            Color {
+              R: 1
+              G: 0.615894
+              A: 1
+            }
+          }
+          Overrides {
+            Name: "bp:Color C"
+            Color {
+              R: 0.99
+              G: 0.452384114
+              A: 1
+            }
+          }
+          Overrides {
+            Name: "bp:Color Offset A"
+            Float: 0
+          }
+          Overrides {
+            Name: "bp:Emissive Brightness"
+            Float: 0.589291573
+          }
+          Overrides {
+            Name: "bp:Ray Density"
+            Float: 3.81970549
+          }
+          Overrides {
+            Name: "bp:Ray Width"
+            Float: 5.85635471
+          }
+          Overrides {
+            Name: "bp:Ray Appearance"
+            Enum {
+              Value: "mc:erayappearance:newenumerator0"
+            }
+          }
+          Overrides {
+            Name: "bp:Ray Color Method"
+            Enum {
+              Value: "mc:eraycoloringoptions:newenumerator2"
+            }
+          }
+          Overrides {
+            Name: "bp:Ray Speed"
+            Float: 4.98035622
+          }
+          Overrides {
+            Name: "bp:Depth Fade"
+            Float: 0.122134179
+          }
+          Overrides {
+            Name: "bp:Align with Sun"
+            Bool: false
+          }
+          Overrides {
+            Name: "bp:Camera Depth Fade Distance"
+            Float: 2.20222521
+          }
+        }
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        Blueprint {
+          BlueprintAsset {
+            Id: 8141935410761630427
+          }
+          TeamSettings {
+          }
+          Vfx {
+            AutoPlay: true
+          }
+        }
+        Relevance {
+          Value: "mc:eproxyrelevance:medium"
+        }
+      }
     }
     Assets {
       Id: 4214934300711528327
@@ -357,6 +471,15 @@ Assets {
       PrimaryAsset {
         AssetType: "StaticMeshAssetRef"
         AssetId: "sm_rocks_small_002"
+      }
+    }
+    Assets {
+      Id: 8141935410761630427
+      Name: "Flare Ray VFX"
+      PlatformAssetType: 8
+      PrimaryAsset {
+        AssetType: "VfxBlueprintAssetRef"
+        AssetId: "fxbp_ray_system"
       }
     }
     PrimaryAssetId {

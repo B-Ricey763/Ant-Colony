@@ -99,6 +99,13 @@ end
 
 Events.Connect("GameStateChanged", function (oldState, newState)
 	if newState == ROUND_STATE then
+
+		-- transfer everyone to new game instance of this game, should not be hardcoded...
+		if (not Game.IsAcceptingPlayers()) then
+			Game.TransferAllPlayersToGame("e73755/ant-colony")
+			return
+		end
+
 		currentDump = Dumpster.New()
 
 		local teamNum = 1
