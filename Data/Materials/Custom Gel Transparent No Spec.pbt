@@ -2,7 +2,7 @@ Assets {
   Id: 1897569548908905784
   Name: "Custom Gel Transparent No Spec"
   PlatformAssetType: 13
-  SerializationVersion: 98
+  SerializationVersion: 100
   CustomMaterialAsset {
     BaseMaterialId: 1115497460184415656
     ParameterOverrides {

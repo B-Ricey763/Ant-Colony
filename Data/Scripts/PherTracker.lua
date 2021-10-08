@@ -3,6 +3,7 @@ local hitboxTrigger = script.parent:FindChildByName("HitboxTrigger")
 local ant = script.parent.parent
 local PheromoneTypes = {CoreString.Split(ant:GetCustomProperty("Pheromones"), ",")}
 
+local NestPheromone = nil
 local root = script:FindTemplateRoot();
 
 local numTrack = 5
@@ -115,7 +116,15 @@ local function TickAnt(dt)
 	local trackAll = function(distance, pher)
 		--local isCarryingFood = ant:GetNetworkedCustomProperty("CarryingFood")
 		local pherType = pher:GetCustomProperty("Type")
-		return ((TrackAllTime>0) and (pherType~="Retrieve"))
+		local pherRoot = pher:FindTemplateRoot()
+		local canTrack = true
+
+		-- cannot follow nest initially
+		if (pherRoot and pherRoot.name=="Nest") then
+			canTrack = false
+		end
+
+		return ((TrackAllTime>0) and canTrack)
 	end
 	local i = GetClosestPheromone(trackAll)
 	if (i>=0) then
@@ -172,7 +181,13 @@ local function OnBeginOverlap(trigger, hit)
 			canTrack = (canTrack or (hit:GetCustomProperty("Type") == pherType))
 		end
 
+		-- do not track nest pheromones
+		if (hit==NestPheromone) then
+			canTrack = false
+		end
+
 		if (canTrack) then
+
 			-- insert pheromones we are tracking
 			table.insert(pheromones, hit)
 			-- forget pheromones
@@ -198,6 +213,8 @@ PeriodicallyForget = function ()
 	-- first lets forget invalid pheromones
 	ForgetInvalidPheromones()
 
+	----
+	-- GOING BACK
 	-- track far away pheromones if they are the closest ants remember
 	local filter = function(distance, pher)
 		return distance>pherTrigger:GetScale().x*100*2
@@ -205,6 +222,27 @@ PeriodicallyForget = function ()
 	local i = GetClosestPheromone(filter)
 	if (i>=0) then
 		Current = pheromones[i]
+	end
+
+	----
+	-- GOING HOME
+	-- if we are lost then start tracking nest when we are far away
+	local hasNearbyPheromones = false
+	for _,pher in ipairs(pheromones) do
+		pherRoot = pher:FindTemplateRoot()
+		if (pherRoot and pherRoot.name=="Pheromone") then
+			hasNearbyPheromones = true
+		end
+	end
+	if ( Object.IsValid(NestPheromone) and (not hasNearbyPheromones) ) then
+		local p0 = NestPheromone:GetWorldPosition()
+		local p1 = ant:GetWorldPosition()
+		local distance = (p0-p1).size
+
+		if (distance>pherTrigger:GetScale().x*100*2) then
+			-- start tracking Nest if we have nowhere to go
+			pheromones = { NestPheromone }
+		end
 	end
 
 	Task.Spawn(PeriodicallyForget)
@@ -217,12 +255,26 @@ pherTrigger.beginOverlapEvent:Connect(OnBeginOverlap)
 -- need to wait a bit for team to be assigned
 Task.Spawn(function()
 	local r = pherTrigger:GetScale().x*50*2
+	local triggerOverlaps = pherTrigger:GetOverlappingObjects()
 	local InitialOverlaps = World.FindObjectsOverlappingSphere(ant:GetWorldPosition(), r)
 	CoreDebug.DrawSphere(ant:GetWorldPosition(), r, {
 		duration = 5,
 		color = Color.BLUE,
 		thickness = 4
 	})
+
+	-- add unique trigger overlaps to initial overlaps
+	-- this is because World.FindObjectsOverlappingSphere does not cover many all initial objects
+	local hash = {}
+	for _, obj in ipairs(InitialOverlaps) do
+		hash[obj] = true
+	end
+	for _, obj in ipairs(triggerOverlaps) do
+		if (not hash[obj]) then
+			table.insert(InitialOverlaps, obj)
+		end
+	end
+
 	-- trigger on overlap
 	for _, obj in ipairs(InitialOverlaps) do
 
@@ -232,6 +284,18 @@ Task.Spawn(function()
 			thickness = 4
 		})
 
-		OnBeginOverlap(pherTrigger, obj)
+		-- handle nest and placed pheromones differently initially
+		local pherRoot = obj:FindTemplateRoot()
+		if (pherRoot and pherRoot.name=="Nest") then
+			-- detect nest follow pheromone for later use
+			if (obj:GetCustomProperty("Type")=="Follow") then
+				NestPheromone = obj
+			end
+		else
+			-- trigger on other pheromones
+			OnBeginOverlap(pherTrigger, obj)
+		end
+
 	end
+
 end, 0.2)

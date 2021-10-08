@@ -174,6 +174,7 @@ Assets {
         ChildIds: 54196432698546914
         ChildIds: 9911070672485469393
         ChildIds: 1900995566298355330
+        ChildIds: 11441985844182019452
         WantsNetworking: true
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
@@ -351,6 +352,49 @@ Assets {
         Script {
           ScriptAsset {
             Id: 834346235161507982
+          }
+        }
+      }
+      Objects {
+        Id: 11441985844182019452
+        Name: "Pheromone"
+        Transform {
+          Location {
+          }
+          Rotation {
+          }
+          Scale {
+            X: 3
+            Y: 3
+            Z: 3
+          }
+        }
+        ParentId: 5288328143641997138
+        UnregisteredParameters {
+          Overrides {
+            Name: "cs:Type"
+            String: "Follow"
+          }
+        }
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        Trigger {
+          TeamSettings {
+            IsTeamCollisionEnabled: true
+            IsEnemyCollisionEnabled: true
+          }
+          TriggerShape_v2 {
+            Value: "mc:etriggershape:sphere"
           }
         }
       }
@@ -2856,5 +2900,5 @@ Assets {
       AssetId: "None"
     }
   }
-  SerializationVersion: 98
+  SerializationVersion: 100
 }

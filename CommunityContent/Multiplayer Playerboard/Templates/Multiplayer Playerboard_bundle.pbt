@@ -40,5 +40,5 @@ Assets {
     Version: "1.0.0"
     Description: "Playerboard feature from Core World.\r\n\r\nDisplays a list of all players in the game."
   }
-  SerializationVersion: 98
+  SerializationVersion: 100
 }

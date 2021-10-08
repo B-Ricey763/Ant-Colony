@@ -2,7 +2,7 @@ Assets {
   Id: 8849503483940266870
   Name: "Custom Concrete Damaged 01"
   PlatformAssetType: 13
-  SerializationVersion: 98
+  SerializationVersion: 100
   CustomMaterialAsset {
     BaseMaterialId: 2441707628016867841
     ParameterOverrides {

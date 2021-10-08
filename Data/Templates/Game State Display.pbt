@@ -385,5 +385,5 @@ Assets {
       AssetId: "Game_State_Display"
     }
   }
-  SerializationVersion: 98
+  SerializationVersion: 100
 }

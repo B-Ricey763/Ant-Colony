@@ -286,6 +286,6 @@ Assets {
   Marketplace {
     Description: "Playerboard feature from Core World.\r\n\r\nDisplays a list of all players in the game."
   }
-  SerializationVersion: 98
+  SerializationVersion: 100
   DirectlyPublished: true
 }

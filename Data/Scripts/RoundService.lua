@@ -62,7 +62,13 @@ local function NewColony(player)
 	nest:SetNetworkedCustomProperty("Ants", antFolder)
 	-- both the player and nest have refs to each other
 	nest:FindDescendantByName("HitboxTrigger").team = player.team
-	nest:FindDescendantByName("Pheromone").team = player.team
+	
+	-- set team to all pheromones
+	local pheromones = nest:FindDescendantsByName("Pheromone")
+	for _,pher in ipairs(pheromones) do
+		pher.team = player.team
+	end
+
 	player:SetPrivateNetworkedData("Nest", nest:GetReference())
 	-- move the camera to look at the nest
 	Task.Spawn(function()

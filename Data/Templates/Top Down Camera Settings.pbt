@@ -245,5 +245,5 @@ Assets {
       AssetId: "Top_Down_Camera_Settings"
     }
   }
-  SerializationVersion: 98
+  SerializationVersion: 100
 }
